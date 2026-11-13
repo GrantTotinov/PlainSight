@@ -17,7 +17,8 @@ BẠN NHẬN ĐƯỢC GÌ
 • Không còn thẻ và nút Chế độ AI trên trang kết quả và trang chủ.
 • Tùy chọn: mở Chế độ AI sẽ đưa bạn đến kết quả thông thường.
 • Chế độ "Chỉ web": mọi tìm kiếm mở trong bộ lọc Web của Google. Chỉ có liên kết và vẫn hoạt động ngay cả khi Google thiết kế lại trang.
-• Tạm dừng trên một thẻ chỉ với một cú nhấp khi bạn muốn xem toàn bộ trang.
+• Tùy chọn: ẩn "Mọi người cũng hỏi", phần mà Google hiện viết câu trả lời bằng AI.
+• Muốn xem câu trả lời AI một lần? Hiện nó trên trang đó bằng một cú nhấp hoặc tạm dừng thẻ bằng Alt+Shift+H.
 
 CÁCH HOẠT ĐỘNG
 Chọn một chế độ khi cài đặt. "Ẩn AI" giữ trang kết quả bình thường và bỏ các phần AI. "Chỉ web" chuyển tìm kiếm sang bộ lọc Web có sẵn, lựa chọn đáng tin cậy nhất vì không phụ thuộc vào bố cục trang. Đổi chế độ hoặc tắt PlainSight bất cứ lúc nào bằng nút trên thanh công cụ.

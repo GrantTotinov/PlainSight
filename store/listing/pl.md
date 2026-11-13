@@ -17,7 +17,8 @@ CO ZYSKUJESZ
 • Brak kart i przycisków Trybu AI na stronie wyników i na stronie głównej.
 • Opcjonalnie: otwarcie Trybu AI przenosi do zwykłych wyników.
 • Tryb „Tylko strony”: każde wyszukiwanie otwiera się w filtrze Web Google. Same linki, a do tego działa nawet po zmianie wyglądu strony przez Google.
-• Wstrzymanie na wybranej karcie jednym kliknięciem, gdy chcesz zobaczyć pełną stronę.
+• Opcjonalnie: ukryj „Podobne pytania”, których odpowiedzi Google pisze teraz za pomocą AI.
+• Chcesz raz zobaczyć odpowiedź AI? Pokaż ją na tej stronie jednym kliknięciem albo wstrzymaj kartę skrótem Alt+Shift+H.
 
 JAK TO DZIAŁA
 Wybierz tryb podczas instalacji. „Ukryj AI” zostawia zwykłą stronę wyników i usuwa części z AI. „Tylko strony” przełącza wyszukiwania na wbudowany filtr Web, najbardziej niezawodną opcję, bo nie zależy od układu strony. Tryb zmienisz lub wyłączysz PlainSight w każdej chwili przyciskiem na pasku narzędzi.

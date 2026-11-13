@@ -17,7 +17,8 @@ CE QUE VOUS OBTENEZ
 • Plus d'onglets ni de boutons du Mode IA sur la page de résultats ou la page d'accueil.
 • En option : ouvrir le Mode IA vous renvoie vers les résultats classiques.
 • Mode « Web uniquement » : chaque recherche s'ouvre dans le filtre Web de Google. Des liens, rien d'autre, et cela continue de fonctionner quand Google modifie sa page.
-• Mettez en pause sur un onglet en un clic quand vous voulez la page complète.
+• En option : masquer « Autres questions posées », dont Google rédige désormais les réponses avec l'IA.
+• Besoin de la réponse IA une fois ? Affichez-la sur cette page en un clic, ou mettez un onglet en pause avec Alt+Shift+H.
 
 COMMENT ÇA MARCHE
 Choisissez un mode à l'installation. « Masquer l'IA » garde la page de résultats habituelle et retire les parties IA. « Web uniquement » passe vos recherches au filtre Web intégré, l'option la plus fiable car elle ne dépend pas de la mise en page. Changez de mode ou désactivez PlainSight à tout moment depuis le bouton de la barre d'outils.

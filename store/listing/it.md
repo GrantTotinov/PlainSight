@@ -17,7 +17,8 @@ COSA OTTIENI
 • Niente schede o pulsanti della Modalità AI nella pagina dei risultati o nella home page.
 • Opzionale: aprire la Modalità AI ti porta ai risultati normali.
 • Modalità "Solo web": ogni ricerca si apre nel filtro Web di Google. Solo link, e continua a funzionare anche quando Google ridisegna la pagina.
-• Metti in pausa una scheda con un clic quando vuoi la pagina completa.
+• Opzionale: nascondi "Altre domande", le cui risposte Google ora scrive con l'AI.
+• Vuoi vedere la risposta AI una volta? Mostrala in quella pagina con un clic o metti in pausa una scheda con Alt+Shift+H.
 
 COME FUNZIONA
 Scegli una modalità all'installazione. "Nascondi AI" mantiene la normale pagina dei risultati e rimuove le parti AI. "Solo web" sposta le tue ricerche sul filtro Web integrato, l'opzione più affidabile perché non dipende dal layout della pagina. Cambia modalità o disattiva PlainSight quando vuoi dal pulsante nella barra degli strumenti.

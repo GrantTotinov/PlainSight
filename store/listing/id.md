@@ -17,7 +17,8 @@ YANG ANDA DAPATKAN
 • Tidak ada tab dan tombol Mode AI di halaman hasil maupun halaman utama.
 • Opsional: membuka Mode AI akan membawa Anda ke hasil biasa.
 • Mode "Hanya web": setiap penelusuran dibuka di filter Web Google. Hanya link, dan tetap berfungsi meski Google mendesain ulang halamannya.
-• Jeda di tab mana pun dengan satu klik saat Anda ingin melihat halaman lengkap.
+• Opsional: sembunyikan "Orang lain juga bertanya", yang jawabannya kini ditulis Google dengan AI.
+• Ingin melihat jawaban AI sekali saja? Tampilkan di halaman itu dengan satu klik, atau jeda tab dengan Alt+Shift+H.
 
 CARA KERJA
 Pilih mode saat memasang. "Sembunyikan AI" mempertahankan halaman hasil biasa dan menghapus bagian AI. "Hanya web" mengalihkan penelusuran ke filter Web bawaan, opsi paling andal karena tidak bergantung pada tata letak halaman. Ganti mode atau matikan PlainSight kapan saja lewat tombol di toolbar.

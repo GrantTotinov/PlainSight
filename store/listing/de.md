@@ -17,7 +17,8 @@ DAS BEKOMMST DU
 • Keine Tabs und Schaltflächen für den KI-Modus auf der Ergebnisseite oder der Startseite.
 • Optional: Wer den KI-Modus öffnet, landet bei den normalen Ergebnissen.
 • Modus „Nur Web“: Jede Suche öffnet im Web-Filter von Google. Nur Links, und das funktioniert auch dann, wenn Google die Seite umbaut.
-• Mit einem Klick auf einem Tab pausieren, wenn du die volle Seite sehen willst.
+• Optional: „Ähnliche Fragen“ ausblenden, deren Antworten Google inzwischen mit KI schreibt.
+• KI-Antwort doch einmal sehen? Mit einem Klick auf dieser Seite anzeigen oder einen Tab mit Alt+Shift+H pausieren.
 
 SO FUNKTIONIERT ES
 Wähle bei der Installation einen Modus. „KI ausblenden“ behält die normale Ergebnisseite und entfernt die KI-Teile. „Nur Web“ schaltet deine Suchen auf den eingebauten Web-Filter um, die zuverlässigste Variante, weil sie nicht vom Seitenaufbau abhängt. Modus wechseln oder PlainSight ausschalten geht jederzeit über das Symbol in der Symbolleiste.
