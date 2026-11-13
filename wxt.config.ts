@@ -22,6 +22,15 @@ export default defineConfig({
       },
     }),
   }),
+  zip: {
+    // AMO needs the sources to rebuild the add-on; test pages and local profiles are not needed.
+    excludeSources: [
+      'test/fixtures/**',
+      '.playwright-profile/**',
+      '.playwright-mcp/**',
+      'store/**',
+    ],
+  },
   vite: () => ({
     oxc: { jsx: { runtime: 'automatic', importSource: 'preact' } },
   }),
