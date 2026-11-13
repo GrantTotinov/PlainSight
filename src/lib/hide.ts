@@ -36,7 +36,8 @@ const ORGANIC_TITLE = 'a h3';
 const HEADINGS = '[role="heading"], h1, h2';
 const BUTTONS = 'a, button, [role="button"], [role="link"]';
 // Tabs, header and search box: never climb out of these to find a block.
-const CHROME = '[role="navigation"], [role="list"], [role="search"], form, header, #top_nav, #hdtb, #appbar';
+const CHROME =
+  '[role="navigation"], [role="list"], [role="search"], form, header, #top_nav, #hdtb, #appbar';
 const AI_MODE_LINK = 'a[href*="udm=50"]';
 
 const allText = (byLocale: Record<string, string[]> | undefined) =>

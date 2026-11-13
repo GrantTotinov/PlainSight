@@ -214,8 +214,14 @@ describe('when Google changes the page', () => {
 
   const variants: [string, (doc: Document) => void][] = [
     ['classes renamed', renameClasses],
-    ['classes renamed, heading pluralized', (d) => (renameClasses(d), setHeading(d, 'AI Overviews'))],
-    ['classes renamed, heading lowercased', (d) => (renameClasses(d), setHeading(d, 'AI overview'))],
+    [
+      'classes renamed, heading pluralized',
+      (d) => (renameClasses(d), setHeading(d, 'AI Overviews')),
+    ],
+    [
+      'classes renamed, heading lowercased',
+      (d) => (renameClasses(d), setHeading(d, 'AI overview')),
+    ],
     ['classes renamed, heading unknown', (d) => (renameClasses(d), setHeading(d, 'Gemini says'))],
   ];
 
