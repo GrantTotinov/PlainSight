@@ -121,5 +121,14 @@
         "example": "1.0.0"
       }
     }
+  },
+  "statusHidden": {
+    "message": "このページの AI による概要を非表示にしました。"
+  },
+  "statusKept": {
+    "message": "AI のような要素がありましたが、検索結果を守るため表示したままにしています。"
+  },
+  "switchToWebOnly": {
+    "message": "「ウェブのみ」を使う"
   }
 }

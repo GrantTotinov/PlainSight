@@ -34,7 +34,7 @@
       "feature": "aiMode",
       "selectors": [
         "[role=\"listitem\"]:has(a[href*=\"udm=50\"])",
-        "a[href^=\"/search\"][href*=\"udm=50\"]",
+        "a[href*=\"/search?\"][href*=\"udm=50\"]",
         "form[role=\"search\"] button[role=\"link\"]"
       ],
       "buttonText": {

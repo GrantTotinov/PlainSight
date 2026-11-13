@@ -2,6 +2,7 @@ import { render } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import '../../components/ui.css';
 import { HostAccessNotice, SettingsForm, t, useSettings } from '../../components/ui';
+import type { PageStatus } from '../../lib/hide';
 import { SEARCH_HOSTS } from '../../lib/hosts';
 import {
   browserName,
@@ -19,7 +20,9 @@ const hosts = new Set(SEARCH_HOSTS);
 function Popup() {
   const [settings, update] = useSettings();
   const [stats, setStats] = useState<Stats | null>(null);
-  const [tab, setTab] = useState<{ id: number; paused: boolean } | null>(null);
+  const [tab, setTab] = useState<{ id: number; paused: boolean; page: PageStatus | null } | null>(
+    null,
+  );
 
   useEffect(() => {
     void loadStats().then(setStats);
@@ -28,7 +31,14 @@ function Popup() {
       const [active] = await browser.tabs.query({ active: true, currentWindow: true });
       if (active?.id === undefined || !active.url || !hosts.has(new URL(active.url).hostname))
         return;
-      setTab({ id: active.id, paused: await send({ type: 'isPaused', tabId: active.id }) });
+      const [paused, page] = await Promise.all([
+        send({ type: 'isPaused', tabId: active.id }),
+        browser.tabs
+          .sendMessage(active.id, { type: 'pageStatus' })
+          .then((s) => (s as PageStatus | undefined) ?? null)
+          .catch(() => null), // page loaded before install, or not a results page
+      ]);
+      setTab({ id: active.id, paused, page });
     })();
   }, []);
 
@@ -64,6 +74,19 @@ function Popup() {
       {tab && settings.mode !== 'off' && (
         <div class="stack">
           {tab.paused && <span class="muted">{t('pausedNotice')}</span>}
+          {!tab.paused && tab.page?.kept ? (
+            <div class="notice" role="status">
+              {t('statusKept')}{' '}
+              {settings.mode !== 'webOnly' && (
+                <button class="link-button" onClick={() => update({ mode: 'webOnly' })}>
+                  {t('switchToWebOnly')}
+                </button>
+              )}
+            </div>
+          ) : (
+            !tab.paused &&
+            tab.page?.overviewHidden && <span class="muted">{t('statusHidden')}</span>
+          )}
           <button onClick={togglePause}>{t(tab.paused ? 'resumeTab' : 'pauseTab')}</button>
         </div>
       )}

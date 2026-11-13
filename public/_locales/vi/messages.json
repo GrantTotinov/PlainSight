@@ -121,5 +121,14 @@
         "example": "1.0.0"
       }
     }
+  },
+  "statusHidden": {
+    "message": "Đã ẩn Tổng quan do AI tạo trên trang này."
+  },
+  "statusKept": {
+    "message": "Có nội dung trông giống AI nhưng được giữ lại để không ảnh hưởng kết quả."
+  },
+  "switchToWebOnly": {
+    "message": "Dùng Chỉ web"
   }
 }

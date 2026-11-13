@@ -121,5 +121,14 @@
         "example": "1.0.0"
       }
     }
+  },
+  "statusHidden": {
+    "message": "已隐藏此页面上的 AI 概览。"
+  },
+  "statusKept": {
+    "message": "此处有类似 AI 的内容，但为保护搜索结果而保留显示。"
+  },
+  "switchToWebOnly": {
+    "message": "使用“仅网页”"
   }
 }

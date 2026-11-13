@@ -121,5 +121,14 @@
         "example": "1.0.0"
       }
     }
+  },
+  "statusHidden": {
+    "message": "Ringkasan AI disembunyikan di halaman ini."
+  },
+  "statusKept": {
+    "message": "Ada yang mirip AI di sini, tetapi dibiarkan terlihat agar hasil Anda aman."
+  },
+  "switchToWebOnly": {
+    "message": "Pakai Hanya web"
   }
 }

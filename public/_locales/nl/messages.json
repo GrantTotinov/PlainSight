@@ -121,5 +121,14 @@
         "example": "1.0.0"
       }
     }
+  },
+  "statusHidden": {
+    "message": "AI-overzicht verborgen op deze pagina."
+  },
+  "statusKept": {
+    "message": "Iets hier leek op AI, maar bleef zichtbaar om je resultaten te beschermen."
+  },
+  "switchToWebOnly": {
+    "message": "Alleen web gebruiken"
   }
 }

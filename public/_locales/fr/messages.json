@@ -121,5 +121,14 @@
         "example": "1.0.0"
       }
     }
+  },
+  "statusHidden": {
+    "message": "Aperçu IA masqué sur cette page."
+  },
+  "statusKept": {
+    "message": "Un élément ressemblait à de l'IA mais reste visible pour protéger vos résultats."
+  },
+  "switchToWebOnly": {
+    "message": "Passer en Web uniquement"
   }
 }

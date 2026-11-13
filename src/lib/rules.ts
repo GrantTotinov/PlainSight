@@ -19,7 +19,8 @@ const SEARCH = String.raw`^https://[^/]+/search\?`;
 const param = (name: string) => `${SEARCH}(?:[^#]*&)?${name}=`;
 export const PATTERNS = {
   search: SEARCH,
-  hasTabParam: param('(?:udm|tbm)'),
+  // A tab or vertical the user picked (udm, tbm), Jobs and Events (ibp), I'm Feeling Lucky (btnI).
+  hasTabParam: param('(?:udm|tbm|ibp|btnI)'),
   aiMode: `${param('udm')}50(?:[&#]|$)`,
 };
 

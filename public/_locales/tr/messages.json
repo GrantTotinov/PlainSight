@@ -121,5 +121,14 @@
         "example": "1.0.0"
       }
     }
+  },
+  "statusHidden": {
+    "message": "Bu sayfada Yapay Zeka Genel Bakışı gizlendi."
+  },
+  "statusKept": {
+    "message": "Burada yapay zekaya benzeyen bir şey sonuçlarınızı korumak için görünür bırakıldı."
+  },
+  "switchToWebOnly": {
+    "message": "Yalnızca web kullan"
   }
 }
