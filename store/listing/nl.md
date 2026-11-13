@@ -23,7 +23,7 @@ HOE HET WERKT
 Kies een modus bij de installatie. "AI verbergen" houdt de normale resultatenpagina en haalt de AI-onderdelen weg. "Alleen web" zet je zoekopdrachten op het ingebouwde webfilter, de betrouwbaarste optie omdat die niet afhangt van de opmaak van de pagina. Wissel van modus of zet PlainSight uit wanneer je wilt via de knop in de werkbalk.
 
 PRIVACY
-PlainSight verzamelt geen gegevens. Geen analyse, geen tracking, geen externe code, geen eigen netwerkverzoeken. Je instellingen blijven in je browser. De code is open source op GitHub, iedereen kan hem controleren.
+PlainSight verzamelt geen gegevens. Geen analyse, geen tracking, geen externe code. De enige verbinding is een dagelijkse download van bijgewerkte regels van GitHub, die niets over jou verstuurt (uit te zetten). Je instellingen blijven in je browser. De code is open source op GitHub, iedereen kan hem controleren.
 
 Werkt op alle Google-domeinen, in elke taal.
 

@@ -23,7 +23,7 @@ JAK TO DZIAŁA
 Wybierz tryb podczas instalacji. „Ukryj AI” zostawia zwykłą stronę wyników i usuwa części z AI. „Tylko strony” przełącza wyszukiwania na wbudowany filtr Web, najbardziej niezawodną opcję, bo nie zależy od układu strony. Tryb zmienisz lub wyłączysz PlainSight w każdej chwili przyciskiem na pasku narzędzi.
 
 PRYWATNOŚĆ
-PlainSight nie zbiera żadnych danych. Bez analityki, bez śledzenia, bez zdalnego kodu, bez własnych żądań sieciowych. Ustawienia zostają w przeglądarce. Kod jest otwarty na GitHubie, każdy może go sprawdzić.
+PlainSight nie zbiera żadnych danych. Bez analityki, bez śledzenia, bez zdalnego kodu. Jedyne połączenie to codzienne pobranie aktualnych reguł z GitHuba, które nie wysyła nic o Tobie (można je wyłączyć). Ustawienia zostają w przeglądarce. Kod jest otwarty na GitHubie, każdy może go sprawdzić.
 
 Działa we wszystkich domenach Google i w każdym języku.
 

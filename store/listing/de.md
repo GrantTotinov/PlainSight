@@ -23,7 +23,7 @@ SO FUNKTIONIERT ES
 Wähle bei der Installation einen Modus. „KI ausblenden“ behält die normale Ergebnisseite und entfernt die KI-Teile. „Nur Web“ schaltet deine Suchen auf den eingebauten Web-Filter um, die zuverlässigste Variante, weil sie nicht vom Seitenaufbau abhängt. Modus wechseln oder PlainSight ausschalten geht jederzeit über das Symbol in der Symbolleiste.
 
 DATENSCHUTZ
-PlainSight sammelt keine Daten. Keine Analyse, kein Tracking, kein nachgeladener Code, keine eigenen Netzwerkanfragen. Deine Einstellungen bleiben in deinem Browser. Der Code ist Open Source auf GitHub, jeder kann ihn prüfen.
+PlainSight sammelt keine Daten. Keine Analyse, kein Tracking, kein nachgeladener Code. Die einzige Verbindung ist ein täglicher Download aktualisierter Regeln von GitHub, der nichts über dich sendet (abschaltbar). Deine Einstellungen bleiben in deinem Browser. Der Code ist Open Source auf GitHub, jeder kann ihn prüfen.
 
 Funktioniert auf allen Google-Domains und in jeder Sprache.
 

@@ -34,7 +34,9 @@ You can also pause PlainSight on a single tab from the toolbar button. The pause
 
 ## Privacy
 
-PlainSight collects no data. There are no analytics, no remote code and no network requests of its own. Settings are stored in your browser (and synced by your browser if you use browser sync). The "AI Overviews hidden" counter stays on your device. See [PRIVACY.md](PRIVACY.md).
+PlainSight collects no data. There are no analytics and no remote code. Settings are stored in your browser (and synced by your browser if you use browser sync). The "AI Overviews hidden" counter stays on your device. See [PRIVACY.md](PRIVACY.md).
+
+The only connection PlainSight makes is **selector updates**: once a day it downloads [`src/selectors/selectors.json`](src/selectors/selectors.json) from this repository, so fixes for Google page changes reach you without waiting for a store review. The request carries no cookies, no referrer, no query string and no identifier. The file is data only (CSS selectors and heading texts), checked strictly before use; anything invalid or older than the copy in the extension is ignored. You can turn it off in Options.
 
 Permissions:
 

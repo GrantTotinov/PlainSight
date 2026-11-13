@@ -23,7 +23,7 @@ CÁCH HOẠT ĐỘNG
 Chọn một chế độ khi cài đặt. "Ẩn AI" giữ trang kết quả bình thường và bỏ các phần AI. "Chỉ web" chuyển tìm kiếm sang bộ lọc Web có sẵn, lựa chọn đáng tin cậy nhất vì không phụ thuộc vào bố cục trang. Đổi chế độ hoặc tắt PlainSight bất cứ lúc nào bằng nút trên thanh công cụ.
 
 QUYỀN RIÊNG TƯ
-PlainSight không thu thập dữ liệu. Không phân tích, không theo dõi, không mã từ xa, không tự gửi yêu cầu mạng. Cài đặt nằm trong trình duyệt của bạn. Mã nguồn mở trên GitHub, ai cũng có thể kiểm tra.
+PlainSight không thu thập dữ liệu. Không phân tích, không theo dõi, không mã từ xa. Kết nối duy nhất là tải quy tắc mới từ GitHub mỗi ngày một lần, không gửi gì về bạn (có thể tắt). Cài đặt nằm trong trình duyệt của bạn. Mã nguồn mở trên GitHub, ai cũng có thể kiểm tra.
 
 Hoạt động trên mọi tên miền Google, với mọi ngôn ngữ.
 

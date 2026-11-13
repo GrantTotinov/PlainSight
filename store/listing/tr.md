@@ -23,7 +23,7 @@ NASIL ÇALIŞIR
 Kurulumda bir mod seçin. Yapay zekayı gizle, normal sonuç sayfasını korur ve yapay zeka bölümlerini kaldırır. Yalnızca web, aramalarınızı yerleşik Web filtresine geçirir; sayfa düzenine bağlı olmadığı için en güvenilir seçenektir. Modu değiştirmek veya PlainSight'ı kapatmak için araç çubuğundaki düğmeyi istediğiniz zaman kullanın.
 
 GİZLİLİK
-PlainSight hiçbir veri toplamaz. Analiz yok, takip yok, uzaktan kod yok, kendi ağ isteği yok. Ayarlarınız tarayıcınızda kalır. Kod GitHub'da açık kaynaktır, herkes inceleyebilir.
+PlainSight hiçbir veri toplamaz. Analiz yok, takip yok, uzaktan kod yok. Tek bağlantı, GitHub'dan günlük güncel kural indirmesidir ve sizinle ilgili hiçbir şey göndermez (kapatılabilir). Ayarlarınız tarayıcınızda kalır. Kod GitHub'da açık kaynaktır, herkes inceleyebilir.
 
 Tüm Google alan adlarında ve her dilde çalışır.
 
