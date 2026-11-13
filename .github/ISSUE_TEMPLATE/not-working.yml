@@ -1,0 +1,36 @@
+name: Not working on my Google
+description: AI blocks still show up, or PlainSight hides something it should not.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Please do not paste search queries or URLs you consider private.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you see, and what did you expect? A screenshot helps a lot.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: PlainSight version
+  - type: input
+    id: browser
+    attributes:
+      label: Browser
+  - type: input
+    id: mode
+    attributes:
+      label: Mode
+  - type: input
+    id: language
+    attributes:
+      label: Browser UI language
+  - type: input
+    id: google-domain
+    attributes:
+      label: Google domain and language (optional)
+      description: For example google.de in German. This helps reproduce the page.

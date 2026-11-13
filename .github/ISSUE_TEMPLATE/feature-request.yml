@@ -1,0 +1,14 @@
+name: Feature request
+description: Suggest an improvement.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        PlainSight has a single purpose: removing AI features from Google Search. Requests outside that scope (ads, shopping, other sites) will likely be declined to keep the extension simple.
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like PlainSight to do?
+    validations:
+      required: true
