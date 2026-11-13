@@ -1,0 +1,53 @@
+name: Submit to stores
+
+# Run by hand from the Actions tab after a release. Only stores whose secrets are set are used.
+# The very first version of each listing must be created by hand (see docs/RELEASING.md).
+on:
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: Only check the store credentials, do not upload
+        type: boolean
+        default: true
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test
+      - run: pnpm zip
+      - name: Submit
+        env:
+          CHROME_API_VERSION: v2
+          CHROME_EXTENSION_ID: ${{ secrets.CHROME_EXTENSION_ID }}
+          CHROME_PUBLISHER_ID: ${{ secrets.CHROME_PUBLISHER_ID }}
+          CHROME_SERVICE_ACCOUNT_CLIENT_EMAIL: ${{ secrets.CHROME_SERVICE_ACCOUNT_CLIENT_EMAIL }}
+          CHROME_SERVICE_ACCOUNT_PRIVATE_KEY: ${{ secrets.CHROME_SERVICE_ACCOUNT_PRIVATE_KEY }}
+          EDGE_PRODUCT_ID: ${{ secrets.EDGE_PRODUCT_ID }}
+          EDGE_CLIENT_ID: ${{ secrets.EDGE_CLIENT_ID }}
+          EDGE_API_KEY: ${{ secrets.EDGE_API_KEY }}
+          FIREFOX_EXTENSION_ID: ${{ secrets.FIREFOX_EXTENSION_ID }}
+          FIREFOX_JWT_ISSUER: ${{ secrets.FIREFOX_JWT_ISSUER }}
+          FIREFOX_JWT_SECRET: ${{ secrets.FIREFOX_JWT_SECRET }}
+          FIREFOX_COMPATIBILITY: firefox,android
+          DRY_RUN: ${{ inputs.dry-run }}
+        run: |
+          args=()
+          if [ -n "$CHROME_EXTENSION_ID" ]; then args+=(--chrome-zip .output/*-chrome.zip); fi
+          if [ -n "$EDGE_PRODUCT_ID" ]; then args+=(--edge-zip .output/*-edge.zip); fi
+          if [ -n "$FIREFOX_EXTENSION_ID" ]; then
+            args+=(--firefox-zip .output/*-firefox.zip --firefox-sources-zip .output/*-sources.zip)
+          fi
+          if [ ${#args[@]} -eq 0 ]; then
+            echo "No store secrets are set. See docs/RELEASING.md."
+            exit 1
+          fi
+          if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
+          pnpm wxt submit "${args[@]}"
