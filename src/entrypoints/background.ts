@@ -1,3 +1,4 @@
+import { SEARCH_HOSTS } from '../lib/hosts';
 import type { Message } from '../lib/messages';
 import { clearRemote, refreshRemote } from '../lib/remote';
 import { buildRules, pauseRule, pauseRuleId } from '../lib/rules';
@@ -6,6 +7,7 @@ import { loadStats } from '../lib/stats';
 
 export default defineBackground(() => {
   const dnr = browser.declarativeNetRequest;
+  const searchHosts = new Set(SEARCH_HOSTS);
 
   // Serialize async work so overlapping events never interleave reads and writes.
   const makeQueue = () => {
@@ -70,6 +72,16 @@ export default defineBackground(() => {
   });
 
   browser.tabs.onRemoved.addListener((tabId) => void setPaused(tabId, false));
+
+  // Keyboard shortcut (Alt+Shift+H unless the user changed it): pause or resume the current tab.
+  browser.commands.onCommand.addListener(async (command) => {
+    if (command !== 'toggle-tab') return;
+    // Without the tabs permission, url is only filled in for Google Search tabs.
+    const [tab] = await browser.tabs.query({ active: true, currentWindow: true });
+    if (tab?.id === undefined || !tab.url || !searchHosts.has(new URL(tab.url).hostname)) return;
+    await setPaused(tab.id, !(await isPaused(tab.id)));
+    await browser.tabs.reload(tab.id);
+  });
 
   browser.runtime.onMessage.addListener((msg: Message, sender, sendResponse) => {
     const tabId = 'tabId' in msg && msg.tabId !== undefined ? msg.tabId : sender.tab?.id;

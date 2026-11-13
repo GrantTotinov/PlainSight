@@ -143,5 +143,23 @@
   },
   "remoteUpdatesHint": {
     "message": "Веднъж дневно PlainSight изтегля списъка си с блокове с ИИ от github.com/GrantTotinov/PlainSight, за да стигат поправките до вас без обновяване в магазина. Нищо за вас или търсенията ви не се изпраща."
+  },
+  "revealPage": {
+    "message": "Покажи на тази страница"
+  },
+  "revealedNotice": {
+    "message": "Показано само на тази страница. Следващото търсене пак го скрива."
+  },
+  "commandToggleTab": {
+    "message": "Пауза или продължаване на PlainSight в текущия раздел"
+  },
+  "shortcutHint": {
+    "message": "Клавишна комбинация: $KEYS$",
+    "placeholders": {
+      "keys": {
+        "content": "$1",
+        "example": "Alt+Shift+H"
+      }
+    }
   }
 }

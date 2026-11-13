@@ -143,5 +143,23 @@
   },
   "remoteUpdatesHint": {
     "message": "PlainSight は 1 日 1 回、github.com/GrantTotinov/PlainSight から AI ブロックの一覧をダウンロードします。ストアの更新を待たずに修正が届きます。あなたや検索内容に関する情報は一切送信されません。"
+  },
+  "revealPage": {
+    "message": "このページで表示"
+  },
+  "revealedNotice": {
+    "message": "このページでのみ表示しています。次の検索では再び非表示になります。"
+  },
+  "commandToggleTab": {
+    "message": "現在のタブで PlainSight を一時停止または再開"
+  },
+  "shortcutHint": {
+    "message": "ショートカット: $KEYS$",
+    "placeholders": {
+      "keys": {
+        "content": "$1",
+        "example": "Alt+Shift+H"
+      }
+    }
   }
 }

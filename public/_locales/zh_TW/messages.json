@@ -143,5 +143,23 @@
   },
   "remoteUpdatesHint": {
     "message": "PlainSight 每天從 github.com/GrantTotinov/PlainSight 下載一次 AI 區塊清單，不必等待商店更新就能取得修正。不會傳送任何關於您或您搜尋的資訊。"
+  },
+  "revealPage": {
+    "message": "在此頁面顯示"
+  },
+  "revealedNotice": {
+    "message": "只在此頁面顯示。下次搜尋會再次隱藏。"
+  },
+  "commandToggleTab": {
+    "message": "在目前分頁暫停或繼續 PlainSight"
+  },
+  "shortcutHint": {
+    "message": "快速鍵：$KEYS$",
+    "placeholders": {
+      "keys": {
+        "content": "$1",
+        "example": "Alt+Shift+H"
+      }
+    }
   }
 }

@@ -143,5 +143,23 @@
   },
   "remoteUpdatesHint": {
     "message": "Eén keer per dag downloadt PlainSight zijn lijst met AI-blokken van github.com/GrantTotinov/PlainSight, zodat oplossingen je bereiken zonder store-update. Er wordt niets over jou of je zoekopdrachten verstuurd."
+  },
+  "revealPage": {
+    "message": "Op deze pagina tonen"
+  },
+  "revealedNotice": {
+    "message": "Alleen op deze pagina zichtbaar. Je volgende zoekopdracht verbergt het weer."
+  },
+  "commandToggleTab": {
+    "message": "PlainSight pauzeren of hervatten op het huidige tabblad"
+  },
+  "shortcutHint": {
+    "message": "Sneltoets: $KEYS$",
+    "placeholders": {
+      "keys": {
+        "content": "$1",
+        "example": "Alt+Shift+H"
+      }
+    }
   }
 }

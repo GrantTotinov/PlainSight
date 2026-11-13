@@ -143,5 +143,23 @@
   },
   "remoteUpdatesHint": {
     "message": "Mỗi ngày một lần PlainSight tải danh sách khối AI từ github.com/GrantTotinov/PlainSight để bản sửa đến với bạn mà không cần cập nhật cửa hàng. Không có thông tin nào về bạn hoặc tìm kiếm của bạn được gửi đi."
+  },
+  "revealPage": {
+    "message": "Hiện trên trang này"
+  },
+  "revealedNotice": {
+    "message": "Chỉ hiện trên trang này. Lần tìm kiếm sau sẽ ẩn lại."
+  },
+  "commandToggleTab": {
+    "message": "Tạm dừng hoặc tiếp tục PlainSight trên thẻ hiện tại"
+  },
+  "shortcutHint": {
+    "message": "Phím tắt: $KEYS$",
+    "placeholders": {
+      "keys": {
+        "content": "$1",
+        "example": "Alt+Shift+H"
+      }
+    }
   }
 }

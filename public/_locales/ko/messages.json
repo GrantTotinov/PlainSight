@@ -143,5 +143,23 @@
   },
   "remoteUpdatesHint": {
     "message": "PlainSight는 하루에 한 번 github.com/GrantTotinov/PlainSight에서 AI 블록 목록을 내려받아 스토어 업데이트 없이도 수정 사항을 적용합니다. 사용자나 검색에 관한 정보는 전송되지 않습니다."
+  },
+  "revealPage": {
+    "message": "이 페이지에서 보기"
+  },
+  "revealedNotice": {
+    "message": "이 페이지에서만 표시됩니다. 다음 검색에서는 다시 숨겨집니다."
+  },
+  "commandToggleTab": {
+    "message": "현재 탭에서 PlainSight 일시중지 또는 다시 시작"
+  },
+  "shortcutHint": {
+    "message": "단축키: $KEYS$",
+    "placeholders": {
+      "keys": {
+        "content": "$1",
+        "example": "Alt+Shift+H"
+      }
+    }
   }
 }

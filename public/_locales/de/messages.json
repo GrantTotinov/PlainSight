@@ -143,5 +143,23 @@
   },
   "remoteUpdatesHint": {
     "message": "Einmal am Tag lädt PlainSight seine Liste der KI-Blöcke von github.com/GrantTotinov/PlainSight, damit Korrekturen ohne Store-Update ankommen. Es wird nichts über dich oder deine Suchen gesendet."
+  },
+  "revealPage": {
+    "message": "Auf dieser Seite anzeigen"
+  },
+  "revealedNotice": {
+    "message": "Nur auf dieser Seite sichtbar. Bei der nächsten Suche ist es wieder ausgeblendet."
+  },
+  "commandToggleTab": {
+    "message": "PlainSight auf dem aktuellen Tab pausieren oder fortsetzen"
+  },
+  "shortcutHint": {
+    "message": "Tastenkürzel: $KEYS$",
+    "placeholders": {
+      "keys": {
+        "content": "$1",
+        "example": "Alt+Shift+H"
+      }
+    }
   }
 }

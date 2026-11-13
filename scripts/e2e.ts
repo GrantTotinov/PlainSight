@@ -123,6 +123,31 @@ try {
     assert.deepEqual(status, { overviewHidden: true, kept: 0 });
   });
 
+  await check('"Show it on this page" reveals until the next page load', async () => {
+    await open(search('results-ai-overview'));
+    const aio = page
+      .locator('[role="heading"]')
+      .filter({ hasText: /^AI Overview$/ })
+      .first();
+    assert.equal(await aio.isVisible(), false);
+    const status = await sw.evaluate(async () => {
+      const [tab] = await chrome.tabs.query({ url: 'https://www.google.com/search*' });
+      return chrome.tabs.sendMessage(tab!.id!, { type: 'reveal' });
+    });
+    assert.deepEqual(status, { overviewHidden: false, kept: 0 });
+    assert.ok(await aio.isVisible(), 'still hidden after reveal');
+    await page.reload();
+    await page.waitForTimeout(300);
+    assert.equal(await aio.isVisible(), false, 'still visible after reload');
+  });
+
+  await check('Keyboard shortcut is registered (Alt+Shift+H)', async () => {
+    const commands = await sw.evaluate(() => chrome.commands.getAll());
+    const toggle = commands.find((c) => c.name === 'toggle-tab');
+    assert.ok(toggle, 'command missing');
+    assert.equal(toggle.shortcut, 'Alt+Shift+H', JSON.stringify(toggle));
+  });
+
   await check('Hide AI: an AI Mode page opened on purpose is left alone', async () => {
     await open(search('results-ai-overview', '&udm=50'));
     assert.equal(udm(page), '50');

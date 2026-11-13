@@ -23,9 +23,15 @@ function Popup() {
   const [tab, setTab] = useState<{ id: number; paused: boolean; page: PageStatus | null } | null>(
     null,
   );
+  const [revealed, setRevealed] = useState(false);
+  const [shortcut, setShortcut] = useState('');
 
   useEffect(() => {
     void loadStats().then(setStats);
+    void browser.commands
+      .getAll()
+      .then((all) => setShortcut(all.find((c) => c.name === 'toggle-tab')?.shortcut ?? ''))
+      .catch(() => {});
     void (async () => {
       // Without the tabs permission, url is only filled in for Google Search tabs.
       const [active] = await browser.tabs.query({ active: true, currentWindow: true });
@@ -49,6 +55,17 @@ function Popup() {
     await send({ type: 'setPaused', tabId: tab.id, paused: !tab.paused });
     setTab({ ...tab, paused: !tab.paused });
     await browser.tabs.reload(tab.id);
+  };
+
+  // Show the hidden AI once, on this page only. The next search hides it again.
+  const reveal = async () => {
+    if (!tab) return;
+    const page = await browser.tabs
+      .sendMessage(tab.id, { type: 'reveal' })
+      .then((s) => (s as PageStatus | undefined) ?? null)
+      .catch(() => null);
+    setTab({ ...tab, page });
+    setRevealed(true);
   };
 
   const dismissReview = () => {
@@ -85,9 +102,18 @@ function Popup() {
             </div>
           ) : (
             !tab.paused &&
-            tab.page?.overviewHidden && <span class="muted">{t('statusHidden')}</span>
+            tab.page?.overviewHidden && (
+              <span class="muted">
+                {t('statusHidden')}{' '}
+                <button class="link-button" onClick={reveal}>
+                  {t('revealPage')}
+                </button>
+              </span>
+            )
           )}
+          {revealed && <span class="muted">{t('revealedNotice')}</span>}
           <button onClick={togglePause}>{t(tab.paused ? 'resumeTab' : 'pauseTab')}</button>
+          {shortcut && <span class="muted">{t('shortcutHint', shortcut)}</span>}
         </div>
       )}
       {shouldAskForReview(stats) && (

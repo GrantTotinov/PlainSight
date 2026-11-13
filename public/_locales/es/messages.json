@@ -143,5 +143,23 @@
   },
   "remoteUpdatesHint": {
     "message": "Una vez al día PlainSight descarga su lista de bloques de IA desde github.com/GrantTotinov/PlainSight, para que las correcciones lleguen sin actualizar la tienda. No se envía nada sobre ti ni tus búsquedas."
+  },
+  "revealPage": {
+    "message": "Mostrarlo en esta página"
+  },
+  "revealedNotice": {
+    "message": "Visible solo en esta página. Tu próxima búsqueda lo vuelve a ocultar."
+  },
+  "commandToggleTab": {
+    "message": "Pausar o reanudar PlainSight en la pestaña actual"
+  },
+  "shortcutHint": {
+    "message": "Atajo: $KEYS$",
+    "placeholders": {
+      "keys": {
+        "content": "$1",
+        "example": "Alt+Shift+H"
+      }
+    }
   }
 }
