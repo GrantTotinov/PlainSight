@@ -64,6 +64,8 @@ describe('buildRules', () => {
     ['News', `${g}&tbm=nws`],
     ['Shopping', 'https://www.google.com/search?tbm=shop&q=cats'],
     ['tab param first', 'https://www.google.com/search?udm=7&q=cats'],
+    ["I'm Feeling Lucky", `${g}&btnI=1`],
+    ['Jobs', `${g}&ibp=htl;jobs`],
   ])('keeps the tab the user picked: %s', (_, url) => {
     expect(navigate(buildRules(webOnly), url)).toBe(url);
   });

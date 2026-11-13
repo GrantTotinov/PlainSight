@@ -7,6 +7,8 @@ import {
   createHider,
   HIDDEN_ATTR,
   KEEP_ATTR,
+  matchTerm,
+  normalize,
   visibleText,
   type SelectorConfig,
 } from '../src/lib/hide';
@@ -193,5 +195,90 @@ describe('selectors.json', () => {
         expect(texts.every((t) => t.trim() === t && t.length > 0)).toBe(true);
       }
     }
+  });
+});
+
+describe('when Google changes the page', () => {
+  // Simulated redesigns of the real fixtures, from mild to severe.
+  const renameClasses = (doc: Document) => {
+    doc.querySelectorAll('.M8OgIe').forEach((e) => e.classList.replace('M8OgIe', 'zz1'));
+    doc.querySelectorAll('#eKIzJc').forEach((e) => (e.id = 'zz2'));
+  };
+  const setHeading = (doc: Document, text: string) => {
+    aiHeading(doc)!.textContent = text;
+  };
+  const dropAriaLabels = (doc: Document) =>
+    doc
+      .querySelectorAll('[aria-label*="AI Overview"]')
+      .forEach((e) => e.removeAttribute('aria-label'));
+
+  const variants: [string, (doc: Document) => void][] = [
+    ['classes renamed', renameClasses],
+    ['classes renamed, heading pluralized', (d) => (renameClasses(d), setHeading(d, 'AI Overviews'))],
+    ['classes renamed, heading lowercased', (d) => (renameClasses(d), setHeading(d, 'AI overview'))],
+    ['classes renamed, heading unknown', (d) => (renameClasses(d), setHeading(d, 'Gemini says'))],
+  ];
+
+  const aiFixtures = fixtures.filter(([n]) => n.includes('ai-overview'));
+
+  describe.each(aiFixtures)('%s', (_, html) => {
+    it.each(variants)('%s: AI Overview still hidden, results intact', (_, change) => {
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const heading = aiHeading(doc)!;
+      change(doc);
+      const onHidden = vi.fn();
+      createHider(doc, config, onHidden).setEnabled(true);
+      expect(isHidden(heading)).toBe(true);
+      expect(onHidden).toHaveBeenCalledTimes(1);
+      for (const title of doc.querySelectorAll('a h3')) expect(isHidden(title)).toBe(false);
+    });
+
+    it('never hides results, whatever is left to detect', () => {
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      renameClasses(doc);
+      setHeading(doc, 'Gemini says');
+      dropAriaLabels(doc);
+      createHider(doc, config, () => {}).setEnabled(true);
+      for (const title of doc.querySelectorAll('a h3')) expect(isHidden(title)).toBe(false);
+    });
+  });
+
+  it('finds the block through an AI Mode link inside it when nothing else is left', () => {
+    const html = fixtures.find(([n]) => n === 'en/results-ai-overview.html')![1];
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const heading = aiHeading(doc)!;
+    renameClasses(doc);
+    setHeading(doc, 'Gemini says');
+    dropAriaLabels(doc);
+    createHider(doc, config, () => {}).setEnabled(true);
+    expect(isHidden(heading)).toBe(true);
+  });
+});
+
+describe('matchTerm', () => {
+  const terms = new Map([
+    [normalize('AI Overview'), 'aiOverview'],
+    [normalize('AI Mode'), 'aiMode'],
+  ]);
+  it.each([
+    ['AI Overview', 'aiOverview'],
+    ['  AI  Overviews ', 'aiOverview'],
+    ['AI overview:', 'aiOverview'],
+    ['AI MODE', 'aiMode'],
+    ['AI Overview of the market', undefined],
+    ['AI Mode history', undefined],
+    ['Overview', undefined],
+  ])('%j -> %s', (text, expected) => {
+    expect(matchTerm(text, terms)).toBe(expected);
+  });
+});
+
+describe('status', () => {
+  it('reports what happened on the page', () => {
+    const html = fixtures.find(([n]) => n === 'en/results-ai-overview.html')![1];
+    const { hider } = load(html);
+    expect(hider.status()).toEqual({ overviewHidden: true, kept: 0 });
+    hider.setEnabled(false);
+    expect(hider.status()).toEqual({ overviewHidden: false, kept: 0 });
   });
 });
