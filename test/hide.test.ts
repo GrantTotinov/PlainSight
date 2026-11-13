@@ -15,6 +15,10 @@ import rawConfig from '../src/selectors/selectors.json';
 const config = rawConfig as SelectorConfig;
 const FIXTURES = resolve('test/fixtures');
 const known = config.rules.flatMap((r) => r.selectors);
+const texts = (key: 'headingText' | 'buttonText') =>
+  new Set(config.rules.flatMap((r) => Object.values(r[key] ?? {}).flat()));
+const AI_HEADINGS = texts('headingText');
+const AI_BUTTONS = texts('buttonText');
 
 function load(html: string) {
   const doc = new DOMParser().parseFromString(html, 'text/html');
@@ -33,7 +37,7 @@ const isHidden = (el: Element) => {
 };
 
 const aiHeading = (doc: Document) =>
-  [...doc.querySelectorAll('[role="heading"]')].find((h) => visibleText(h) === 'AI Overview');
+  [...doc.querySelectorAll('[role="heading"]')].find((h) => AI_HEADINGS.has(visibleText(h)));
 
 const fixtures = readdirSync(FIXTURES, { recursive: true, encoding: 'utf8' })
   .filter((f) => f.endsWith('.html'))
@@ -78,7 +82,7 @@ describe('fixtures', () => {
         expect(isHidden(a)).toBe(false);
       }
       const visibleAiMode = [...doc.querySelectorAll('a, button, [role="button"], [role="link"]')]
-        .filter((el) => visibleText(el) === 'AI Mode')
+        .filter((el) => AI_BUTTONS.has(visibleText(el)))
         .filter((el) => !isHidden(el));
       expect(visibleAiMode).toEqual([]);
     });

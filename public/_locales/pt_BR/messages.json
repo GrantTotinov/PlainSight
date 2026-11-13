@@ -1,0 +1,125 @@
+{
+  "extName": {
+    "message": "PlainSight: oculte Visões gerais criadas por IA e Modo IA no Google™",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "extDescription": {
+    "message": "Remove Visões gerais criadas por IA e Modo IA da Pesquisa Google. Resultados clássicos de volta. Grátis, open source, sem rastreio.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "showFullResults": {
+    "message": "Mostrar todos os resultados do Google"
+  },
+  "modeLabel": {
+    "message": "Modo"
+  },
+  "modeHideAi": {
+    "message": "Ocultar IA"
+  },
+  "modeHideAiHint": {
+    "message": "Resultados normais do Google sem Visões gerais criadas por IA nem botões do Modo IA.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "modeWebOnly": {
+    "message": "Somente web"
+  },
+  "modeWebOnlyHint": {
+    "message": "Toda pesquisa abre no filtro Web do Google: só links, sem IA, sem imagens ou mapas."
+  },
+  "modeOff": {
+    "message": "Desativado"
+  },
+  "modeOffHint": {
+    "message": "O PlainSight não faz nada até você ativá-lo de novo."
+  },
+  "blockAiMode": {
+    "message": "Bloquear Modo IA",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "blockAiModeHint": {
+    "message": "Abrir o Modo IA leva você aos resultados normais.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "hiddenCount": {
+    "message": "Visões gerais criadas por IA ocultadas: $COUNT$",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "pauseTab": {
+    "message": "Pausar nesta guia"
+  },
+  "resumeTab": {
+    "message": "Retomar nesta guia"
+  },
+  "pausedNotice": {
+    "message": "Pausado nesta guia até você fechá-la."
+  },
+  "reportProblem": {
+    "message": "Informar um problema"
+  },
+  "options": {
+    "message": "Opções"
+  },
+  "reviewPrompt": {
+    "message": "O PlainSight está funcionando para você?"
+  },
+  "reviewLink": {
+    "message": "Deixar uma avaliação"
+  },
+  "dismiss": {
+    "message": "Fechar"
+  },
+  "hostAccessMissing": {
+    "message": "O PlainSight precisa de acesso às páginas da Pesquisa Google."
+  },
+  "hostAccessGrant": {
+    "message": "Permitir acesso"
+  },
+  "welcomeTitle": {
+    "message": "Boas-vindas ao PlainSight"
+  },
+  "welcomeIntro": {
+    "message": "Escolha como a Pesquisa Google deve aparecer. Você pode mudar isso a qualquer momento pelo botão do PlainSight."
+  },
+  "welcomeDifference": {
+    "message": "Ocultar IA mantém a página normal do Google e remove as partes de IA. Somente web muda para o filtro Web do Google, que mostra só links e continua funcionando mesmo quando o Google muda a página."
+  },
+  "welcomeSaved": {
+    "message": "Salvo. Você pode fechar esta guia e pesquisar normalmente."
+  },
+  "optionsTitle": {
+    "message": "Opções do PlainSight"
+  },
+  "privacyNote": {
+    "message": "O PlainSight não coleta dados. Suas configurações ficam no seu navegador e o contador nunca sai do seu dispositivo."
+  },
+  "supportTitle": {
+    "message": "Apoie o PlainSight"
+  },
+  "supportText": {
+    "message": "O PlainSight é gratuito e de código aberto. Se ele melhora suas pesquisas, você pode apoiar o desenvolvimento."
+  },
+  "supportLink": {
+    "message": "Patrocinar no GitHub"
+  },
+  "moreFromDeveloper": {
+    "message": "Mais do desenvolvedor"
+  },
+  "sourceCode": {
+    "message": "Código-fonte"
+  },
+  "version": {
+    "message": "Versão $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "1.0.0"
+      }
+    }
+  }
+}

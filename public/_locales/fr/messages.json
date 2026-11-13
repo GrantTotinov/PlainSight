@@ -1,0 +1,125 @@
+{
+  "extName": {
+    "message": "PlainSight : masquer les Aperçus IA et le Mode IA dans la recherche Google™",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "extDescription": {
+    "message": "Retire les Aperçus IA et le Mode IA de la recherche Google. Retrouvez les résultats classiques. Gratuit, open source, sans pistage.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "showFullResults": {
+    "message": "Afficher tous les résultats Google"
+  },
+  "modeLabel": {
+    "message": "Mode"
+  },
+  "modeHideAi": {
+    "message": "Masquer l'IA"
+  },
+  "modeHideAiHint": {
+    "message": "Résultats Google normaux, sans Aperçus IA ni boutons Mode IA.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "modeWebOnly": {
+    "message": "Web uniquement"
+  },
+  "modeWebOnlyHint": {
+    "message": "Chaque recherche s'ouvre dans le filtre Web de Google : des liens, sans IA, sans images ni cartes."
+  },
+  "modeOff": {
+    "message": "Désactivé"
+  },
+  "modeOffHint": {
+    "message": "PlainSight ne fait rien jusqu'à ce que vous le réactiviez."
+  },
+  "blockAiMode": {
+    "message": "Bloquer le Mode IA",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "blockAiModeHint": {
+    "message": "Ouvrir le Mode IA vous renvoie vers les résultats classiques.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "hiddenCount": {
+    "message": "Aperçus IA masqués : $COUNT$",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "pauseTab": {
+    "message": "Mettre en pause sur cet onglet"
+  },
+  "resumeTab": {
+    "message": "Reprendre sur cet onglet"
+  },
+  "pausedNotice": {
+    "message": "En pause sur cet onglet jusqu'à sa fermeture."
+  },
+  "reportProblem": {
+    "message": "Signaler un problème"
+  },
+  "options": {
+    "message": "Options"
+  },
+  "reviewPrompt": {
+    "message": "PlainSight vous est utile ?"
+  },
+  "reviewLink": {
+    "message": "Laisser un avis"
+  },
+  "dismiss": {
+    "message": "Fermer"
+  },
+  "hostAccessMissing": {
+    "message": "PlainSight a besoin d'accéder aux pages de la recherche Google."
+  },
+  "hostAccessGrant": {
+    "message": "Autoriser l'accès"
+  },
+  "welcomeTitle": {
+    "message": "Bienvenue dans PlainSight"
+  },
+  "welcomeIntro": {
+    "message": "Choisissez l'apparence de la recherche Google. Vous pouvez changer à tout moment avec le bouton PlainSight."
+  },
+  "welcomeDifference": {
+    "message": "Masquer l'IA garde la page Google habituelle et retire les parties IA. Web uniquement passe au filtre Web de Google, qui n'affiche que des liens et continue de fonctionner même quand Google change sa page."
+  },
+  "welcomeSaved": {
+    "message": "Enregistré. Vous pouvez fermer cet onglet et chercher normalement."
+  },
+  "optionsTitle": {
+    "message": "Options de PlainSight"
+  },
+  "privacyNote": {
+    "message": "PlainSight ne collecte aucune donnée. Vos réglages restent dans votre navigateur et le compteur ne quitte jamais votre appareil."
+  },
+  "supportTitle": {
+    "message": "Soutenir PlainSight"
+  },
+  "supportText": {
+    "message": "PlainSight est gratuit et open source. S'il améliore vos recherches, vous pouvez soutenir son développement."
+  },
+  "supportLink": {
+    "message": "Sponsoriser sur GitHub"
+  },
+  "moreFromDeveloper": {
+    "message": "Du même développeur"
+  },
+  "sourceCode": {
+    "message": "Code source"
+  },
+  "version": {
+    "message": "Version $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "1.0.0"
+      }
+    }
+  }
+}

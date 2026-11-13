@@ -1,0 +1,125 @@
+{
+  "extName": {
+    "message": "PlainSight: Google 検索™ の AI による概要と AI モードを非表示",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "extDescription": {
+    "message": "Google 検索から AI による概要と AI モードを取り除き、従来の検索結果に戻します。無料、オープンソース、トラッキングなし。",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "showFullResults": {
+    "message": "Google の検索結果をすべて表示"
+  },
+  "modeLabel": {
+    "message": "モード"
+  },
+  "modeHideAi": {
+    "message": "AI を非表示"
+  },
+  "modeHideAiHint": {
+    "message": "AI による概要と AI モードのボタンを除いた通常の Google 検索結果。",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "modeWebOnly": {
+    "message": "ウェブのみ"
+  },
+  "modeWebOnlyHint": {
+    "message": "すべての検索を Google の「ウェブ」フィルタで開きます。リンクのみで、AI、画像、地図は表示されません。"
+  },
+  "modeOff": {
+    "message": "オフ"
+  },
+  "modeOffHint": {
+    "message": "オンに戻すまで PlainSight は何もしません。"
+  },
+  "blockAiMode": {
+    "message": "AI モードをブロック",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "blockAiModeHint": {
+    "message": "AI モードを開くと通常の検索結果に移動します。",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "hiddenCount": {
+    "message": "非表示にした AI による概要: $COUNT$",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "pauseTab": {
+    "message": "このタブで一時停止"
+  },
+  "resumeTab": {
+    "message": "このタブで再開"
+  },
+  "pausedNotice": {
+    "message": "このタブを閉じるまで一時停止中です。"
+  },
+  "reportProblem": {
+    "message": "問題を報告"
+  },
+  "options": {
+    "message": "オプション"
+  },
+  "reviewPrompt": {
+    "message": "PlainSight は役に立っていますか？"
+  },
+  "reviewLink": {
+    "message": "レビューを書く"
+  },
+  "dismiss": {
+    "message": "閉じる"
+  },
+  "hostAccessMissing": {
+    "message": "PlainSight が動作するには Google 検索ページへのアクセスが必要です。"
+  },
+  "hostAccessGrant": {
+    "message": "アクセスを許可"
+  },
+  "welcomeTitle": {
+    "message": "PlainSight へようこそ"
+  },
+  "welcomeIntro": {
+    "message": "Google 検索の表示方法を選んでください。PlainSight のボタンからいつでも変更できます。"
+  },
+  "welcomeDifference": {
+    "message": "「AI を非表示」は通常の Google ページのまま AI 部分を取り除きます。「ウェブのみ」は Google の「ウェブ」フィルタに切り替えます。リンクのみを表示し、Google がページを変更しても動作し続けます。"
+  },
+  "welcomeSaved": {
+    "message": "保存しました。このタブを閉じていつも通り検索できます。"
+  },
+  "optionsTitle": {
+    "message": "PlainSight のオプション"
+  },
+  "privacyNote": {
+    "message": "PlainSight はデータを一切収集しません。設定はブラウザ内に保存され、カウンターが端末の外に出ることはありません。"
+  },
+  "supportTitle": {
+    "message": "PlainSight を支援"
+  },
+  "supportText": {
+    "message": "PlainSight は無料のオープンソースです。検索が快適になったら、開発を支援していただけます。"
+  },
+  "supportLink": {
+    "message": "GitHub でスポンサーになる"
+  },
+  "moreFromDeveloper": {
+    "message": "開発者のほかの拡張機能"
+  },
+  "sourceCode": {
+    "message": "ソースコード"
+  },
+  "version": {
+    "message": "バージョン $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "1.0.0"
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "extName": {
+    "message": "PlainSight: Google सर्च™ में एआई से खास जानकारी और एआई मोड छिपाएं",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "extDescription": {
+    "message": "Google सर्च से एआई से खास जानकारी और एआई मोड हटाएं। पुराने वेब नतीजे वापस पाएं। मुफ़्त, ओपन सोर्स, कोई ट्रैकिंग नहीं।",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "showFullResults": {
+    "message": "Google के सभी नतीजे दिखाएं"
+  },
+  "modeLabel": {
+    "message": "मोड"
+  },
+  "modeHideAi": {
+    "message": "एआई छिपाएं"
+  },
+  "modeHideAiHint": {
+    "message": "एआई से खास जानकारी और एआई मोड बटन के बिना सामान्य Google नतीजे।",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "modeWebOnly": {
+    "message": "सिर्फ़ वेब"
+  },
+  "modeWebOnlyHint": {
+    "message": "हर खोज Google के वेब फ़िल्टर में खुलती है: सिर्फ़ लिंक, कोई एआई, इमेज या मैप नहीं।"
+  },
+  "modeOff": {
+    "message": "बंद"
+  },
+  "modeOffHint": {
+    "message": "जब तक आप इसे फिर से चालू नहीं करते, PlainSight कुछ नहीं करता।"
+  },
+  "blockAiMode": {
+    "message": "एआई मोड ब्लॉक करें",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "blockAiModeHint": {
+    "message": "एआई मोड खोलने पर आप सामान्य नतीजों पर पहुंचेंगे।",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "hiddenCount": {
+    "message": "छिपाई गई एआई से खास जानकारी: $COUNT$",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "pauseTab": {
+    "message": "इस टैब पर रोकें"
+  },
+  "resumeTab": {
+    "message": "इस टैब पर फिर से शुरू करें"
+  },
+  "pausedNotice": {
+    "message": "यह टैब बंद करने तक रुका हुआ है।"
+  },
+  "reportProblem": {
+    "message": "समस्या की शिकायत करें"
+  },
+  "options": {
+    "message": "विकल्प"
+  },
+  "reviewPrompt": {
+    "message": "क्या PlainSight आपके काम आ रहा है?"
+  },
+  "reviewLink": {
+    "message": "समीक्षा लिखें"
+  },
+  "dismiss": {
+    "message": "बंद करें"
+  },
+  "hostAccessMissing": {
+    "message": "PlainSight को काम करने के लिए Google सर्च पेजों का ऐक्सेस चाहिए।"
+  },
+  "hostAccessGrant": {
+    "message": "ऐक्सेस दें"
+  },
+  "welcomeTitle": {
+    "message": "PlainSight में आपका स्वागत है"
+  },
+  "welcomeIntro": {
+    "message": "चुनें कि Google सर्च कैसा दिखे। आप इसे कभी भी PlainSight बटन से बदल सकते हैं।"
+  },
+  "welcomeDifference": {
+    "message": "एआई छिपाएं सामान्य Google पेज रखता है और एआई वाले हिस्से हटाता है। सिर्फ़ वेब Google के वेब फ़िल्टर पर ले जाता है, जो सिर्फ़ लिंक दिखाता है और Google के पेज बदलने पर भी काम करता रहता है।"
+  },
+  "welcomeSaved": {
+    "message": "सेव हो गया। आप यह टैब बंद करके सामान्य रूप से खोज सकते हैं।"
+  },
+  "optionsTitle": {
+    "message": "PlainSight के विकल्प"
+  },
+  "privacyNote": {
+    "message": "PlainSight कोई डेटा इकट्ठा नहीं करता। आपकी सेटिंग ब्राउज़र में रहती हैं और काउंटर कभी आपके डिवाइस से बाहर नहीं जाता।"
+  },
+  "supportTitle": {
+    "message": "PlainSight को सपोर्ट करें"
+  },
+  "supportText": {
+    "message": "PlainSight मुफ़्त और ओपन सोर्स है। अगर इससे आपकी खोज बेहतर होती है, तो आप इसके विकास में मदद कर सकते हैं।"
+  },
+  "supportLink": {
+    "message": "GitHub पर स्पॉन्सर करें"
+  },
+  "moreFromDeveloper": {
+    "message": "डेवलपर की दूसरी चीज़ें"
+  },
+  "sourceCode": {
+    "message": "सोर्स कोड"
+  },
+  "version": {
+    "message": "वर्शन $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "1.0.0"
+      }
+    }
+  }
+}

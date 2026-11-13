@@ -1,0 +1,125 @@
+{
+  "extName": {
+    "message": "PlainSight：隱藏 Google 搜尋™ 中的 AI 摘要和 AI 模式",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "extDescription": {
+    "message": "從 Google 搜尋移除 AI 摘要和 AI 模式，找回傳統網頁結果。免費、開放原始碼、不追蹤。",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "showFullResults": {
+    "message": "顯示完整的 Google 結果"
+  },
+  "modeLabel": {
+    "message": "模式"
+  },
+  "modeHideAi": {
+    "message": "隱藏 AI"
+  },
+  "modeHideAiHint": {
+    "message": "一般的 Google 搜尋結果，不含 AI 摘要和 AI 模式按鈕。",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "modeWebOnly": {
+    "message": "僅限網頁"
+  },
+  "modeWebOnlyHint": {
+    "message": "每次搜尋都在 Google 的「網頁」篩選器中開啟：只有連結，沒有 AI、圖片或地圖。"
+  },
+  "modeOff": {
+    "message": "關閉"
+  },
+  "modeOffHint": {
+    "message": "在您重新開啟前，PlainSight 不會執行任何動作。"
+  },
+  "blockAiMode": {
+    "message": "封鎖 AI 模式",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "blockAiModeHint": {
+    "message": "開啟 AI 模式時會改為顯示一般搜尋結果。",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "hiddenCount": {
+    "message": "已隱藏的 AI 摘要：$COUNT$",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "pauseTab": {
+    "message": "在此分頁暫停"
+  },
+  "resumeTab": {
+    "message": "在此分頁繼續"
+  },
+  "pausedNotice": {
+    "message": "此分頁已暫停，直到您關閉為止。"
+  },
+  "reportProblem": {
+    "message": "回報問題"
+  },
+  "options": {
+    "message": "選項"
+  },
+  "reviewPrompt": {
+    "message": "PlainSight 好用嗎？"
+  },
+  "reviewLink": {
+    "message": "留下評論"
+  },
+  "dismiss": {
+    "message": "關閉"
+  },
+  "hostAccessMissing": {
+    "message": "PlainSight 需要存取 Google 搜尋頁面才能運作。"
+  },
+  "hostAccessGrant": {
+    "message": "允許存取"
+  },
+  "welcomeTitle": {
+    "message": "歡迎使用 PlainSight"
+  },
+  "welcomeIntro": {
+    "message": "選擇 Google 搜尋的顯示方式。您隨時可以透過 PlainSight 按鈕變更。"
+  },
+  "welcomeDifference": {
+    "message": "「隱藏 AI」保留一般的 Google 頁面並移除 AI 部分。「僅限網頁」切換到 Google 的「網頁」篩選器，只顯示連結，即使 Google 變更頁面也能繼續運作。"
+  },
+  "welcomeSaved": {
+    "message": "已儲存。您可以關閉此分頁，照常搜尋。"
+  },
+  "optionsTitle": {
+    "message": "PlainSight 選項"
+  },
+  "privacyNote": {
+    "message": "PlainSight 不會收集任何資料。您的設定保存在瀏覽器中，計數器永遠不會離開您的裝置。"
+  },
+  "supportTitle": {
+    "message": "支持 PlainSight"
+  },
+  "supportText": {
+    "message": "PlainSight 免費且開放原始碼。如果它讓您的搜尋更好，歡迎支持開發。"
+  },
+  "supportLink": {
+    "message": "在 GitHub 上贊助"
+  },
+  "moreFromDeveloper": {
+    "message": "開發者的其他作品"
+  },
+  "sourceCode": {
+    "message": "原始碼"
+  },
+  "version": {
+    "message": "版本 $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "1.0.0"
+      }
+    }
+  }
+}

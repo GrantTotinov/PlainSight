@@ -1,0 +1,125 @@
+{
+  "extName": {
+    "message": "PlainSight: приховати Огляди від ШІ та Режим ШІ в Пошуку Google™",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "extDescription": {
+    "message": "Прибирає Огляди від ШІ та Режим ШІ з Пошуку Google. Повертає звичайні результати. Безкоштовно, відкритий код, без стеження.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "showFullResults": {
+    "message": "Показати всі результати Google"
+  },
+  "modeLabel": {
+    "message": "Режим"
+  },
+  "modeHideAi": {
+    "message": "Приховати ШІ"
+  },
+  "modeHideAiHint": {
+    "message": "Звичайні результати Google без Оглядів від ШІ та кнопок Режиму ШІ.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "modeWebOnly": {
+    "message": "Лише веб"
+  },
+  "modeWebOnlyHint": {
+    "message": "Кожен пошук відкривається у фільтрі Google «Веб»: лише посилання, без ШІ, зображень і карт."
+  },
+  "modeOff": {
+    "message": "Вимк."
+  },
+  "modeOffHint": {
+    "message": "PlainSight нічого не робить, доки ви знову його не ввімкнете."
+  },
+  "blockAiMode": {
+    "message": "Блокувати Режим ШІ",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "blockAiModeHint": {
+    "message": "Відкриття Режиму ШІ веде до звичайних результатів.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "hiddenCount": {
+    "message": "Приховано Оглядів від ШІ: $COUNT$",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "pauseTab": {
+    "message": "Призупинити на цій вкладці"
+  },
+  "resumeTab": {
+    "message": "Відновити на цій вкладці"
+  },
+  "pausedNotice": {
+    "message": "Призупинено на цій вкладці, доки ви її не закриєте."
+  },
+  "reportProblem": {
+    "message": "Повідомити про проблему"
+  },
+  "options": {
+    "message": "Налаштування"
+  },
+  "reviewPrompt": {
+    "message": "PlainSight вам допомагає?"
+  },
+  "reviewLink": {
+    "message": "Залишити відгук"
+  },
+  "dismiss": {
+    "message": "Закрити"
+  },
+  "hostAccessMissing": {
+    "message": "PlainSight потрібен доступ до сторінок Пошуку Google."
+  },
+  "hostAccessGrant": {
+    "message": "Дозволити доступ"
+  },
+  "welcomeTitle": {
+    "message": "Ласкаво просимо до PlainSight"
+  },
+  "welcomeIntro": {
+    "message": "Виберіть, як має виглядати Пошук Google. Це можна змінити будь-коли кнопкою PlainSight."
+  },
+  "welcomeDifference": {
+    "message": "«Приховати ШІ» залишає звичайну сторінку Google і прибирає блоки ШІ. «Лише веб» перемикає на фільтр Google «Веб», який показує лише посилання і працює, навіть коли Google змінює сторінку."
+  },
+  "welcomeSaved": {
+    "message": "Збережено. Можна закрити вкладку й шукати як зазвичай."
+  },
+  "optionsTitle": {
+    "message": "Налаштування PlainSight"
+  },
+  "privacyNote": {
+    "message": "PlainSight не збирає дані. Налаштування залишаються у браузері, а лічильник ніколи не залишає ваш пристрій."
+  },
+  "supportTitle": {
+    "message": "Підтримати PlainSight"
+  },
+  "supportText": {
+    "message": "PlainSight безкоштовний і з відкритим кодом. Якщо він покращує ваш пошук, ви можете підтримати розробку."
+  },
+  "supportLink": {
+    "message": "Спонсорувати на GitHub"
+  },
+  "moreFromDeveloper": {
+    "message": "Інші проєкти розробника"
+  },
+  "sourceCode": {
+    "message": "Вихідний код"
+  },
+  "version": {
+    "message": "Версія $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "1.0.0"
+      }
+    }
+  }
+}

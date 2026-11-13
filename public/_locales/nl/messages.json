@@ -1,0 +1,125 @@
+{
+  "extName": {
+    "message": "PlainSight: verberg AI-overzichten en AI-modus in Google Zoeken™",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "extDescription": {
+    "message": "Verwijdert AI-overzichten en de AI-modus uit Google Zoeken. Klassieke resultaten terug. Gratis, open source, geen tracking.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "showFullResults": {
+    "message": "Volledige Google-resultaten tonen"
+  },
+  "modeLabel": {
+    "message": "Modus"
+  },
+  "modeHideAi": {
+    "message": "AI verbergen"
+  },
+  "modeHideAiHint": {
+    "message": "Normale Google-resultaten zonder AI-overzichten en AI-modus-knoppen.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "modeWebOnly": {
+    "message": "Alleen web"
+  },
+  "modeWebOnlyHint": {
+    "message": "Elke zoekopdracht opent in het webfilter van Google: alleen links, geen AI, geen afbeeldingen of kaarten."
+  },
+  "modeOff": {
+    "message": "Uit"
+  },
+  "modeOffHint": {
+    "message": "PlainSight doet niets tot je het weer aanzet."
+  },
+  "blockAiMode": {
+    "message": "AI-modus blokkeren",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "blockAiModeHint": {
+    "message": "Wie de AI-modus opent, krijgt de normale resultaten.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "hiddenCount": {
+    "message": "Verborgen AI-overzichten: $COUNT$",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "pauseTab": {
+    "message": "Pauzeren op dit tabblad"
+  },
+  "resumeTab": {
+    "message": "Hervatten op dit tabblad"
+  },
+  "pausedNotice": {
+    "message": "Gepauzeerd op dit tabblad tot je het sluit."
+  },
+  "reportProblem": {
+    "message": "Probleem melden"
+  },
+  "options": {
+    "message": "Opties"
+  },
+  "reviewPrompt": {
+    "message": "Werkt PlainSight goed voor je?"
+  },
+  "reviewLink": {
+    "message": "Schrijf een review"
+  },
+  "dismiss": {
+    "message": "Sluiten"
+  },
+  "hostAccessMissing": {
+    "message": "PlainSight heeft toegang nodig tot pagina's van Google Zoeken."
+  },
+  "hostAccessGrant": {
+    "message": "Toegang toestaan"
+  },
+  "welcomeTitle": {
+    "message": "Welkom bij PlainSight"
+  },
+  "welcomeIntro": {
+    "message": "Kies hoe Google Zoeken eruit moet zien. Je kunt dit altijd wijzigen via de PlainSight-knop."
+  },
+  "welcomeDifference": {
+    "message": "AI verbergen houdt de normale Google-pagina en haalt de AI-onderdelen weg. Alleen web schakelt naar het webfilter van Google, dat alleen links toont en blijft werken als Google de pagina verandert."
+  },
+  "welcomeSaved": {
+    "message": "Opgeslagen. Je kunt dit tabblad sluiten en zoeken zoals altijd."
+  },
+  "optionsTitle": {
+    "message": "PlainSight-opties"
+  },
+  "privacyNote": {
+    "message": "PlainSight verzamelt geen gegevens. Je instellingen blijven in je browser en de teller verlaat nooit je apparaat."
+  },
+  "supportTitle": {
+    "message": "Steun PlainSight"
+  },
+  "supportText": {
+    "message": "PlainSight is gratis en open source. Maakt het je zoekopdrachten beter, dan kun je de ontwikkeling steunen."
+  },
+  "supportLink": {
+    "message": "Sponsor op GitHub"
+  },
+  "moreFromDeveloper": {
+    "message": "Meer van de ontwikkelaar"
+  },
+  "sourceCode": {
+    "message": "Broncode"
+  },
+  "version": {
+    "message": "Versie $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "1.0.0"
+      }
+    }
+  }
+}

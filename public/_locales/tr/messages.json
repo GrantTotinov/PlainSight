@@ -1,0 +1,125 @@
+{
+  "extName": {
+    "message": "PlainSight: Google Arama™ Yapay Zeka Genel Bakışlarını ve Modunu gizle",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "extDescription": {
+    "message": "Google Arama'dan Yapay Zeka Genel Bakışı ve Modunu kaldırır. Klasik sonuçlar geri gelir. Ücretsiz, açık kaynak, takip yok.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "showFullResults": {
+    "message": "Tüm Google sonuçlarını göster"
+  },
+  "modeLabel": {
+    "message": "Mod"
+  },
+  "modeHideAi": {
+    "message": "Yapay zekayı gizle"
+  },
+  "modeHideAiHint": {
+    "message": "Yapay Zeka Genel Bakışı ve Yapay Zeka Modu düğmeleri olmadan normal Google sonuçları.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "modeWebOnly": {
+    "message": "Yalnızca web"
+  },
+  "modeWebOnlyHint": {
+    "message": "Her arama Google'ın Web filtresinde açılır: yalnızca bağlantılar, yapay zeka yok, görsel veya harita yok."
+  },
+  "modeOff": {
+    "message": "Kapalı"
+  },
+  "modeOffHint": {
+    "message": "PlainSight siz yeniden açana kadar hiçbir şey yapmaz."
+  },
+  "blockAiMode": {
+    "message": "Yapay Zeka Modunu engelle",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "blockAiModeHint": {
+    "message": "Yapay Zeka Modunu açmak sizi normal sonuçlara götürür.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "hiddenCount": {
+    "message": "Gizlenen Yapay Zeka Genel Bakışları: $COUNT$",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "pauseTab": {
+    "message": "Bu sekmede duraklat"
+  },
+  "resumeTab": {
+    "message": "Bu sekmede devam et"
+  },
+  "pausedNotice": {
+    "message": "Bu sekmede, kapatana kadar duraklatıldı."
+  },
+  "reportProblem": {
+    "message": "Sorun bildir"
+  },
+  "options": {
+    "message": "Seçenekler"
+  },
+  "reviewPrompt": {
+    "message": "PlainSight işinize yarıyor mu?"
+  },
+  "reviewLink": {
+    "message": "Değerlendirme yazın"
+  },
+  "dismiss": {
+    "message": "Kapat"
+  },
+  "hostAccessMissing": {
+    "message": "PlainSight'ın Google Arama sayfalarına erişmesi gerekiyor."
+  },
+  "hostAccessGrant": {
+    "message": "Erişime izin ver"
+  },
+  "welcomeTitle": {
+    "message": "PlainSight'a hoş geldiniz"
+  },
+  "welcomeIntro": {
+    "message": "Google Arama'nın nasıl görüneceğini seçin. Bunu istediğiniz zaman PlainSight düğmesinden değiştirebilirsiniz."
+  },
+  "welcomeDifference": {
+    "message": "Yapay zekayı gizle normal Google sayfasını korur ve yapay zeka bölümlerini kaldırır. Yalnızca web, Google'ın Web filtresine geçer; bu filtre yalnızca bağlantı gösterir ve Google sayfasını değiştirse bile çalışmaya devam eder."
+  },
+  "welcomeSaved": {
+    "message": "Kaydedildi. Bu sekmeyi kapatıp her zamanki gibi arama yapabilirsiniz."
+  },
+  "optionsTitle": {
+    "message": "PlainSight seçenekleri"
+  },
+  "privacyNote": {
+    "message": "PlainSight hiçbir veri toplamaz. Ayarlarınız tarayıcınızda kalır ve sayaç cihazınızdan asla çıkmaz."
+  },
+  "supportTitle": {
+    "message": "PlainSight'ı destekleyin"
+  },
+  "supportText": {
+    "message": "PlainSight ücretsiz ve açık kaynaktır. Aramalarınızı iyileştiriyorsa geliştirilmesine destek olabilirsiniz."
+  },
+  "supportLink": {
+    "message": "GitHub'da sponsor ol"
+  },
+  "moreFromDeveloper": {
+    "message": "Geliştiricinin diğer ürünleri"
+  },
+  "sourceCode": {
+    "message": "Kaynak kodu"
+  },
+  "version": {
+    "message": "Sürüm $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "1.0.0"
+      }
+    }
+  }
+}

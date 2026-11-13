@@ -1,0 +1,125 @@
+{
+  "extName": {
+    "message": "PlainSight: Ẩn Tổng quan do AI tạo và Chế độ AI trên Google Tìm kiếm™",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "extDescription": {
+    "message": "Xóa Tổng quan do AI tạo và Chế độ AI khỏi Google Tìm kiếm. Lấy lại kết quả web cổ điển. Miễn phí, mã nguồn mở, không theo dõi.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "showFullResults": {
+    "message": "Hiện toàn bộ kết quả Google"
+  },
+  "modeLabel": {
+    "message": "Chế độ"
+  },
+  "modeHideAi": {
+    "message": "Ẩn AI"
+  },
+  "modeHideAiHint": {
+    "message": "Kết quả Google bình thường, không có Tổng quan do AI tạo và nút Chế độ AI.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "modeWebOnly": {
+    "message": "Chỉ web"
+  },
+  "modeWebOnlyHint": {
+    "message": "Mọi tìm kiếm mở trong bộ lọc Web của Google: chỉ có liên kết, không AI, không hình ảnh hay bản đồ."
+  },
+  "modeOff": {
+    "message": "Tắt"
+  },
+  "modeOffHint": {
+    "message": "PlainSight không làm gì cho đến khi bạn bật lại."
+  },
+  "blockAiMode": {
+    "message": "Chặn Chế độ AI",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "blockAiModeHint": {
+    "message": "Mở Chế độ AI sẽ đưa bạn đến kết quả thông thường.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "hiddenCount": {
+    "message": "Tổng quan do AI tạo đã ẩn: $COUNT$",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "pauseTab": {
+    "message": "Tạm dừng trên thẻ này"
+  },
+  "resumeTab": {
+    "message": "Tiếp tục trên thẻ này"
+  },
+  "pausedNotice": {
+    "message": "Đã tạm dừng trên thẻ này cho đến khi bạn đóng thẻ."
+  },
+  "reportProblem": {
+    "message": "Báo cáo sự cố"
+  },
+  "options": {
+    "message": "Tùy chọn"
+  },
+  "reviewPrompt": {
+    "message": "PlainSight có hữu ích với bạn không?"
+  },
+  "reviewLink": {
+    "message": "Viết đánh giá"
+  },
+  "dismiss": {
+    "message": "Đóng"
+  },
+  "hostAccessMissing": {
+    "message": "PlainSight cần quyền truy cập các trang Google Tìm kiếm."
+  },
+  "hostAccessGrant": {
+    "message": "Cho phép truy cập"
+  },
+  "welcomeTitle": {
+    "message": "Chào mừng bạn đến với PlainSight"
+  },
+  "welcomeIntro": {
+    "message": "Chọn cách Google Tìm kiếm hiển thị. Bạn có thể đổi bất cứ lúc nào bằng nút PlainSight."
+  },
+  "welcomeDifference": {
+    "message": "Ẩn AI giữ trang Google bình thường và bỏ các phần AI. Chỉ web chuyển sang bộ lọc Web của Google, chỉ hiện liên kết và vẫn hoạt động khi Google thay đổi trang."
+  },
+  "welcomeSaved": {
+    "message": "Đã lưu. Bạn có thể đóng thẻ này và tìm kiếm như bình thường."
+  },
+  "optionsTitle": {
+    "message": "Tùy chọn PlainSight"
+  },
+  "privacyNote": {
+    "message": "PlainSight không thu thập dữ liệu nào. Cài đặt nằm trong trình duyệt và bộ đếm không bao giờ rời khỏi thiết bị của bạn."
+  },
+  "supportTitle": {
+    "message": "Ủng hộ PlainSight"
+  },
+  "supportText": {
+    "message": "PlainSight miễn phí và mã nguồn mở. Nếu nó giúp bạn tìm kiếm tốt hơn, bạn có thể ủng hộ việc phát triển."
+  },
+  "supportLink": {
+    "message": "Tài trợ trên GitHub"
+  },
+  "moreFromDeveloper": {
+    "message": "Thêm từ nhà phát triển"
+  },
+  "sourceCode": {
+    "message": "Mã nguồn"
+  },
+  "version": {
+    "message": "Phiên bản $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "1.0.0"
+      }
+    }
+  }
+}

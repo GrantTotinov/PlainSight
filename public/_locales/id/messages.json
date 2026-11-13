@@ -1,0 +1,125 @@
+{
+  "extName": {
+    "message": "PlainSight: Sembunyikan Ringkasan AI & Mode AI di Google Penelusuran™",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "extDescription": {
+    "message": "Hapus Ringkasan AI dan Mode AI dari Google Penelusuran. Dapatkan lagi hasil web klasik. Gratis, open source, tanpa pelacakan.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "showFullResults": {
+    "message": "Tampilkan semua hasil Google"
+  },
+  "modeLabel": {
+    "message": "Mode"
+  },
+  "modeHideAi": {
+    "message": "Sembunyikan AI"
+  },
+  "modeHideAiHint": {
+    "message": "Hasil Google biasa tanpa Ringkasan AI dan tombol Mode AI.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "modeWebOnly": {
+    "message": "Hanya web"
+  },
+  "modeWebOnlyHint": {
+    "message": "Setiap penelusuran dibuka di filter Web Google: hanya link, tanpa AI, tanpa gambar atau peta."
+  },
+  "modeOff": {
+    "message": "Nonaktif"
+  },
+  "modeOffHint": {
+    "message": "PlainSight tidak melakukan apa pun sampai Anda mengaktifkannya lagi."
+  },
+  "blockAiMode": {
+    "message": "Blokir Mode AI",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "blockAiModeHint": {
+    "message": "Membuka Mode AI akan membawa Anda ke hasil biasa.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "hiddenCount": {
+    "message": "Ringkasan AI disembunyikan: $COUNT$",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "pauseTab": {
+    "message": "Jeda di tab ini"
+  },
+  "resumeTab": {
+    "message": "Lanjutkan di tab ini"
+  },
+  "pausedNotice": {
+    "message": "Dijeda di tab ini sampai Anda menutupnya."
+  },
+  "reportProblem": {
+    "message": "Laporkan masalah"
+  },
+  "options": {
+    "message": "Opsi"
+  },
+  "reviewPrompt": {
+    "message": "Apakah PlainSight berguna untuk Anda?"
+  },
+  "reviewLink": {
+    "message": "Beri ulasan"
+  },
+  "dismiss": {
+    "message": "Tutup"
+  },
+  "hostAccessMissing": {
+    "message": "PlainSight memerlukan akses ke halaman Google Penelusuran."
+  },
+  "hostAccessGrant": {
+    "message": "Izinkan akses"
+  },
+  "welcomeTitle": {
+    "message": "Selamat datang di PlainSight"
+  },
+  "welcomeIntro": {
+    "message": "Pilih tampilan Google Penelusuran. Anda bisa mengubahnya kapan saja lewat tombol PlainSight."
+  },
+  "welcomeDifference": {
+    "message": "Sembunyikan AI mempertahankan halaman Google biasa dan menghapus bagian AI. Hanya web beralih ke filter Web Google, yang hanya menampilkan link dan tetap berfungsi meski Google mengubah halamannya."
+  },
+  "welcomeSaved": {
+    "message": "Tersimpan. Anda bisa menutup tab ini dan menelusuri seperti biasa."
+  },
+  "optionsTitle": {
+    "message": "Opsi PlainSight"
+  },
+  "privacyNote": {
+    "message": "PlainSight tidak mengumpulkan data apa pun. Setelan tetap di browser dan penghitung tidak pernah keluar dari perangkat Anda."
+  },
+  "supportTitle": {
+    "message": "Dukung PlainSight"
+  },
+  "supportText": {
+    "message": "PlainSight gratis dan open source. Jika membantu penelusuran Anda, Anda bisa mendukung pengembangannya."
+  },
+  "supportLink": {
+    "message": "Sponsori di GitHub"
+  },
+  "moreFromDeveloper": {
+    "message": "Lainnya dari developer"
+  },
+  "sourceCode": {
+    "message": "Kode sumber"
+  },
+  "version": {
+    "message": "Versi $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "1.0.0"
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "extName": {
+    "message": "PlainSight: Übersicht mit KI & KI-Modus in der Google Suche™ ausblenden",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "extDescription": {
+    "message": "Entfernt Übersicht mit KI und KI-Modus aus der Google Suche. Klassische Ergebnisse zurück. Kostenlos, Open Source, kein Tracking.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "showFullResults": {
+    "message": "Vollständige Google-Ergebnisse anzeigen"
+  },
+  "modeLabel": {
+    "message": "Modus"
+  },
+  "modeHideAi": {
+    "message": "KI ausblenden"
+  },
+  "modeHideAiHint": {
+    "message": "Normale Google-Ergebnisse ohne Übersicht mit KI und KI-Modus-Schaltflächen.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "modeWebOnly": {
+    "message": "Nur Web"
+  },
+  "modeWebOnlyHint": {
+    "message": "Jede Suche öffnet im Web-Filter von Google: nur Links, keine KI, keine Bilder oder Karten."
+  },
+  "modeOff": {
+    "message": "Aus"
+  },
+  "modeOffHint": {
+    "message": "PlainSight tut nichts, bis du es wieder einschaltest."
+  },
+  "blockAiMode": {
+    "message": "KI-Modus blockieren",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "blockAiModeHint": {
+    "message": "Wer den KI-Modus öffnet, landet stattdessen bei den normalen Ergebnissen.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "hiddenCount": {
+    "message": "Ausgeblendete Übersichten mit KI: $COUNT$",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "pauseTab": {
+    "message": "Auf diesem Tab pausieren"
+  },
+  "resumeTab": {
+    "message": "Auf diesem Tab fortsetzen"
+  },
+  "pausedNotice": {
+    "message": "Auf diesem Tab pausiert, bis du ihn schließt."
+  },
+  "reportProblem": {
+    "message": "Problem melden"
+  },
+  "options": {
+    "message": "Optionen"
+  },
+  "reviewPrompt": {
+    "message": "Funktioniert PlainSight für dich?"
+  },
+  "reviewLink": {
+    "message": "Bewertung schreiben"
+  },
+  "dismiss": {
+    "message": "Schließen"
+  },
+  "hostAccessMissing": {
+    "message": "PlainSight braucht Zugriff auf Seiten der Google Suche."
+  },
+  "hostAccessGrant": {
+    "message": "Zugriff erlauben"
+  },
+  "welcomeTitle": {
+    "message": "Willkommen bei PlainSight"
+  },
+  "welcomeIntro": {
+    "message": "Wähle, wie die Google Suche aussehen soll. Du kannst das jederzeit über das PlainSight-Symbol ändern."
+  },
+  "welcomeDifference": {
+    "message": "KI ausblenden behält die normale Google-Seite und entfernt die KI-Teile. Nur Web wechselt zum Web-Filter von Google, der nur Links zeigt und auch dann funktioniert, wenn Google die Seite ändert."
+  },
+  "welcomeSaved": {
+    "message": "Gespeichert. Du kannst diesen Tab schließen und wie gewohnt suchen."
+  },
+  "optionsTitle": {
+    "message": "PlainSight-Optionen"
+  },
+  "privacyNote": {
+    "message": "PlainSight sammelt keine Daten. Deine Einstellungen bleiben in deinem Browser und der Zähler verlässt nie dein Gerät."
+  },
+  "supportTitle": {
+    "message": "PlainSight unterstützen"
+  },
+  "supportText": {
+    "message": "PlainSight ist kostenlos und Open Source. Wenn es deine Suche besser macht, kannst du die Entwicklung unterstützen."
+  },
+  "supportLink": {
+    "message": "Auf GitHub sponsern"
+  },
+  "moreFromDeveloper": {
+    "message": "Mehr vom Entwickler"
+  },
+  "sourceCode": {
+    "message": "Quellcode"
+  },
+  "version": {
+    "message": "Version $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "1.0.0"
+      }
+    }
+  }
+}

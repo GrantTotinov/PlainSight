@@ -1,0 +1,125 @@
+{
+  "extName": {
+    "message": "PlainSight: скрыть Обзоры от ИИ и Режим ИИ в Google Поиске™",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "extDescription": {
+    "message": "Убирает Обзоры от ИИ и Режим ИИ из Google Поиска. Возвращает обычные результаты. Бесплатно, открытый код, без слежки.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "showFullResults": {
+    "message": "Показать все результаты Google"
+  },
+  "modeLabel": {
+    "message": "Режим"
+  },
+  "modeHideAi": {
+    "message": "Скрыть ИИ"
+  },
+  "modeHideAiHint": {
+    "message": "Обычные результаты Google без Обзоров от ИИ и кнопок Режима ИИ.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "modeWebOnly": {
+    "message": "Только веб"
+  },
+  "modeWebOnlyHint": {
+    "message": "Каждый поиск открывается в фильтре Google «Веб»: только ссылки, без ИИ, картинок и карт."
+  },
+  "modeOff": {
+    "message": "Выкл."
+  },
+  "modeOffHint": {
+    "message": "PlainSight ничего не делает, пока вы его снова не включите."
+  },
+  "blockAiMode": {
+    "message": "Блокировать Режим ИИ",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "blockAiModeHint": {
+    "message": "При открытии Режима ИИ вы попадёте на обычные результаты.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "hiddenCount": {
+    "message": "Скрыто Обзоров от ИИ: $COUNT$",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "pauseTab": {
+    "message": "Приостановить на этой вкладке"
+  },
+  "resumeTab": {
+    "message": "Возобновить на этой вкладке"
+  },
+  "pausedNotice": {
+    "message": "Приостановлено на этой вкладке до её закрытия."
+  },
+  "reportProblem": {
+    "message": "Сообщить о проблеме"
+  },
+  "options": {
+    "message": "Настройки"
+  },
+  "reviewPrompt": {
+    "message": "PlainSight вам помогает?"
+  },
+  "reviewLink": {
+    "message": "Оставить отзыв"
+  },
+  "dismiss": {
+    "message": "Закрыть"
+  },
+  "hostAccessMissing": {
+    "message": "PlainSight нужен доступ к страницам Google Поиска."
+  },
+  "hostAccessGrant": {
+    "message": "Разрешить доступ"
+  },
+  "welcomeTitle": {
+    "message": "Добро пожаловать в PlainSight"
+  },
+  "welcomeIntro": {
+    "message": "Выберите, как должен выглядеть Google Поиск. Это можно изменить в любой момент кнопкой PlainSight."
+  },
+  "welcomeDifference": {
+    "message": "«Скрыть ИИ» оставляет обычную страницу Google и убирает ИИ-блоки. «Только веб» переключает на фильтр Google «Веб», который показывает только ссылки и продолжает работать, даже когда Google меняет страницу."
+  },
+  "welcomeSaved": {
+    "message": "Сохранено. Можно закрыть вкладку и искать как обычно."
+  },
+  "optionsTitle": {
+    "message": "Настройки PlainSight"
+  },
+  "privacyNote": {
+    "message": "PlainSight не собирает данные. Настройки хранятся в браузере, а счётчик никогда не покидает ваше устройство."
+  },
+  "supportTitle": {
+    "message": "Поддержать PlainSight"
+  },
+  "supportText": {
+    "message": "PlainSight бесплатный и с открытым кодом. Если он делает поиск лучше, вы можете поддержать разработку."
+  },
+  "supportLink": {
+    "message": "Спонсировать на GitHub"
+  },
+  "moreFromDeveloper": {
+    "message": "Другие проекты разработчика"
+  },
+  "sourceCode": {
+    "message": "Исходный код"
+  },
+  "version": {
+    "message": "Версия $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "1.0.0"
+      }
+    }
+  }
+}

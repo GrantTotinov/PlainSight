@@ -1,0 +1,125 @@
+{
+  "extName": {
+    "message": "PlainSight: nascondi Panoramiche AI e Modalità AI nella Ricerca Google™",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "extDescription": {
+    "message": "Rimuove Panoramiche AI e Modalità AI dalla Ricerca Google. Tornano i risultati classici. Gratis, open source, nessun tracciamento.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "showFullResults": {
+    "message": "Mostra tutti i risultati di Google"
+  },
+  "modeLabel": {
+    "message": "Modalità"
+  },
+  "modeHideAi": {
+    "message": "Nascondi AI"
+  },
+  "modeHideAiHint": {
+    "message": "Risultati Google normali senza Panoramiche AI né pulsanti della Modalità AI.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "modeWebOnly": {
+    "message": "Solo web"
+  },
+  "modeWebOnlyHint": {
+    "message": "Ogni ricerca si apre nel filtro Web di Google: solo link, niente AI, niente immagini o mappe."
+  },
+  "modeOff": {
+    "message": "Disattivato"
+  },
+  "modeOffHint": {
+    "message": "PlainSight non fa nulla finché non lo riattivi."
+  },
+  "blockAiMode": {
+    "message": "Blocca Modalità AI",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "blockAiModeHint": {
+    "message": "Aprire la Modalità AI ti porta ai risultati normali.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "hiddenCount": {
+    "message": "Panoramiche AI nascoste: $COUNT$",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "pauseTab": {
+    "message": "Metti in pausa in questa scheda"
+  },
+  "resumeTab": {
+    "message": "Riprendi in questa scheda"
+  },
+  "pausedNotice": {
+    "message": "In pausa in questa scheda finché non la chiudi."
+  },
+  "reportProblem": {
+    "message": "Segnala un problema"
+  },
+  "options": {
+    "message": "Opzioni"
+  },
+  "reviewPrompt": {
+    "message": "PlainSight funziona per te?"
+  },
+  "reviewLink": {
+    "message": "Lascia una recensione"
+  },
+  "dismiss": {
+    "message": "Chiudi"
+  },
+  "hostAccessMissing": {
+    "message": "PlainSight ha bisogno di accedere alle pagine della Ricerca Google."
+  },
+  "hostAccessGrant": {
+    "message": "Consenti accesso"
+  },
+  "welcomeTitle": {
+    "message": "Benvenuto in PlainSight"
+  },
+  "welcomeIntro": {
+    "message": "Scegli come deve apparire la Ricerca Google. Puoi cambiarlo quando vuoi dal pulsante di PlainSight."
+  },
+  "welcomeDifference": {
+    "message": "Nascondi AI mantiene la normale pagina di Google e rimuove le parti AI. Solo web passa al filtro Web di Google, che mostra solo link e continua a funzionare anche quando Google cambia la pagina."
+  },
+  "welcomeSaved": {
+    "message": "Salvato. Puoi chiudere questa scheda e cercare come sempre."
+  },
+  "optionsTitle": {
+    "message": "Opzioni di PlainSight"
+  },
+  "privacyNote": {
+    "message": "PlainSight non raccoglie dati. Le impostazioni restano nel tuo browser e il contatore non lascia mai il tuo dispositivo."
+  },
+  "supportTitle": {
+    "message": "Sostieni PlainSight"
+  },
+  "supportText": {
+    "message": "PlainSight è gratuito e open source. Se migliora le tue ricerche, puoi sostenerne lo sviluppo."
+  },
+  "supportLink": {
+    "message": "Sponsorizza su GitHub"
+  },
+  "moreFromDeveloper": {
+    "message": "Altro dallo sviluppatore"
+  },
+  "sourceCode": {
+    "message": "Codice sorgente"
+  },
+  "version": {
+    "message": "Versione $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "1.0.0"
+      }
+    }
+  }
+}

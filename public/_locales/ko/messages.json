@@ -1,0 +1,125 @@
+{
+  "extName": {
+    "message": "PlainSight: Google 검색™의 AI 개요와 AI 모드 숨기기",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "extDescription": {
+    "message": "Google 검색에서 AI 개요와 AI 모드를 없애고 기존 웹 결과를 되돌려 줍니다. 무료, 오픈소스, 추적 없음.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "showFullResults": {
+    "message": "Google 전체 결과 보기"
+  },
+  "modeLabel": {
+    "message": "모드"
+  },
+  "modeHideAi": {
+    "message": "AI 숨기기"
+  },
+  "modeHideAiHint": {
+    "message": "AI 개요와 AI 모드 버튼이 없는 일반 Google 검색 결과.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "modeWebOnly": {
+    "message": "웹만"
+  },
+  "modeWebOnlyHint": {
+    "message": "모든 검색을 Google의 웹 필터로 엽니다. 링크만 표시되고 AI, 이미지, 지도는 없습니다."
+  },
+  "modeOff": {
+    "message": "끄기"
+  },
+  "modeOffHint": {
+    "message": "다시 켤 때까지 PlainSight는 아무것도 하지 않습니다."
+  },
+  "blockAiMode": {
+    "message": "AI 모드 차단",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "blockAiModeHint": {
+    "message": "AI 모드를 열면 일반 검색 결과로 이동합니다.",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language."
+  },
+  "hiddenCount": {
+    "message": "숨긴 AI 개요: $COUNT$",
+    "description": "TODO(verify): uses Google's name for AI Overviews / AI Mode in this language.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "pauseTab": {
+    "message": "이 탭에서 일시중지"
+  },
+  "resumeTab": {
+    "message": "이 탭에서 다시 시작"
+  },
+  "pausedNotice": {
+    "message": "이 탭을 닫을 때까지 일시중지됩니다."
+  },
+  "reportProblem": {
+    "message": "문제 신고"
+  },
+  "options": {
+    "message": "옵션"
+  },
+  "reviewPrompt": {
+    "message": "PlainSight가 잘 작동하나요?"
+  },
+  "reviewLink": {
+    "message": "리뷰 남기기"
+  },
+  "dismiss": {
+    "message": "닫기"
+  },
+  "hostAccessMissing": {
+    "message": "PlainSight가 작동하려면 Google 검색 페이지에 대한 액세스 권한이 필요합니다."
+  },
+  "hostAccessGrant": {
+    "message": "액세스 허용"
+  },
+  "welcomeTitle": {
+    "message": "PlainSight에 오신 것을 환영합니다"
+  },
+  "welcomeIntro": {
+    "message": "Google 검색이 어떻게 보일지 선택하세요. PlainSight 버튼에서 언제든지 바꿀 수 있습니다."
+  },
+  "welcomeDifference": {
+    "message": "AI 숨기기는 일반 Google 페이지를 유지하고 AI 부분만 없앱니다. 웹만은 Google의 웹 필터로 전환해 링크만 보여 주며, Google이 페이지를 바꿔도 계속 작동합니다."
+  },
+  "welcomeSaved": {
+    "message": "저장했습니다. 이 탭을 닫고 평소처럼 검색하세요."
+  },
+  "optionsTitle": {
+    "message": "PlainSight 옵션"
+  },
+  "privacyNote": {
+    "message": "PlainSight는 어떤 데이터도 수집하지 않습니다. 설정은 브라우저에 남고 카운터는 기기 밖으로 나가지 않습니다."
+  },
+  "supportTitle": {
+    "message": "PlainSight 후원하기"
+  },
+  "supportText": {
+    "message": "PlainSight는 무료 오픈소스입니다. 검색이 더 나아졌다면 개발을 후원할 수 있습니다."
+  },
+  "supportLink": {
+    "message": "GitHub에서 후원하기"
+  },
+  "moreFromDeveloper": {
+    "message": "개발자의 다른 확장 프로그램"
+  },
+  "sourceCode": {
+    "message": "소스 코드"
+  },
+  "version": {
+    "message": "버전 $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "1.0.0"
+      }
+    }
+  }
+}
