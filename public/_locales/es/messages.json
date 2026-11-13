@@ -121,5 +121,21 @@
         "example": "1.0.0"
       }
     }
+  },
+  "statusHidden": {
+    "message": "Vista creada con IA ocultada en esta página."
+  },
+  "statusKept": {
+    "message": "Algo aquí parecía IA, pero se dejó visible para no afectar a tus resultados."
+  },
+  "switchToWebOnly": {
+    "message": "Usar Solo web"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "Ocultar «Más preguntas»",
+    "description": "TODO(verify): Google's name for \"People also ask\" in this language."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "Google ahora escribe casi todas estas respuestas con IA."
   }
 }

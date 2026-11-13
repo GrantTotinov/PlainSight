@@ -121,5 +121,21 @@
         "example": "1.0.0"
       }
     }
+  },
+  "statusHidden": {
+    "message": "Übersicht mit KI auf dieser Seite ausgeblendet."
+  },
+  "statusKept": {
+    "message": "Etwas hier sah nach KI aus, blieb aber sichtbar, damit deine Ergebnisse sicher bleiben."
+  },
+  "switchToWebOnly": {
+    "message": "Nur Web nutzen"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "„Ähnliche Fragen“ ausblenden",
+    "description": "TODO(verify): Google's name for \"People also ask\" in this language."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "Google schreibt fast alle diese Antworten inzwischen mit KI."
   }
 }

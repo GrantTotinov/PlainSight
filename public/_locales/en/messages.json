@@ -123,5 +123,23 @@
         "example": "1.0.0"
       }
     }
+  },
+  "statusHidden": {
+    "message": "AI Overview hidden on this page.",
+    "description": "Popup line when PlainSight hid an AI Overview on the current tab."
+  },
+  "statusKept": {
+    "message": "Something here looked like AI but was left visible to keep your results safe.",
+    "description": "Popup notice when a safety guard left an AI-looking block visible."
+  },
+  "switchToWebOnly": {
+    "message": "Use Web only"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "Hide \"People also ask\"",
+    "description": "Option. Use Google's exact name of the \"People also ask\" box."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "Google now writes almost all of these answers with AI."
   }
 }

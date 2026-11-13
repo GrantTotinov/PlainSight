@@ -121,5 +121,21 @@
         "example": "1.0.0"
       }
     }
+  },
+  "statusHidden": {
+    "message": "Ringkasan AI disembunyikan di halaman ini."
+  },
+  "statusKept": {
+    "message": "Ada yang mirip AI di sini, tetapi dibiarkan terlihat agar hasil Anda aman."
+  },
+  "switchToWebOnly": {
+    "message": "Pakai Hanya web"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "Sembunyikan \"Orang lain juga bertanya\"",
+    "description": "TODO(verify): Google's name for \"People also ask\" in this language."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "Google kini menulis hampir semua jawaban ini dengan AI."
   }
 }

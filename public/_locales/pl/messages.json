@@ -121,5 +121,21 @@
         "example": "1.0.0"
       }
     }
+  },
+  "statusHidden": {
+    "message": "Przegląd od AI ukryty na tej stronie."
+  },
+  "statusKept": {
+    "message": "Coś tutaj wyglądało na AI, ale zostało widoczne, by nie naruszyć wyników."
+  },
+  "switchToWebOnly": {
+    "message": "Użyj Tylko strony"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "Ukryj „Podobne pytania”",
+    "description": "TODO(verify): Google's name for \"People also ask\" in this language."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "Google pisze teraz prawie wszystkie te odpowiedzi za pomocą AI."
   }
 }

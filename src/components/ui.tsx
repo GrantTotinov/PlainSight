@@ -78,6 +78,18 @@ export function SettingsForm({
           <span class="muted">{t('blockAiModeHint')}</span>
         </span>
       </label>
+      <label class="choice">
+        <input
+          type="checkbox"
+          checked={settings.hidePeopleAlsoAsk}
+          disabled={settings.mode === 'off'}
+          onChange={(e) => update({ hidePeopleAlsoAsk: e.currentTarget.checked })}
+        />
+        <span>
+          <strong>{t('hidePeopleAlsoAsk')}</strong>
+          <span class="muted">{t('hidePeopleAlsoAskHint')}</span>
+        </span>
+      </label>
     </div>
   );
 }

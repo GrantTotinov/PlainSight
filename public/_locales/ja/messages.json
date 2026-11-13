@@ -121,5 +121,21 @@
         "example": "1.0.0"
       }
     }
+  },
+  "statusHidden": {
+    "message": "このページの AI による概要を非表示にしました。"
+  },
+  "statusKept": {
+    "message": "AI のような要素がありましたが、検索結果を守るため表示したままにしています。"
+  },
+  "switchToWebOnly": {
+    "message": "「ウェブのみ」を使う"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "「他の人はこちらも質問」を非表示",
+    "description": "TODO(verify): Google's name for \"People also ask\" in this language."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "これらの回答は現在ほぼすべて Google の AI が作成しています。"
   }
 }

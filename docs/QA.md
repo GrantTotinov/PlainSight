@@ -29,10 +29,16 @@ Legend: ✅ verified, ❌ broken, ⏳ not checked yet. Add the date and version 
 | 18  | Report a problem opens a prefilled issue with no URL or query            | unit          | ⏳     | ⏳   | ⏳      | ⏳              |
 | 19  | Firefox: host access missing shows "Allow access" and granting it works  |               | n/a    | n/a  | ⏳      | ⏳              |
 | 20  | Options page: settings, sponsor link, version                            |               | ⏳     | ⏳   | ⏳      | ⏳              |
+| 21  | "Hide People also ask": hidden while on, back when off, Videos untouched | fixtures, e2e | ⏳     | ⏳   | ⏳      | ⏳              |
+| 22  | AI Mode opened on purpose (browser AI Mode button) is not blanked        | e2e           | ⏳     | ⏳   | ⏳      | ⏳              |
+| 23  | Web only: I'm Feeling Lucky and Jobs still work                          | unit, e2e     | ⏳     | ⏳   | ⏳      | ⏳              |
+| 24  | Popup shows "AI Overview hidden on this page" on a results tab           | e2e (message) | ⏳     | ⏳   | ⏳      | ⏳              |
 
 ## Results so far (2026-11-13, v0.1.0)
 
-- Chrome (Playwright Chromium): all e2e checks pass on fixtures captured that day (en, google.com).
+- Chrome (Playwright Chromium): all 19 e2e checks pass on fixtures captured that day (en, google.com).
+- Live Google, normal (headed) browser, 2026-11-13: PlainSight's selectors hid the AI Overview, its side panel and the AI Mode tab, and left results and "People also ask" in place. See `store/assets/google-before.png` and `google-after.png`.
+- Resilience: fixture tests simulate renamed classes, a pluralized or lowercased heading and an unknown heading. The AI Overview stays hidden in all of them and no result is ever hidden.
 - Live Google, one headless run: redirects were confirmed in the URLs Google received (`udm=14` added, `udm=2` kept, `udm=50` sent to `udm=14`), then Google answered with a captcha because the browser was headless. Repeat rows 1 to 9 by hand in a normal browser.
 - Firefox: `web-ext lint` reports 0 errors and 1 warning (`innerHTML` inside the bundled Preact runtime, not used by PlainSight). Every DNR feature used is supported since Firefox 113 per MDN compatibility data. Not yet run in Firefox.
 - Firefox for Android: the APIs are supported (MDN data mirrors desktop), so `gecko_android` is set to 142, the first version with the built-in data consent. Google's mobile page has a different layout, so Hide AI on mobile needs its own fixtures. Web only works there because it does not depend on the page layout.

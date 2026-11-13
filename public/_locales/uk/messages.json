@@ -121,5 +121,21 @@
         "example": "1.0.0"
       }
     }
+  },
+  "statusHidden": {
+    "message": "Огляд від ШІ на цій сторінці приховано."
+  },
+  "statusKept": {
+    "message": "Тут було щось схоже на ШІ, але його залишено, щоб не зачепити результати."
+  },
+  "switchToWebOnly": {
+    "message": "Увімкнути «Лише веб»"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "Приховати «Схожі запитання»",
+    "description": "TODO(verify): Google's name for \"People also ask\" in this language."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "Майже всі ці відповіді Google тепер пише за допомогою ШІ."
   }
 }

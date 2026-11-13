@@ -121,5 +121,21 @@
         "example": "1.0.0"
       }
     }
+  },
+  "statusHidden": {
+    "message": "Общият преглед от ИИ е скрит на тази страница."
+  },
+  "statusKept": {
+    "message": "Тук имаше нещо като ИИ, но е оставено видимо, за да не засегне резултатите."
+  },
+  "switchToWebOnly": {
+    "message": "Използвай „Само уеб“"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "Скрий „Хората питат също“",
+    "description": "TODO(verify): Google's name for \"People also ask\" in this language."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "Google вече пише почти всички тези отговори с ИИ."
   }
 }

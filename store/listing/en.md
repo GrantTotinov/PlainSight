@@ -14,6 +14,7 @@ WHAT YOU GET
 • A clean results page. The AI summary is hidden before it appears, so nothing jumps around.
 • No AI Mode tabs or buttons on the results page or the homepage.
 • Optional: send AI Mode back to regular results.
+• Optional: hide "People also ask", whose answers Google now writes with AI.
 • Web only mode: every search opens in Google's own Web filter. Just links, and it keeps working even when Google redesigns its page.
 • Pause on any tab with one click when you want the full page.
 

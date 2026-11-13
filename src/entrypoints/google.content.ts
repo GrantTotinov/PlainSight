@@ -10,11 +10,19 @@ export default defineContentScript({
   matches: CONTENT_MATCHES,
   runAt: 'document_start',
   async main() {
+    // The user opened AI Mode on purpose (a link, a bookmark, the browser's own AI Mode button).
+    // Hiding the AI parts of that page would leave it blank. Block AI Mode redirects it instead.
+    const onAiModePage = () => new URL(location.href).searchParams.get('udm') === '50';
+
     // Hide first, ask questions later: AI blocks must never flash on screen.
     const hider = createHider(document, selectors as SelectorConfig, () => {
       void send({ type: 'countHidden' }).catch(() => {});
     });
-    hider.start();
+    if (!onAiModePage()) hider.start();
+
+    browser.runtime.onMessage.addListener((msg: { type?: string }, _sender, sendResponse) => {
+      if (msg?.type === 'pageStatus') sendResponse(hider.status());
+    });
 
     const [settings, paused] = await Promise.all([
       loadSettings(),
@@ -22,8 +30,8 @@ export default defineContentScript({
     ]);
 
     const apply = (s: Settings) => {
-      const on = s.mode !== 'off' && !paused;
-      hider.setEnabled(on);
+      const on = s.mode !== 'off' && !paused && !onAiModePage();
+      hider.setEnabled(on, s.hidePeopleAlsoAsk ? ['peopleAlsoAsk'] : []);
       if (on && s.mode === 'webOnly') whenReady(addFullResultsLink);
       else document.getElementById(LINK_ID)?.remove();
     };

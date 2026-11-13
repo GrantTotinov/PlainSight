@@ -4,3 +4,4 @@ node_modules/
 .playwright-profile/
 *.log
 .playwright-mcp/
+.claude/

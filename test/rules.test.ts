@@ -37,7 +37,7 @@ function navigate(rules: Rule[], url: string, tabId = 1): string {
   throw new Error(`too many redirects for ${url}`);
 }
 
-const webOnly: Settings = { mode: 'webOnly', blockAiMode: false };
+const webOnly: Pick<Settings, 'mode' | 'blockAiMode'> = { mode: 'webOnly', blockAiMode: false };
 const g = 'https://www.google.com/search?q=cats';
 
 describe('buildRules', () => {
@@ -64,6 +64,8 @@ describe('buildRules', () => {
     ['News', `${g}&tbm=nws`],
     ['Shopping', 'https://www.google.com/search?tbm=shop&q=cats'],
     ['tab param first', 'https://www.google.com/search?udm=7&q=cats'],
+    ["I'm Feeling Lucky", `${g}&btnI=1`],
+    ['Jobs', `${g}&ibp=htl;jobs`],
   ])('keeps the tab the user picked: %s', (_, url) => {
     expect(navigate(buildRules(webOnly), url)).toBe(url);
   });

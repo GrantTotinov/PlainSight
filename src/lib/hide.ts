@@ -1,13 +1,15 @@
-export type Feature = 'aiOverview' | 'aiMode';
+export type Feature = 'aiOverview' | 'aiMode' | 'peopleAlsoAsk';
 
 export interface SelectorRule {
   id: string;
   feature: Feature;
+  /** Off unless the user turns the feature on in the settings. */
+  optional?: boolean;
   /** CSS selectors hidden before first paint. Prefer structural or attribute selectors. */
   selectors: string[];
-  /** Exact heading text of the block, per Google UI locale. */
+  /** Heading text of the block, per Google UI locale. */
   headingText?: Record<string, string[]>;
-  /** Exact text of a link or button that opens the feature, per Google UI locale. */
+  /** Text of a link or button that opens the feature, per Google UI locale. */
   buttonText?: Record<string, string[]>;
 }
 
@@ -15,6 +17,13 @@ export interface SelectorConfig {
   schemaVersion: 1;
   updated: string;
   rules: SelectorRule[];
+}
+
+export interface PageStatus {
+  /** An AI Overview was found and hidden on this page. */
+  overviewHidden: boolean;
+  /** Blocks that looked like AI but were left visible by a safety guard. */
+  kept: number;
 }
 
 export const HIDDEN_ATTR = 'data-plainsight-hidden';
@@ -28,19 +37,46 @@ const PROTECTED = `${RESULTS}, [role="main"], body, html`;
 const ORGANIC_TITLE = 'a h3';
 const HEADINGS = '[role="heading"], h1, h2';
 const BUTTONS = 'a, button, [role="button"], [role="link"]';
+// Tabs, header and search box: never climb out of these to find a block.
+const CHROME =
+  '[role="navigation"], [role="list"], [role="search"], form, header, #top_nav, #hdtb, #appbar';
+const AI_MODE_LINK = 'a[href*="udm=50"]';
 
 const allText = (byLocale: Record<string, string[]> | undefined) =>
   Object.values(byLocale ?? {}).flat();
 
+/** Lowercase, single spaces, no punctuation at either end. */
+export const normalize = (s: string) =>
+  s
+    .normalize('NFKC')
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, '');
+
 /**
- * CSS that hides every known selector, unless a safety guard marked the element to keep.
- * One rule per selector, so a selector a browser does not support only drops itself.
+ * Matches a label against known terms. Tolerates case, punctuation and a short plural ending,
+ * so "AI Overviews" or "AI overview:" still match "AI Overview" if Google rewords it slightly.
  */
-export function buildCss(config: SelectorConfig): string {
-  const selectors = config.rules.flatMap((r) => r.selectors).map((s) => `${s}:not([${KEEP_ATTR}])`);
-  return [...selectors, `[${HIDDEN_ATTR}]`]
-    .map((s) => `${s} { display: none !important; }`)
-    .join('\n');
+export function matchTerm<T>(text: string, terms: Map<string, T>): T | undefined {
+  const t = normalize(text);
+  if (!t || t.length > 60) return undefined;
+  for (const [term, value] of terms) {
+    if (t === term) return value;
+    const rest = t.slice(term.length);
+    if (t.startsWith(term) && rest.length <= 2 && /^\p{L}+$/u.test(rest)) return value;
+  }
+  return undefined;
+}
+
+/**
+ * CSS that hides every known selector of the active rules, unless a safety guard marked the
+ * element to keep. One rule per selector, so a selector a browser does not support only drops
+ * itself. Hidden markers are per feature, so turning an option off shows its blocks again.
+ */
+export function buildCss(rules: SelectorRule[]): string {
+  const selectors = rules.flatMap((r) => r.selectors).map((s) => `${s}:not([${KEEP_ATTR}])`);
+  const markers = [...new Set(rules.map((r) => r.feature))].map((f) => `[${HIDDEN_ATTR}="${f}"]`);
+  return [...selectors, ...markers].map((s) => `${s} { display: none !important; }`).join('\n');
 }
 
 /** Text a user would see: skips inline <style>/<script>, which Google puts inside buttons. */
@@ -78,10 +114,15 @@ function* within(root: Element, selector: string): Generator<Element> {
 export interface Hider {
   /** Inject CSS and start watching the page. Call as early as possible. */
   start(): void;
-  /** Turn hiding on or off (Off mode, paused tab, settings change). */
-  setEnabled(on: boolean): void;
+  /**
+   * Turn hiding on or off (Off mode, paused tab, settings change). `optional` lists the
+   * optional features the user turned on, such as hiding "People also ask".
+   */
+  setEnabled(on: boolean, optional?: Feature[]): void;
   /** Scan a subtree right away. Exposed for tests. */
   scan(root: Element): void;
+  /** What happened on this page, for the popup. */
+  status(): PageStatus;
 }
 
 export function createHider(
@@ -89,20 +130,31 @@ export function createHider(
   config: SelectorConfig,
   onAiOverviewHidden: () => void,
 ): Hider {
-  const css = buildCss(config);
-  const ruleSelectors = config.rules.flatMap((r) =>
-    r.selectors.map((selector) => ({ selector, feature: r.feature })),
-  );
-  const headings = new Map<string, Feature>();
-  const buttons = new Map<string, Feature>();
-  for (const r of config.rules) {
-    for (const t of allText(r.headingText)) headings.set(t, r.feature);
-    for (const t of allText(r.buttonText)) buttons.set(t, r.feature);
-  }
-  const textMatch = (el: Element, texts: Map<string, Feature>) => {
-    const raw = el.textContent ?? '';
-    if (![...texts.keys()].some((t) => raw.includes(t))) return undefined; // cheap pre-check
-    return texts.get(visibleText(el));
+  let css = '';
+  let ruleSelectors: { selector: string; feature: Feature }[] = [];
+  let headings = new Map<string, Feature>();
+  let buttons = new Map<string, Feature>();
+  let overviewTerms: string[] = [];
+  const compile = (optional: Feature[]) => {
+    const rules = config.rules.filter((r) => !r.optional || optional.includes(r.feature));
+    css = buildCss(rules);
+    ruleSelectors = rules.flatMap((r) =>
+      r.selectors.map((selector) => ({ selector, feature: r.feature })),
+    );
+    headings = new Map();
+    buttons = new Map();
+    for (const r of rules) {
+      for (const t of allText(r.headingText)) headings.set(normalize(t), r.feature);
+      for (const t of allText(r.buttonText)) buttons.set(normalize(t), r.feature);
+    }
+    overviewTerms = [...headings].filter(([, f]) => f === 'aiOverview').map(([t]) => t);
+  };
+  compile([]);
+
+  const textMatch = (el: Element, terms: Map<string, Feature>) => {
+    const raw = (el.textContent ?? '').toLowerCase();
+    if (![...terms.keys()].some((t) => raw.includes(t))) return undefined; // cheap pre-check
+    return matchTerm(visibleText(el), terms);
   };
 
   const style = doc.createElement('style');
@@ -131,18 +183,22 @@ export function createHider(
   };
 
   const scan = (root: Element) => {
+    // Layer 1: known selectors (also injected as CSS before first paint).
     for (const { selector, feature } of ruleSelectors) {
       try {
-        for (const el of within(root, selector))
+        for (const el of within(root, selector)) {
           hide(feature === 'aiOverview' ? blockFor(el) : el, feature);
+        }
       } catch {
         // An unsupported selector must not break the others.
       }
     }
+    // Layer 2: the heading Google shows above the block, in any listed language.
     for (const h of within(root, HEADINGS)) {
       const feature = h.closest('a') ? undefined : textMatch(h, headings);
       if (feature) hide(blockFor(h), feature);
     }
+    // Layer 3: links and buttons labelled "AI Mode".
     for (const b of within(root, BUTTONS)) {
       const feature = b.querySelector('h3') ? undefined : textMatch(b, buttons);
       if (!feature) continue;
@@ -150,9 +206,22 @@ export function createHider(
       const item = b.closest('[role="listitem"]');
       hide(item && visibleText(item) === visibleText(b) ? item : b, feature);
     }
+    // Fallbacks for when Google renames classes and rewords the heading. Both start inside
+    // the AI block and climb with the same guards, so they cannot reach a search result.
+    // Layer 4: accessibility labels that mention the AI Overview ("Show more AI Overview").
+    for (const el of within(root, '[aria-label]')) {
+      const label = normalize(el.getAttribute('aria-label') ?? '');
+      if (!overviewTerms.some((t) => label.includes(t)) || el.closest(`a, ${CHROME}`)) continue;
+      hide(blockFor(el), 'aiOverview');
+    }
+    // Layer 5: AI Mode links inside the content ("Dive deeper in AI Mode").
+    for (const a of within(root, AI_MODE_LINK)) {
+      if (a.closest(CHROME)) continue;
+      hide(blockFor(a), 'aiOverview');
+    }
   };
 
-  // Batch mutations per animation frame and only look at what was added.
+  // Batch mutations per animation frame and only look at what changed.
   const pending = new Set<Element>();
   let frame = 0;
   const flush = () => {
@@ -162,6 +231,11 @@ export function createHider(
   };
   const observer = new MutationObserver((records) => {
     for (const r of records) {
+      // Text written into an existing node (streamed headings) counts too.
+      if (r.type === 'characterData') {
+        if (r.target.parentElement) pending.add(r.target.parentElement);
+        continue;
+      }
       for (const n of r.addedNodes) {
         const el = n.nodeType === Node.ELEMENT_NODE ? (n as Element) : n.parentElement;
         if (el) pending.add(el);
@@ -169,20 +243,23 @@ export function createHider(
     }
     if (pending.size && !frame) frame = requestAnimationFrame(flush);
   });
+  const observe = () =>
+    observer.observe(doc.documentElement, { childList: true, characterData: true, subtree: true });
 
   return {
     start() {
       style.textContent = css;
       doc.documentElement.append(style);
-      observer.observe(doc.documentElement, { childList: true, subtree: true });
+      observe();
       scan(doc.documentElement);
     },
-    setEnabled(on) {
+    setEnabled(on, optional = []) {
       state = on ? 'on' : 'off';
+      compile(optional);
       style.textContent = on ? css : '';
       if (on) {
         if (!style.isConnected) doc.documentElement.append(style);
-        observer.observe(doc.documentElement, { childList: true, subtree: true });
+        observe();
         scan(doc.documentElement);
         maybeCount();
       } else {
@@ -190,5 +267,9 @@ export function createHider(
       }
     },
     scan,
+    status: () => ({
+      overviewHidden: state === 'on' && sawOverview,
+      kept: state === 'on' ? doc.querySelectorAll(`[${KEEP_ATTR}]`).length : 0,
+    }),
   };
 }

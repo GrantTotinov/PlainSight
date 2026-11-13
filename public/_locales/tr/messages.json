@@ -121,5 +121,21 @@
         "example": "1.0.0"
       }
     }
+  },
+  "statusHidden": {
+    "message": "Bu sayfada Yapay Zeka Genel Bakışı gizlendi."
+  },
+  "statusKept": {
+    "message": "Burada yapay zekaya benzeyen bir şey sonuçlarınızı korumak için görünür bırakıldı."
+  },
+  "switchToWebOnly": {
+    "message": "Yalnızca web kullan"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "\"Diğer kullanıcılar şunları da sordu\" bölümünü gizle",
+    "description": "TODO(verify): Google's name for \"People also ask\" in this language."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "Google artık bu yanıtların neredeyse tamamını yapay zekayla yazıyor."
   }
 }

@@ -121,5 +121,21 @@
         "example": "1.0.0"
       }
     }
+  },
+  "statusHidden": {
+    "message": "이 페이지의 AI 개요를 숨겼습니다."
+  },
+  "statusKept": {
+    "message": "AI처럼 보이는 요소가 있었지만 검색 결과를 지키기 위해 그대로 두었습니다."
+  },
+  "switchToWebOnly": {
+    "message": "웹만 사용"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "\"관련 질문\" 숨기기",
+    "description": "TODO(verify): Google's name for \"People also ask\" in this language."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "이제 Google은 이 답변의 거의 전부를 AI로 작성합니다."
   }
 }

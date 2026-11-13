@@ -4,12 +4,20 @@ export interface Settings {
   mode: Mode;
   /** Redirect AI Mode (udm=50) back to regular results. */
   blockAiMode: boolean;
+  /** Also hide "People also ask": Google now answers almost all of it with AI. Opt-in. */
+  hidePeopleAlsoAsk: boolean;
 }
 
 export const SCHEMA_VERSION = 1;
 export const SETTINGS_KEY = 'settings';
 export const MODES: readonly Mode[] = ['hideAi', 'webOnly', 'off'];
-export const DEFAULT_SETTINGS: Settings = { mode: 'hideAi', blockAiMode: false };
+export const DEFAULT_SETTINGS: Settings = {
+  mode: 'hideAi',
+  blockAiMode: false,
+  hidePeopleAlsoAsk: false,
+};
+
+const bool = (value: unknown, fallback: boolean) => (typeof value === 'boolean' ? value : fallback);
 
 /**
  * Turns whatever is in storage (nothing, an older schema, or garbage) into valid settings.
@@ -19,7 +27,9 @@ export function migrate(raw: unknown): Settings {
   const s = (raw && typeof raw === 'object' ? raw : {}) as Record<string, unknown>;
   return {
     mode: MODES.includes(s.mode as Mode) ? (s.mode as Mode) : DEFAULT_SETTINGS.mode,
-    blockAiMode: typeof s.blockAiMode === 'boolean' ? s.blockAiMode : DEFAULT_SETTINGS.blockAiMode,
+    blockAiMode: bool(s.blockAiMode, DEFAULT_SETTINGS.blockAiMode),
+    // Added after 0.1.0 without a schema bump: a missing field simply takes its default.
+    hidePeopleAlsoAsk: bool(s.hidePeopleAlsoAsk, DEFAULT_SETTINGS.hidePeopleAlsoAsk),
   };
 }
 

@@ -24,6 +24,7 @@
     "test:watch": "vitest",
     "domains:update": "node scripts/update-google-domains.ts",
     "fixtures:capture": "node scripts/capture-fixtures.ts",
+    "store:assets": "node scripts/store-assets.ts",
     "postinstall": "wxt prepare",
     "e2e": "node scripts/e2e.ts"
   },

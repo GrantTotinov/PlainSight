@@ -46,10 +46,11 @@ const udm = (page: Page) => new URL(page.url()).searchParams.get('udm');
 
 try {
   const sw = ctx.serviceWorkers()[0] ?? (await ctx.waitForEvent('serviceworker'));
-  const setSettings = async (mode: string, blockAiMode: boolean) => {
+  const setSettings = async (mode: string, blockAiMode: boolean, hidePeopleAlsoAsk = false) => {
     await sw.evaluate((s) => chrome.storage.sync.set({ settings: { schemaVersion: 1, ...s } }), {
       mode,
       blockAiMode,
+      hidePeopleAlsoAsk,
     });
     await new Promise((r) => setTimeout(r, 300)); // background rebuilds the DNR rules
   };
@@ -102,9 +103,20 @@ try {
     assert.ok(await page.locator('textarea[name="q"]').isVisible());
   });
 
-  await check('Hide AI: no redirects without Block AI Mode', async () => {
+  await check('Hide AI: page status reaches the popup', async () => {
+    await open(search('results-ai-overview'));
+    const status = await sw.evaluate(async () => {
+      const [tab] = await chrome.tabs.query({ url: 'https://www.google.com/search*' });
+      return chrome.tabs.sendMessage(tab!.id!, { type: 'pageStatus' });
+    });
+    assert.deepEqual(status, { overviewHidden: true, kept: 0 });
+  });
+
+  await check('Hide AI: an AI Mode page opened on purpose is left alone', async () => {
     await open(search('results-ai-overview', '&udm=50'));
     assert.equal(udm(page), '50');
+    const aio = page.locator('[role="heading"]').filter({ hasText: /^AI Overview$/ });
+    assert.equal(await aio.first().isVisible(), true, 'AI content hidden on the AI Mode page');
   });
 
   await check('Block AI Mode in Hide AI: udm=50 goes to regular results', async () => {
@@ -119,11 +131,13 @@ try {
     assert.equal(udm(page), '14', page.url());
   });
 
-  await check('Web only: Images and News tabs are left alone', async () => {
+  await check("Web only: Images, News, Jobs and I'm Feeling Lucky are left alone", async () => {
     await open(search('results-web-filter', '&udm=2'));
     assert.equal(udm(page), '2', page.url());
-    await open(search('results-web-filter', '&tbm=nws'));
-    assert.equal(udm(page), null, page.url());
+    for (const extra of ['&tbm=nws', '&ibp=htl;jobs', '&btnI=1']) {
+      await open(search('results-web-filter', extra));
+      assert.equal(udm(page), null, page.url());
+    }
   });
 
   await check('Web only + Block AI Mode: udm=50 goes to the Web filter', async () => {
@@ -159,6 +173,25 @@ try {
     await new Promise((r) => setTimeout(r, 300));
     const rules = await sw.evaluate(() => chrome.declarativeNetRequest.getSessionRules());
     assert.equal(rules.length, 0);
+  });
+
+  await check('Option: "People also ask" hidden only while turned on', async () => {
+    const p = await ctx.newPage();
+    await setSettings('hideAi', false, true);
+    await p.goto(search('results-ai-overview-2'));
+    const paa = p
+      .locator('[role="heading"]')
+      .filter({ hasText: /^People also ask$/ })
+      .first();
+    const videos = p
+      .locator('[role="heading"]')
+      .filter({ hasText: /^Videos$/ })
+      .first();
+    assert.equal(await paa.isVisible(), false, 'People also ask visible while on');
+    assert.ok(await videos.isVisible(), 'Videos hidden');
+    await setSettings('hideAi', false, false);
+    assert.ok(await paa.isVisible(), 'People also ask still hidden after turning it off');
+    await p.close();
   });
 
   await check('Mode switch applies to an open page without reload', async () => {

@@ -121,5 +121,21 @@
         "example": "1.0.0"
       }
     }
+  },
+  "statusHidden": {
+    "message": "已隐藏此页面上的 AI 概览。"
+  },
+  "statusKept": {
+    "message": "此处有类似 AI 的内容，但为保护搜索结果而保留显示。"
+  },
+  "switchToWebOnly": {
+    "message": "使用“仅网页”"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "隐藏“相关问题”",
+    "description": "TODO(verify): Google's name for \"People also ask\" in this language."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "Google 现在几乎所有这些答案都由 AI 撰写。"
   }
 }

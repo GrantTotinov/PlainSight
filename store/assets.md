@@ -1,5 +1,20 @@
 # Store assets
 
+## Ready to upload (`store/assets/`, made by `pnpm store:assets`)
+
+| File                         | Size       | Use                                                    |
+| ---------------------------- | ---------- | ------------------------------------------------------ |
+| `1-before-after.png`         | 1280 x 800 | Screenshot 1, all stores                               |
+| `2-popup.png`                | 1280 x 800 | Screenshot 2, all stores                               |
+| `3-welcome.png`              | 1280 x 800 | Screenshot 3, all stores                               |
+| `4-privacy.png`              | 1280 x 800 | Screenshot 4, all stores                               |
+| `promo-small-440x280.png`    | 440 x 280  | Chrome small promo tile (required), Edge optional tile |
+| `promo-marquee-1400x560.png` | 1400 x 560 | Chrome marquee, Edge large tile (optional)             |
+| `edge-logo-300.png`          | 300 x 300  | Edge Add-ons logo                                      |
+| `store-icon-128.png`         | 128 x 128  | Chrome Web Store icon (96 px artwork, 16 px padding)   |
+
+`google-before.png` and `google-after.png` are the raw inputs for screenshot 1 (live Google, 2026-11-13, signed out, EU consent rejected). Retake them after the final icon and before each major listing update. All images use the placeholder icon in `store/icon.svg`: replace it, then run `pnpm build:chrome && pnpm store:assets` again.
+
 ## Required sizes
 
 | Asset              | Chrome Web Store                               | Edge Add-ons (TODO(verify) in Partner Center) | Firefox AMO                      |

@@ -7,6 +7,8 @@ import {
   createHider,
   HIDDEN_ATTR,
   KEEP_ATTR,
+  matchTerm,
+  normalize,
   visibleText,
   type SelectorConfig,
 } from '../src/lib/hide';
@@ -14,9 +16,11 @@ import rawConfig from '../src/selectors/selectors.json';
 
 const config = rawConfig as SelectorConfig;
 const FIXTURES = resolve('test/fixtures');
-const known = config.rules.flatMap((r) => r.selectors);
+// Rules that are always on. Optional ones (People also ask) are tested separately.
+const always = config.rules.filter((r) => !r.optional);
+const known = always.flatMap((r) => r.selectors);
 const texts = (key: 'headingText' | 'buttonText') =>
-  new Set(config.rules.flatMap((r) => Object.values(r[key] ?? {}).flat()));
+  new Set(always.flatMap((r) => Object.values(r[key] ?? {}).flat()));
 const AI_HEADINGS = texts('headingText');
 const AI_BUTTONS = texts('buttonText');
 
@@ -187,11 +191,146 @@ describe('selectors.json', () => {
     expect(config.updated).toMatch(/^\d{4}-\d{2}-\d{2}$/);
     expect(new Set(config.rules.map((r) => r.id)).size).toBe(config.rules.length);
     for (const r of config.rules) {
-      expect(['aiOverview', 'aiMode']).toContain(r.feature);
+      expect(['aiOverview', 'aiMode', 'peopleAlsoAsk']).toContain(r.feature);
       for (const s of r.selectors) expect(() => document.querySelector(s)).not.toThrow();
       for (const texts of Object.values({ ...r.headingText, ...r.buttonText })) {
         expect(texts.every((t) => t.trim() === t && t.length > 0)).toBe(true);
       }
     }
+  });
+});
+
+describe('when Google changes the page', () => {
+  // Simulated redesigns of the real fixtures, from mild to severe.
+  const renameClasses = (doc: Document) => {
+    doc.querySelectorAll('.M8OgIe').forEach((e) => e.classList.replace('M8OgIe', 'zz1'));
+    doc.querySelectorAll('#eKIzJc').forEach((e) => (e.id = 'zz2'));
+  };
+  const setHeading = (doc: Document, text: string) => {
+    aiHeading(doc)!.textContent = text;
+  };
+  const dropAriaLabels = (doc: Document) =>
+    doc
+      .querySelectorAll('[aria-label*="AI Overview"]')
+      .forEach((e) => e.removeAttribute('aria-label'));
+
+  const variants: [string, (doc: Document) => void][] = [
+    ['classes renamed', renameClasses],
+    [
+      'classes renamed, heading pluralized',
+      (d) => (renameClasses(d), setHeading(d, 'AI Overviews')),
+    ],
+    [
+      'classes renamed, heading lowercased',
+      (d) => (renameClasses(d), setHeading(d, 'AI overview')),
+    ],
+    ['classes renamed, heading unknown', (d) => (renameClasses(d), setHeading(d, 'Gemini says'))],
+  ];
+
+  const aiFixtures = fixtures.filter(([n]) => n.includes('ai-overview'));
+
+  describe.each(aiFixtures)('%s', (_, html) => {
+    it.each(variants)('%s: AI Overview still hidden, results intact', (_, change) => {
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const heading = aiHeading(doc)!;
+      change(doc);
+      const onHidden = vi.fn();
+      createHider(doc, config, onHidden).setEnabled(true);
+      expect(isHidden(heading)).toBe(true);
+      expect(onHidden).toHaveBeenCalledTimes(1);
+      for (const title of doc.querySelectorAll('a h3')) expect(isHidden(title)).toBe(false);
+    });
+
+    it('never hides results, whatever is left to detect', () => {
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      renameClasses(doc);
+      setHeading(doc, 'Gemini says');
+      dropAriaLabels(doc);
+      createHider(doc, config, () => {}).setEnabled(true);
+      for (const title of doc.querySelectorAll('a h3')) expect(isHidden(title)).toBe(false);
+    });
+  });
+
+  it('finds the block through an AI Mode link inside it when nothing else is left', () => {
+    const html = fixtures.find(([n]) => n === 'en/results-ai-overview.html')![1];
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const heading = aiHeading(doc)!;
+    renameClasses(doc);
+    setHeading(doc, 'Gemini says');
+    dropAriaLabels(doc);
+    createHider(doc, config, () => {}).setEnabled(true);
+    expect(isHidden(heading)).toBe(true);
+  });
+});
+
+describe('matchTerm', () => {
+  const terms = new Map([
+    [normalize('AI Overview'), 'aiOverview'],
+    [normalize('AI Mode'), 'aiMode'],
+  ]);
+  it.each([
+    ['AI Overview', 'aiOverview'],
+    ['  AI  Overviews ', 'aiOverview'],
+    ['AI overview:', 'aiOverview'],
+    ['AI MODE', 'aiMode'],
+    ['AI Overview of the market', undefined],
+    ['AI Mode history', undefined],
+    ['Overview', undefined],
+  ])('%j -> %s', (text, expected) => {
+    expect(matchTerm(text, terms)).toBe(expected);
+  });
+});
+
+describe('optional: hide "People also ask"', () => {
+  const withPaa = fixtures.filter(([, html]) => html.includes('People also ask'));
+  const heading = (doc: Document, text: string) =>
+    [...doc.querySelectorAll('[role="heading"], h2')].find((h) => visibleText(h) === text);
+  // PAA markers only count as hidden while the option is on, like the real CSS.
+  const paaHidden = (el: Element) => {
+    for (let e: Element | null = el; e; e = e.parentElement) {
+      if (e.getAttribute(HIDDEN_ATTR) === 'peopleAlsoAsk') return true;
+    }
+    return isHidden(el);
+  };
+
+  it('has fixtures with People also ask', () => {
+    expect(withPaa.length).toBeGreaterThan(0);
+  });
+
+  it.each(withPaa)('%s: off by default', (_, html) => {
+    const { doc } = load(html);
+    expect(isHidden(heading(doc, 'People also ask')!)).toBe(false);
+  });
+
+  it.each(withPaa)('%s: hidden when on, results and videos stay', (_, html) => {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const onHidden = vi.fn();
+    createHider(doc, config, onHidden).setEnabled(true, ['peopleAlsoAsk']);
+    expect(paaHidden(heading(doc, 'People also ask')!)).toBe(true);
+    expect(isHidden(heading(doc, 'Videos')!)).toBe(false);
+    for (const title of doc.querySelectorAll('a h3')) expect(isHidden(title)).toBe(false);
+    expect(onHidden).toHaveBeenCalledTimes(1); // only the AI Overview is counted
+  });
+
+  it('shows People also ask again when the option is turned off', () => {
+    const html = withPaa[0]![1];
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const hider = createHider(doc, config, () => {});
+    hider.setEnabled(true, ['peopleAlsoAsk']);
+    const css = () => [...doc.querySelectorAll('style')].at(-1)!.textContent ?? '';
+    expect(css()).toContain('[data-plainsight-hidden="peopleAlsoAsk"]');
+    hider.setEnabled(true, []);
+    expect(css()).not.toContain('peopleAlsoAsk');
+    expect(css()).not.toContain('YrZdPb');
+  });
+});
+
+describe('status', () => {
+  it('reports what happened on the page', () => {
+    const html = fixtures.find(([n]) => n === 'en/results-ai-overview.html')![1];
+    const { hider } = load(html);
+    expect(hider.status()).toEqual({ overviewHidden: true, kept: 0 });
+    hider.setEnabled(false);
+    expect(hider.status()).toEqual({ overviewHidden: false, kept: 0 });
   });
 });

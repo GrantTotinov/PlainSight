@@ -19,7 +19,8 @@ const SEARCH = String.raw`^https://[^/]+/search\?`;
 const param = (name: string) => `${SEARCH}(?:[^#]*&)?${name}=`;
 export const PATTERNS = {
   search: SEARCH,
-  hasTabParam: param('(?:udm|tbm)'),
+  // A tab or vertical the user picked (udm, tbm), Jobs and Events (ibp), I'm Feeling Lucky (btnI).
+  hasTabParam: param('(?:udm|tbm|ibp|btnI)'),
   aiMode: `${param('udm')}50(?:[&#]|$)`,
 };
 
@@ -44,7 +45,7 @@ const redirect = (queryTransform: QueryTransform): Rule['action'] => ({
 });
 
 /** The full set of dynamic rules for the given settings. Rules only touch top-level /search loads. */
-export function buildRules(settings: Settings): Rule[] {
+export function buildRules(settings: Pick<Settings, 'mode' | 'blockAiMode'>): Rule[] {
   if (settings.mode === 'off') return [];
   const webOnly = settings.mode === 'webOnly';
   const rules: Rule[] = [];
