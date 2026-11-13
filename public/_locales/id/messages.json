@@ -161,5 +161,35 @@
         "example": "Alt+Shift+H"
       }
     }
+  },
+  "supportPrompt": {
+    "message": "Suka PlainSight? Bantu agar tetap gratis."
+  },
+  "buyCoffee": {
+    "message": "Traktir saya kopi"
+  },
+  "starGithub": {
+    "message": "Beri bintang di GitHub"
+  },
+  "checkUpdates": {
+    "message": "Periksa pembaruan"
+  },
+  "updateChecking": {
+    "message": "Memeriksa…"
+  },
+  "upToDate": {
+    "message": "Sudah terbaru"
+  },
+  "updateInstall": {
+    "message": "Pasang pembaruan $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "0.3.0"
+      }
+    }
+  },
+  "updateOpenStore": {
+    "message": "Buka halaman toko"
   }
 }

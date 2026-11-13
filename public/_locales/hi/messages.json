@@ -161,5 +161,35 @@
         "example": "Alt+Shift+H"
       }
     }
+  },
+  "supportPrompt": {
+    "message": "PlainSight पसंद आया? इसे मुफ़्त बनाए रखने में मदद करें।"
+  },
+  "buyCoffee": {
+    "message": "मुझे एक कॉफ़ी पिलाएं"
+  },
+  "starGithub": {
+    "message": "GitHub पर स्टार दें"
+  },
+  "checkUpdates": {
+    "message": "अपडेट देखें"
+  },
+  "updateChecking": {
+    "message": "जांच हो रही है…"
+  },
+  "upToDate": {
+    "message": "नया वर्शन है"
+  },
+  "updateInstall": {
+    "message": "अपडेट $VERSION$ इंस्टॉल करें",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "0.3.0"
+      }
+    }
+  },
+  "updateOpenStore": {
+    "message": "स्टोर पेज खोलें"
   }
 }

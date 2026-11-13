@@ -161,5 +161,35 @@
         "example": "Alt+Shift+H"
       }
     }
+  },
+  "supportPrompt": {
+    "message": "PlainSight を気に入っていただけましたか？無料で続けるためにご支援ください。"
+  },
+  "buyCoffee": {
+    "message": "コーヒーをおごる"
+  },
+  "starGithub": {
+    "message": "GitHub でスター"
+  },
+  "checkUpdates": {
+    "message": "アップデートを確認"
+  },
+  "updateChecking": {
+    "message": "確認中…"
+  },
+  "upToDate": {
+    "message": "最新です"
+  },
+  "updateInstall": {
+    "message": "アップデート $VERSION$ をインストール",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "0.3.0"
+      }
+    }
+  },
+  "updateOpenStore": {
+    "message": "ストアのページを開く"
   }
 }

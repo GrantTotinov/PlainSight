@@ -1,5 +1,7 @@
 export const REPO_URL = 'https://github.com/GrantTotinov/PlainSight';
 export const SPONSORS_URL = 'https://github.com/sponsors/GrantTotinov';
+// Same page as in AI Exporter.
+export const COFFEE_URL = 'https://buymeacoffee.com/granttotinov';
 // Homepage rather than one store, so the link works for Chrome, Edge and Firefox users.
 export const AI_EXPORTER_URL = 'https://granttotinov.github.io/AIExporter/';
 // TODO(verify): AMO slug once the listing exists.
@@ -7,14 +9,27 @@ const AMO_SLUG = 'plainsight';
 
 export type TargetBrowser = 'chrome' | 'edge' | 'firefox';
 
-export function reviewUrl(target: TargetBrowser, extensionId: string): string {
+/** The store page of the browser PlainSight runs in. */
+export function storeUrl(target: TargetBrowser, extensionId: string): string {
   switch (target) {
     case 'firefox':
-      return `https://addons.mozilla.org/firefox/addon/${AMO_SLUG}/reviews/`;
+      return `https://addons.mozilla.org/firefox/addon/${AMO_SLUG}/`;
     case 'edge':
       return `https://microsoftedge.microsoft.com/addons/detail/${extensionId}`;
     default:
-      return `https://chromewebstore.google.com/detail/${extensionId}/reviews`;
+      return `https://chromewebstore.google.com/detail/${extensionId}`;
+  }
+}
+
+export function reviewUrl(target: TargetBrowser, extensionId: string): string {
+  const page = storeUrl(target, extensionId);
+  switch (target) {
+    case 'firefox':
+      return `${page}reviews/`;
+    case 'edge':
+      return page; // Edge has no separate reviews page; ratings are on the main page
+    default:
+      return `${page}/reviews`;
   }
 }
 

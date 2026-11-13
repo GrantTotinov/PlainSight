@@ -161,5 +161,35 @@
         "example": "Alt+Shift+H"
       }
     }
+  },
+  "supportPrompt": {
+    "message": "喜歡 PlainSight 嗎？幫助它保持免費。"
+  },
+  "buyCoffee": {
+    "message": "請我喝杯咖啡"
+  },
+  "starGithub": {
+    "message": "在 GitHub 上加星"
+  },
+  "checkUpdates": {
+    "message": "檢查更新"
+  },
+  "updateChecking": {
+    "message": "正在檢查…"
+  },
+  "upToDate": {
+    "message": "已是最新版本"
+  },
+  "updateInstall": {
+    "message": "安裝更新 $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "0.3.0"
+      }
+    }
+  },
+  "updateOpenStore": {
+    "message": "開啟商店頁面"
   }
 }

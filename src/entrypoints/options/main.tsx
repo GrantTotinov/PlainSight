@@ -1,7 +1,7 @@
 import { render } from 'preact';
 import '../../components/ui.css';
 import { HostAccessNotice, SettingsForm, t, useSettings } from '../../components/ui';
-import { AI_EXPORTER_URL, REPO_URL, SPONSORS_URL } from '../../lib/links';
+import { AI_EXPORTER_URL, COFFEE_URL, REPO_URL, SPONSORS_URL } from '../../lib/links';
 
 function Options() {
   const [settings, update] = useSettings();
@@ -26,9 +26,14 @@ function Options() {
       <section class="notice">
         <h2>{t('supportTitle')}</h2>
         <p>{t('supportText')}</p>
-        <a href={SPONSORS_URL} target="_blank" rel="noopener">
-          {t('supportLink')}
-        </a>
+        <div class="support-row">
+          <a class="support-button" href={COFFEE_URL} target="_blank" rel="noopener">
+            <span aria-hidden="true">☕</span> {t('buyCoffee')}
+          </a>
+          <a class="support-button" href={SPONSORS_URL} target="_blank" rel="noopener">
+            {t('supportLink')}
+          </a>
+        </div>
       </section>
       {AI_EXPORTER_URL && (
         <p>
