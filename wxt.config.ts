@@ -17,6 +17,8 @@ export default defineConfig({
           strict_min_version: '140.0',
           data_collection_permissions: { required: ['none'] },
         },
+        // Android 142+ shows the built-in data consent; every API used here is supported there.
+        gecko_android: { strict_min_version: '142.0' },
       },
     }),
   }),
