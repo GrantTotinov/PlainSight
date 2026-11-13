@@ -113,3 +113,33 @@ input:focus-visible {
   color: var(--accent);
   text-decoration: underline;
 }
+.support {
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+.support p {
+  margin: 0 0 8px;
+}
+.support-row {
+  display: flex;
+  flex-wrap: wrap; /* long labels in some languages go to a second line */
+  gap: 6px;
+}
+.support-button {
+  flex: 1 1 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 6px 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--fg);
+  font-size: 12px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.support-button:hover {
+  border-color: var(--accent);
+}

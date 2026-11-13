@@ -161,5 +161,35 @@
         "example": "Alt+Shift+H"
       }
     }
+  },
+  "supportPrompt": {
+    "message": "Bạn thích PlainSight? Hãy giúp nó luôn miễn phí."
+  },
+  "buyCoffee": {
+    "message": "Mời tôi một ly cà phê"
+  },
+  "starGithub": {
+    "message": "Gắn sao trên GitHub"
+  },
+  "checkUpdates": {
+    "message": "Kiểm tra cập nhật"
+  },
+  "updateChecking": {
+    "message": "Đang kiểm tra…"
+  },
+  "upToDate": {
+    "message": "Đã cập nhật"
+  },
+  "updateInstall": {
+    "message": "Cài bản cập nhật $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "0.3.0"
+      }
+    }
+  },
+  "updateOpenStore": {
+    "message": "Mở trang cửa hàng"
   }
 }

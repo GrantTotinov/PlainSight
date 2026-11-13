@@ -161,5 +161,35 @@
         "example": "Alt+Shift+H"
       }
     }
+  },
+  "supportPrompt": {
+    "message": "Vind je PlainSight goed? Help het gratis te houden."
+  },
+  "buyCoffee": {
+    "message": "Trakteer me op koffie"
+  },
+  "starGithub": {
+    "message": "Ster op GitHub"
+  },
+  "checkUpdates": {
+    "message": "Zoeken naar updates"
+  },
+  "updateChecking": {
+    "message": "Controleren…"
+  },
+  "upToDate": {
+    "message": "Up-to-date"
+  },
+  "updateInstall": {
+    "message": "Update $VERSION$ installeren",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "0.3.0"
+      }
+    }
+  },
+  "updateOpenStore": {
+    "message": "Storepagina openen"
   }
 }

@@ -6,13 +6,17 @@ import type { PageStatus } from '../../lib/hide';
 import { SEARCH_HOSTS } from '../../lib/hosts';
 import {
   browserName,
+  COFFEE_URL,
+  REPO_URL,
   reportUrl,
   reviewUrl,
   shouldAskForReview,
+  storeUrl,
   type TargetBrowser,
 } from '../../lib/links';
 import { send } from '../../lib/messages';
 import { loadStats, type Stats } from '../../lib/stats';
+import { checkForUpdate, type UpdateCheck } from '../../lib/updates';
 
 const TARGET = import.meta.env.BROWSER as TargetBrowser;
 const hosts = new Set(SEARCH_HOSTS);
@@ -134,6 +138,7 @@ function Popup() {
           </button>
         </div>
       )}
+      <SupportSection />
       <div class="row">
         <a href={report} target="_blank" rel="noopener">
           {t('reportProblem')}
@@ -142,7 +147,76 @@ function Popup() {
           {t('options')}
         </button>
       </div>
+      <VersionFooter />
     </main>
+  );
+}
+
+/** Same idea as in AI Exporter: a review, a coffee or a star keeps PlainSight free. */
+function SupportSection() {
+  const link = (href: string, icon: string, label: string) => (
+    <a class="support-button" href={href} target="_blank" rel="noopener">
+      <span aria-hidden="true">{icon}</span> {label}
+    </a>
+  );
+  return (
+    <section class="support">
+      <p class="muted">{t('supportPrompt')}</p>
+      <div class="support-row">
+        {link(reviewUrl(TARGET, browser.runtime.id), '★', t('reviewLink'))}
+        {link(COFFEE_URL, '☕', t('buyCoffee'))}
+        {link(REPO_URL, '⭐', t('starGithub'))}
+      </div>
+    </section>
+  );
+}
+
+/** "v0.2.0 · Check for updates". Asks the store directly where the browser allows it. */
+function VersionFooter() {
+  const [check, setCheck] = useState<UpdateCheck | 'checking' | null>(null);
+  const version = browser.runtime.getManifest().version;
+  const store = storeUrl(TARGET, browser.runtime.id);
+
+  const run = async () => {
+    setCheck('checking');
+    const result = await checkForUpdate();
+    if (result.status === 'unsupported') {
+      // Firefox updates add-ons by itself and has no check to call: show the store page.
+      window.open(store, '_blank', 'noopener');
+      setCheck(null);
+      return;
+    }
+    setCheck(result);
+  };
+
+  let status;
+  if (check === 'checking') status = <span>{t('updateChecking')}</span>;
+  else if (check?.status === 'update_available')
+    status = (
+      <button class="link-button" onClick={() => browser.runtime.reload()}>
+        {t('updateInstall', check.version ?? '')}
+      </button>
+    );
+  else if (check?.status === 'no_update') status = <span>{t('upToDate')}</span>;
+  else if (check)
+    status = (
+      <a href={store} target="_blank" rel="noopener">
+        {t('updateOpenStore')}
+      </a>
+    );
+  else
+    status = (
+      <button class="link-button" onClick={run}>
+        {t('checkUpdates')}
+      </button>
+    );
+
+  return (
+    <footer class="row muted" style={{ justifyContent: 'center', gap: '6px' }}>
+      <span>v{version}</span>
+      <span aria-hidden="true">·</span>
+      <span role="status">{status}</span>
+    </footer>
   );
 }
 

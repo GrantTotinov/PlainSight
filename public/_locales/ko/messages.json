@@ -161,5 +161,35 @@
         "example": "Alt+Shift+H"
       }
     }
+  },
+  "supportPrompt": {
+    "message": "PlainSight가 마음에 드시나요? 무료로 유지되도록 도와주세요."
+  },
+  "buyCoffee": {
+    "message": "커피 한 잔 사주기"
+  },
+  "starGithub": {
+    "message": "GitHub에서 별 주기"
+  },
+  "checkUpdates": {
+    "message": "업데이트 확인"
+  },
+  "updateChecking": {
+    "message": "확인 중…"
+  },
+  "upToDate": {
+    "message": "최신 버전"
+  },
+  "updateInstall": {
+    "message": "$VERSION$ 업데이트 설치",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "0.3.0"
+      }
+    }
+  },
+  "updateOpenStore": {
+    "message": "스토어 페이지 열기"
   }
 }

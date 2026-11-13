@@ -161,5 +161,35 @@
         "example": "Alt+Shift+H"
       }
     }
+  },
+  "supportPrompt": {
+    "message": "¿Te gusta PlainSight? Ayuda a que siga siendo gratis."
+  },
+  "buyCoffee": {
+    "message": "Invítame a un café"
+  },
+  "starGithub": {
+    "message": "Estrella en GitHub"
+  },
+  "checkUpdates": {
+    "message": "Buscar actualizaciones"
+  },
+  "updateChecking": {
+    "message": "Comprobando…"
+  },
+  "upToDate": {
+    "message": "Actualizado"
+  },
+  "updateInstall": {
+    "message": "Instalar actualización $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "0.3.0"
+      }
+    }
+  },
+  "updateOpenStore": {
+    "message": "Abrir la página de la tienda"
   }
 }

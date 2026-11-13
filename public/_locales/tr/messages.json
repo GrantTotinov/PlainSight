@@ -161,5 +161,35 @@
         "example": "Alt+Shift+H"
       }
     }
+  },
+  "supportPrompt": {
+    "message": "PlainSight'ı beğendiniz mi? Ücretsiz kalmasına yardım edin."
+  },
+  "buyCoffee": {
+    "message": "Bana bir kahve ısmarla"
+  },
+  "starGithub": {
+    "message": "GitHub'da yıldız ver"
+  },
+  "checkUpdates": {
+    "message": "Güncellemeleri denetle"
+  },
+  "updateChecking": {
+    "message": "Denetleniyor…"
+  },
+  "upToDate": {
+    "message": "Güncel"
+  },
+  "updateInstall": {
+    "message": "$VERSION$ güncellemesini yükle",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "0.3.0"
+      }
+    }
+  },
+  "updateOpenStore": {
+    "message": "Mağaza sayfasını aç"
   }
 }

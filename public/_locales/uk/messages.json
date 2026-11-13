@@ -161,5 +161,35 @@
         "example": "Alt+Shift+H"
       }
     }
+  },
+  "supportPrompt": {
+    "message": "Подобається PlainSight? Допоможіть йому лишатися безкоштовним."
+  },
+  "buyCoffee": {
+    "message": "Пригостити кавою"
+  },
+  "starGithub": {
+    "message": "Зірка на GitHub"
+  },
+  "checkUpdates": {
+    "message": "Перевірити оновлення"
+  },
+  "updateChecking": {
+    "message": "Перевірка…"
+  },
+  "upToDate": {
+    "message": "Остання версія"
+  },
+  "updateInstall": {
+    "message": "Встановити оновлення $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "0.3.0"
+      }
+    }
+  },
+  "updateOpenStore": {
+    "message": "Відкрити сторінку в магазині"
   }
 }
