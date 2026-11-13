@@ -148,5 +148,24 @@
   "remoteUpdatesHint": {
     "message": "Once a day PlainSight downloads its list of AI blocks from github.com/GrantTotinov/PlainSight, so fixes reach you without a store update. Nothing about you or your searches is sent.",
     "description": "Disclosure of the only network request PlainSight makes. Keep it complete and plain."
+  },
+  "revealPage": {
+    "message": "Show it on this page"
+  },
+  "revealedNotice": {
+    "message": "Shown on this page only. Your next search hides it again."
+  },
+  "commandToggleTab": {
+    "message": "Pause or resume PlainSight on the current tab",
+    "description": "Keyboard shortcut description in the browser shortcut settings."
+  },
+  "shortcutHint": {
+    "message": "Shortcut: $KEYS$",
+    "placeholders": {
+      "keys": {
+        "content": "$1",
+        "example": "Alt+Shift+H"
+      }
+    }
   }
 }

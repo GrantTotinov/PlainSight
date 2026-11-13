@@ -143,5 +143,23 @@
   },
   "remoteUpdatesHint": {
     "message": "Раз в день PlainSight загружает список ИИ-блоков с github.com/GrantTotinov/PlainSight, чтобы исправления приходили без обновления в магазине. Ничего о вас и ваших запросах не отправляется."
+  },
+  "revealPage": {
+    "message": "Показать на этой странице"
+  },
+  "revealedNotice": {
+    "message": "Показано только на этой странице. Следующий поиск снова скроет это."
+  },
+  "commandToggleTab": {
+    "message": "Приостановить или возобновить PlainSight на текущей вкладке"
+  },
+  "shortcutHint": {
+    "message": "Сочетание клавиш: $KEYS$",
+    "placeholders": {
+      "keys": {
+        "content": "$1",
+        "example": "Alt+Shift+H"
+      }
+    }
   }
 }

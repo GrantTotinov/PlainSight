@@ -17,7 +17,8 @@ WAT JE KRIJGT
 • Geen tabbladen en knoppen van de AI-modus op de resultatenpagina of de startpagina.
 • Optioneel: wie de AI-modus opent, krijgt de normale resultaten.
 • Modus "Alleen web": elke zoekopdracht opent in het webfilter van Google. Alleen links, en het blijft werken als Google de pagina vernieuwt.
-• Pauzeer met één klik op een tabblad als je de volledige pagina wilt zien.
+• Optioneel: "Mensen vragen ook" verbergen, waarvan Google de antwoorden nu met AI schrijft.
+• Toch één keer het AI-antwoord zien? Toon het met één klik op die pagina, of pauzeer een tabblad met Alt+Shift+H.
 
 HOE HET WERKT
 Kies een modus bij de installatie. "AI verbergen" houdt de normale resultatenpagina en haalt de AI-onderdelen weg. "Alleen web" zet je zoekopdrachten op het ingebouwde webfilter, de betrouwbaarste optie omdat die niet afhangt van de opmaak van de pagina. Wissel van modus of zet PlainSight uit wanneer je wilt via de knop in de werkbalk.

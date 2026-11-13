@@ -24,7 +24,7 @@ Options:
 - **Hide "People also ask"** (off by default): Google now answers almost every "People also ask" question with AI, so this hides the whole box.
 - **Block AI Mode** (off by default): opening AI Mode takes you to regular results instead. Without it, an AI Mode page you open on purpose (for example from the browser's own AI Mode button) is left as it is.
 
-You can also pause PlainSight on a single tab from the toolbar button. The pause ends when you close the tab. The popup tells you when it hid an AI Overview on the current page, and warns you if something looked like AI but was left visible for safety.
+You can also pause PlainSight on a single tab from the toolbar button or with **Alt+Shift+H** (change it in your browser's extension shortcut settings). The pause ends when you close the tab. The popup tells you when it hid an AI Overview on the current page, lets you **show it on that page only** with one click (the next search hides it again), and warns you if something looked like AI but was left visible for safety.
 
 ## How it works
 

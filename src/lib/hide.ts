@@ -138,6 +138,9 @@ export function createHider(
   let ruleSelectors: { selector: string; feature: Feature }[] = [];
   let headings = new Map<string, Feature>();
   let buttons = new Map<string, Feature>();
+  // Plain arrays for the per-element pre-checks, built once per config.
+  let headingKeys: string[] = [];
+  let buttonKeys: string[] = [];
   let overviewTerms: string[] = [];
   const compile = (optional: Feature[]) => {
     const rules = config.rules.filter((r) => !r.optional || optional.includes(r.feature));
@@ -151,13 +154,15 @@ export function createHider(
       for (const t of allText(r.headingText)) headings.set(normalize(t), r.feature);
       for (const t of allText(r.buttonText)) buttons.set(normalize(t), r.feature);
     }
+    headingKeys = [...headings.keys()];
+    buttonKeys = [...buttons.keys()];
     overviewTerms = [...headings].filter(([, f]) => f === 'aiOverview').map(([t]) => t);
   };
   compile([]);
 
-  const textMatch = (el: Element, terms: Map<string, Feature>) => {
+  const textMatch = (el: Element, terms: Map<string, Feature>, keys: string[]) => {
     const raw = (el.textContent ?? '').toLowerCase();
-    if (![...terms.keys()].some((t) => raw.includes(t))) return undefined; // cheap pre-check
+    if (!keys.some((t) => raw.includes(t))) return undefined; // cheap pre-check
     return matchTerm(visibleText(el), terms);
   };
 
@@ -199,12 +204,12 @@ export function createHider(
     }
     // Layer 2: the heading Google shows above the block, in any listed language.
     for (const h of within(root, HEADINGS)) {
-      const feature = h.closest('a') ? undefined : textMatch(h, headings);
+      const feature = h.closest('a') ? undefined : textMatch(h, headings, headingKeys);
       if (feature) hide(blockFor(h), feature);
     }
     // Layer 3: links and buttons labelled "AI Mode".
     for (const b of within(root, BUTTONS)) {
-      const feature = b.querySelector('h3') ? undefined : textMatch(b, buttons);
+      const feature = b.querySelector('h3') ? undefined : textMatch(b, buttons, buttonKeys);
       if (!feature) continue;
       // Hide the whole tab when the list item holds nothing else.
       const item = b.closest('[role="listitem"]');
@@ -230,7 +235,14 @@ export function createHider(
   let frame = 0;
   const flush = () => {
     frame = 0;
-    for (const el of pending) if (el.isConnected) scan(el);
+    for (const el of pending) {
+      // Nothing to do inside a block that is already hidden (a streaming AI Overview changes
+      // constantly), or below another node that is scanned in this same batch.
+      if (!el.isConnected || el.closest(`[${HIDDEN_ATTR}]`)) continue;
+      let covered = false;
+      for (let p = el.parentElement; p && !covered; p = p.parentElement) covered = pending.has(p);
+      if (!covered) scan(el);
+    }
     pending.clear();
   };
   const observer = new MutationObserver((records) => {
@@ -247,36 +259,53 @@ export function createHider(
     }
     if (pending.size && !frame) frame = requestAnimationFrame(flush);
   });
-  const observe = () =>
+  // A full scan is only needed when the rules changed or the observer missed something
+  // (it was disconnected). Everything else is covered by the observer.
+  let observing = false;
+  let rulesChanged = true;
+  const observe = () => {
     observer.observe(doc.documentElement, { childList: true, characterData: true, subtree: true });
+    observing = true;
+  };
+  const fullScan = () => {
+    scan(doc.documentElement);
+    rulesChanged = false;
+  };
 
   return {
     start() {
       style.textContent = css;
       doc.documentElement.append(style);
       observe();
-      scan(doc.documentElement);
+      fullScan();
     },
     setEnabled(on, optional = []) {
+      if (optional.join() !== optionalOn.join()) {
+        optionalOn = optional;
+        compile(optional);
+        rulesChanged = true;
+      }
       state = on ? 'on' : 'off';
-      optionalOn = optional;
-      compile(optional);
       style.textContent = on ? css : '';
       if (on) {
         if (!style.isConnected) doc.documentElement.append(style);
+        const missed = !observing;
         observe();
-        scan(doc.documentElement);
+        if (missed || rulesChanged) fullScan();
         maybeCount();
       } else {
         observer.disconnect();
+        observing = false;
       }
     },
     setConfig(next) {
+      if (next === config) return;
       config = next;
       compile(optionalOn);
+      rulesChanged = true;
       if (state === 'off') return;
       style.textContent = css;
-      scan(doc.documentElement);
+      fullScan();
     },
     scan,
     status: () => ({

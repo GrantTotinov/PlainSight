@@ -143,5 +143,23 @@
   },
   "remoteUpdatesHint": {
     "message": "Sekali sehari PlainSight mengunduh daftar blok AI dari github.com/GrantTotinov/PlainSight, sehingga perbaikan sampai tanpa pembaruan di toko. Tidak ada data tentang Anda atau penelusuran Anda yang dikirim."
+  },
+  "revealPage": {
+    "message": "Tampilkan di halaman ini"
+  },
+  "revealedNotice": {
+    "message": "Hanya ditampilkan di halaman ini. Penelusuran berikutnya menyembunyikannya lagi."
+  },
+  "commandToggleTab": {
+    "message": "Jeda atau lanjutkan PlainSight di tab saat ini"
+  },
+  "shortcutHint": {
+    "message": "Pintasan: $KEYS$",
+    "placeholders": {
+      "keys": {
+        "content": "$1",
+        "example": "Alt+Shift+H"
+      }
+    }
   }
 }

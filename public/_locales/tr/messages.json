@@ -143,5 +143,23 @@
   },
   "remoteUpdatesHint": {
     "message": "PlainSight günde bir kez yapay zeka blokları listesini github.com/GrantTotinov/PlainSight adresinden indirir, böylece düzeltmeler mağaza güncellemesi beklemeden gelir. Sizin veya aramalarınız hakkında hiçbir şey gönderilmez."
+  },
+  "revealPage": {
+    "message": "Bu sayfada göster"
+  },
+  "revealedNotice": {
+    "message": "Yalnızca bu sayfada gösteriliyor. Sonraki aramada yine gizlenir."
+  },
+  "commandToggleTab": {
+    "message": "PlainSight'ı geçerli sekmede duraklat veya sürdür"
+  },
+  "shortcutHint": {
+    "message": "Kısayol: $KEYS$",
+    "placeholders": {
+      "keys": {
+        "content": "$1",
+        "example": "Alt+Shift+H"
+      }
+    }
   }
 }

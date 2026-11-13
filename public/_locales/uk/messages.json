@@ -143,5 +143,23 @@
   },
   "remoteUpdatesHint": {
     "message": "Раз на день PlainSight завантажує список блоків ШІ з github.com/GrantTotinov/PlainSight, щоб виправлення надходили без оновлення в магазині. Нічого про вас і ваші запити не надсилається."
+  },
+  "revealPage": {
+    "message": "Показати на цій сторінці"
+  },
+  "revealedNotice": {
+    "message": "Показано лише на цій сторінці. Наступний пошук знову це приховає."
+  },
+  "commandToggleTab": {
+    "message": "Призупинити або відновити PlainSight на поточній вкладці"
+  },
+  "shortcutHint": {
+    "message": "Комбінація клавіш: $KEYS$",
+    "placeholders": {
+      "keys": {
+        "content": "$1",
+        "example": "Alt+Shift+H"
+      }
+    }
   }
 }

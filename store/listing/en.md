@@ -16,7 +16,7 @@ WHAT YOU GET
 • Optional: send AI Mode back to regular results.
 • Optional: hide "People also ask", whose answers Google now writes with AI.
 • Web only mode: every search opens in Google's own Web filter. Just links, and it keeps working even when Google redesigns its page.
-• Pause on any tab with one click when you want the full page.
+• Want the AI answer just once? Show it on that page with one click, or pause a tab with Alt+Shift+H.
 
 HOW IT WORKS
 Pick a mode when you install. Hide AI keeps the normal results page and removes the AI parts. Web only switches your searches to the built-in Web filter, the most reliable option because it does not depend on the page layout. Switch modes or turn PlainSight off from the toolbar button at any time.

@@ -10,6 +10,14 @@ export default defineConfig({
     default_locale: 'en',
     permissions: ['storage', 'declarativeNetRequestWithHostAccess'],
     host_permissions: HOST_PERMISSIONS,
+    // Keyboard shortcuts need no permission. Users can change them in the browser's settings.
+    // Chrome refuses to assign Alt+Shift+P (tested), Alt+Shift+H works.
+    commands: {
+      'toggle-tab': {
+        suggested_key: { default: 'Alt+Shift+H' },
+        description: '__MSG_commandToggleTab__',
+      },
+    },
     ...(browser === 'firefox' && {
       browser_specific_settings: {
         gecko: {

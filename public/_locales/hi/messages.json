@@ -143,5 +143,23 @@
   },
   "remoteUpdatesHint": {
     "message": "PlainSight दिन में एक बार github.com/GrantTotinov/PlainSight से एआई ब्लॉक की सूची डाउनलोड करता है, ताकि स्टोर अपडेट के बिना सुधार आप तक पहुंचें। आपके या आपकी खोजों के बारे में कुछ भी नहीं भेजा जाता।"
+  },
+  "revealPage": {
+    "message": "इस पेज पर दिखाएं"
+  },
+  "revealedNotice": {
+    "message": "सिर्फ़ इस पेज पर दिख रहा है। अगली खोज में यह फिर छिप जाएगा।"
+  },
+  "commandToggleTab": {
+    "message": "मौजूदा टैब पर PlainSight रोकें या फिर से शुरू करें"
+  },
+  "shortcutHint": {
+    "message": "शॉर्टकट: $KEYS$",
+    "placeholders": {
+      "keys": {
+        "content": "$1",
+        "example": "Alt+Shift+H"
+      }
+    }
   }
 }

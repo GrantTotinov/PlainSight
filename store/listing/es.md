@@ -17,7 +17,8 @@ QUÉ OBTIENES
 • Sin pestañas ni botones del Modo IA en la página de resultados ni en la página principal.
 • Opcional: al abrir el Modo IA vas a los resultados normales.
 • Modo «Solo web»: cada búsqueda se abre en el filtro Web de Google. Solo enlaces, y sigue funcionando aunque Google rediseñe su página.
-• Pausa en cualquier pestaña con un clic cuando quieras la página completa.
+• Opcional: ocultar «Más preguntas», cuyas respuestas Google ahora escribe con IA.
+• ¿Quieres ver la respuesta de IA una vez? Muéstrala en esa página con un clic o pausa una pestaña con Alt+Shift+H.
 
 CÓMO FUNCIONA
 Elige un modo al instalar. «Ocultar IA» mantiene la página de resultados normal y quita las partes de IA. «Solo web» cambia tus búsquedas al filtro Web integrado, la opción más fiable porque no depende del diseño de la página. Cambia de modo o desactiva PlainSight cuando quieras desde el botón de la barra de herramientas.

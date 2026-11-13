@@ -23,26 +23,31 @@ export default defineContentScript({
     });
     if (!onAiModePage()) hider.start();
 
-    browser.runtime.onMessage.addListener((msg: { type?: string }, _sender, sendResponse) => {
-      if (msg?.type === 'pageStatus') sendResponse(hider.status());
-    });
-
     // Listen before the first await: the daily selector download often finishes while this
     // page is still loading, and a change event fired before the listener exists is lost.
     let current: Settings | undefined;
     let remote: unknown;
     let remoteSeen = false;
     let paused = false;
+    let revealed = false; // "Show it on this page" from the popup, until the next page load
     let ready = false;
 
     const apply = (s: Settings) => {
       current = s;
       hider.setConfig(s.remoteUpdates ? pickConfig(bundled, remote) : bundled);
-      const on = s.mode !== 'off' && !paused && !onAiModePage();
+      const on = s.mode !== 'off' && !paused && !revealed && !onAiModePage();
       hider.setEnabled(on, s.hidePeopleAlsoAsk ? ['peopleAlsoAsk'] : []);
       if (on && s.mode === 'webOnly') whenReady(addFullResultsLink);
       else document.getElementById(LINK_ID)?.remove();
     };
+
+    browser.runtime.onMessage.addListener((msg: { type?: string }, _sender, sendResponse) => {
+      if (msg?.type === 'reveal') {
+        revealed = true;
+        if (current) apply(current);
+      }
+      if (msg?.type === 'pageStatus' || msg?.type === 'reveal') sendResponse(hider.status());
+    });
 
     browser.storage.onChanged.addListener((changes, area) => {
       const settingsChanged = area === 'sync' && SETTINGS_KEY in changes;
