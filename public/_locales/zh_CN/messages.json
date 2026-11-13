@@ -137,5 +137,11 @@
   },
   "hidePeopleAlsoAskHint": {
     "message": "Google 现在几乎所有这些答案都由 AI 撰写。"
+  },
+  "remoteUpdates": {
+    "message": "从 GitHub 获取规则更新"
+  },
+  "remoteUpdatesHint": {
+    "message": "PlainSight 每天从 github.com/GrantTotinov/PlainSight 下载一次 AI 区块列表，无需等待商店更新即可获得修复。不会发送任何关于您或您搜索的信息。"
   }
 }

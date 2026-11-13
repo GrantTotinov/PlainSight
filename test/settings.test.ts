@@ -16,12 +16,14 @@ describe('migrate', () => {
 
   it('keeps valid values and repairs invalid ones field by field', () => {
     expect(migrate({ schemaVersion: 1, mode: 'webOnly', blockAiMode: true })).toEqual({
+      ...DEFAULT_SETTINGS,
       mode: 'webOnly',
       blockAiMode: true,
-      hidePeopleAlsoAsk: false,
     });
-    expect(migrate({ mode: 'hideAi', hidePeopleAlsoAsk: true })).toMatchObject({
+    expect(migrate({ mode: 'hideAi', hidePeopleAlsoAsk: true, remoteUpdates: false })).toEqual({
+      ...DEFAULT_SETTINGS,
       hidePeopleAlsoAsk: true,
+      remoteUpdates: false,
     });
     expect(migrate({ schemaVersion: 1, mode: 'aiOnly', blockAiMode: 'yes' })).toEqual(
       DEFAULT_SETTINGS,
@@ -30,9 +32,8 @@ describe('migrate', () => {
 
   it('drops unknown fields', () => {
     expect(migrate({ mode: 'off', blockAiMode: false, extra: 1 })).toEqual({
+      ...DEFAULT_SETTINGS,
       mode: 'off',
-      blockAiMode: false,
-      hidePeopleAlsoAsk: false,
     });
   });
 });
@@ -48,9 +49,9 @@ describe('storage', () => {
     await saveSettings({ mode: 'webOnly' });
     await saveSettings({ blockAiMode: true });
     expect(await loadSettings()).toEqual({
+      ...DEFAULT_SETTINGS,
       mode: 'webOnly',
       blockAiMode: true,
-      hidePeopleAlsoAsk: false,
     });
     const stored = await fakeBrowser.storage.sync.get(SETTINGS_KEY);
     expect(stored[SETTINGS_KEY]).toMatchObject({ schemaVersion: SCHEMA_VERSION });

@@ -137,5 +137,11 @@
   },
   "hidePeopleAlsoAskHint": {
     "message": "Почти все эти ответы Google теперь пишет с помощью ИИ."
+  },
+  "remoteUpdates": {
+    "message": "Получать обновления правил с GitHub"
+  },
+  "remoteUpdatesHint": {
+    "message": "Раз в день PlainSight загружает список ИИ-блоков с github.com/GrantTotinov/PlainSight, чтобы исправления приходили без обновления в магазине. Ничего о вас и ваших запросах не отправляется."
   }
 }

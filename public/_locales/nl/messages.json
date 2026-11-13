@@ -137,5 +137,11 @@
   },
   "hidePeopleAlsoAskHint": {
     "message": "Google schrijft bijna al deze antwoorden nu met AI."
+  },
+  "remoteUpdates": {
+    "message": "Regelupdates van GitHub ophalen"
+  },
+  "remoteUpdatesHint": {
+    "message": "Eén keer per dag downloadt PlainSight zijn lijst met AI-blokken van github.com/GrantTotinov/PlainSight, zodat oplossingen je bereiken zonder store-update. Er wordt niets over jou of je zoekopdrachten verstuurd."
   }
 }

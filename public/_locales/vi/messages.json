@@ -137,5 +137,11 @@
   },
   "hidePeopleAlsoAskHint": {
     "message": "Google hiện viết gần như tất cả các câu trả lời này bằng AI."
+  },
+  "remoteUpdates": {
+    "message": "Nhận cập nhật quy tắc từ GitHub"
+  },
+  "remoteUpdatesHint": {
+    "message": "Mỗi ngày một lần PlainSight tải danh sách khối AI từ github.com/GrantTotinov/PlainSight để bản sửa đến với bạn mà không cần cập nhật cửa hàng. Không có thông tin nào về bạn hoặc tìm kiếm của bạn được gửi đi."
   }
 }

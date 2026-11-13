@@ -1,8 +1,7 @@
-// TODO(Grant): confirm the repo name and visibility (open decision 3).
 export const REPO_URL = 'https://github.com/GrantTotinov/PlainSight';
 export const SPONSORS_URL = 'https://github.com/sponsors/GrantTotinov';
-// TODO(Grant): store link for AI Exporter. The options page hides the link while this is empty.
-export const AI_EXPORTER_URL = '';
+// Homepage rather than one store, so the link works for Chrome, Edge and Firefox users.
+export const AI_EXPORTER_URL = 'https://granttotinov.github.io/AIExporter/';
 // TODO(verify): AMO slug once the listing exists.
 const AMO_SLUG = 'plainsight';
 

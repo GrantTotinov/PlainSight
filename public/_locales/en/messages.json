@@ -141,5 +141,12 @@
   },
   "hidePeopleAlsoAskHint": {
     "message": "Google now writes almost all of these answers with AI."
+  },
+  "remoteUpdates": {
+    "message": "Get hiding rule updates from GitHub"
+  },
+  "remoteUpdatesHint": {
+    "message": "Once a day PlainSight downloads its list of AI blocks from github.com/GrantTotinov/PlainSight, so fixes reach you without a store update. Nothing about you or your searches is sent.",
+    "description": "Disclosure of the only network request PlainSight makes. Keep it complete and plain."
   }
 }

@@ -23,7 +23,7 @@ COMO FUNCIONA
 Escolha um modo ao instalar. "Ocultar IA" mantém a página de resultados normal e remove as partes de IA. "Somente web" muda suas pesquisas para o filtro Web integrado, a opção mais confiável porque não depende do layout da página. Mude de modo ou desative o PlainSight a qualquer momento pelo botão na barra de ferramentas.
 
 PRIVACIDADE
-O PlainSight não coleta dados. Sem análises, sem rastreio, sem código remoto, sem requisições de rede próprias. Suas configurações ficam no seu navegador. O código é aberto no GitHub, qualquer pessoa pode conferir.
+O PlainSight não coleta dados. Sem análises, sem rastreio, sem código remoto. A única conexão é um download diário de regras atualizadas do GitHub, que não envia nada sobre você (pode ser desativado). Suas configurações ficam no seu navegador. O código é aberto no GitHub, qualquer pessoa pode conferir.
 
 Funciona em todos os domínios do Google, em qualquer idioma.
 

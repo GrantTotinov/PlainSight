@@ -22,7 +22,7 @@ HOW IT WORKS
 Pick a mode when you install. Hide AI keeps the normal results page and removes the AI parts. Web only switches your searches to the built-in Web filter, the most reliable option because it does not depend on the page layout. Switch modes or turn PlainSight off from the toolbar button at any time.
 
 PRIVACY
-PlainSight collects no data. No analytics, no tracking, no remote code, no network requests of its own. Your settings stay in your browser. The code is open source on GitHub, so anyone can check it.
+PlainSight collects no data. No analytics, no tracking, no remote code. Its only connection is a daily download of updated hiding rules from GitHub, which sends nothing about you (you can turn it off). Your settings stay in your browser. The code is open source on GitHub, so anyone can check it.
 
 Works on every Google domain, in any language.
 

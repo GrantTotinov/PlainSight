@@ -23,7 +23,7 @@ CARA KERJA
 Pilih mode saat memasang. "Sembunyikan AI" mempertahankan halaman hasil biasa dan menghapus bagian AI. "Hanya web" mengalihkan penelusuran ke filter Web bawaan, opsi paling andal karena tidak bergantung pada tata letak halaman. Ganti mode atau matikan PlainSight kapan saja lewat tombol di toolbar.
 
 PRIVASI
-PlainSight tidak mengumpulkan data. Tanpa analitik, tanpa pelacakan, tanpa kode jarak jauh, tanpa permintaan jaringan sendiri. Setelan tetap di browser Anda. Kodenya open source di GitHub, siapa pun bisa memeriksanya.
+PlainSight tidak mengumpulkan data. Tanpa analitik, tanpa pelacakan, tanpa kode jarak jauh. Satu-satunya koneksi adalah unduhan harian aturan terbaru dari GitHub, yang tidak mengirim apa pun tentang Anda (bisa dimatikan). Setelan tetap di browser Anda. Kodenya open source di GitHub, siapa pun bisa memeriksanya.
 
 Berfungsi di semua domain Google, dalam bahasa apa pun.
 

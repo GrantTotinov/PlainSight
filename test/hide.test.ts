@@ -173,6 +173,21 @@ describe('createHider', () => {
     expect(onHidden).toHaveBeenCalledTimes(1);
   });
 
+  it('applies a downloaded config to an open page', () => {
+    document.body.innerHTML = '<div role="main"><div class="new-ai-block">AI text</div></div>';
+    const hider = createHider(document, config, () => {});
+    hider.start();
+    hider.setEnabled(true);
+    const block = document.querySelector('.new-ai-block')!;
+    expect(block.hasAttribute(HIDDEN_ATTR)).toBe(false);
+    const updated = structuredClone(config);
+    updated.rules[0]!.selectors.push('.new-ai-block');
+    hider.setConfig(updated);
+    expect(block.getAttribute(HIDDEN_ATTR)).toBe('aiOverview');
+    const style = [...document.querySelectorAll('style')].at(-1)!;
+    expect(style.textContent).toContain('.new-ai-block');
+  });
+
   it('does not count while disabled and turns the CSS off', () => {
     const onHidden = vi.fn();
     document.body.innerHTML = '<div role="main"><div class="M8OgIe">AI</div></div>';

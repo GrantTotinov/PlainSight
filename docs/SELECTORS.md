@@ -21,6 +21,15 @@ If Google changes the page so much that all five miss, **Web only** mode still w
 - Headings inside links are ignored, so a result titled "AI Overview" is never hidden.
 - On an AI Mode page the user opened on purpose (`udm=50`), nothing is hidden, so the page never turns blank.
 
+## Updates reach users within a day
+
+`src/selectors/selectors.json` on `main` is also the live update file: every installed copy with selector updates turned on downloads it once a day (`src/lib/remote.ts`). So:
+
+- **Merging a selector change to `main` ships it to users.** Only merge after CI is green.
+- Bump `updated` (`YYYY-MM-DD`) with every change. Users only switch to the downloaded file when it is newer than the copy inside their version of the extension.
+- Keep `schemaVersion: 1`. Older versions ignore any other schema and keep their bundled rules. A new `feature` name is ignored by versions that do not know it.
+- The download is rejected if a selector contains `{ } ; @ \ < >` or a comment, if a rule is malformed, or if there is no AI Overview or AI Mode rule left.
+
 ## When something breaks
 
 1. Reproduce it and save the page: `pnpm fixtures:capture <locale>` (headed browser, persistent profile, low request rate). Read `scripts/capture-fixtures.ts` for details. Review the new files before committing: fixtures are public.

@@ -137,5 +137,11 @@
   },
   "hidePeopleAlsoAskHint": {
     "message": "Google अब इनमें से लगभग सभी जवाब एआई से लिखता है।"
+  },
+  "remoteUpdates": {
+    "message": "GitHub से नियमों के अपडेट पाएं"
+  },
+  "remoteUpdatesHint": {
+    "message": "PlainSight दिन में एक बार github.com/GrantTotinov/PlainSight से एआई ब्लॉक की सूची डाउनलोड करता है, ताकि स्टोर अपडेट के बिना सुधार आप तक पहुंचें। आपके या आपकी खोजों के बारे में कुछ भी नहीं भेजा जाता।"
   }
 }

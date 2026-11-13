@@ -23,7 +23,7 @@ COME FUNZIONA
 Scegli una modalità all'installazione. "Nascondi AI" mantiene la normale pagina dei risultati e rimuove le parti AI. "Solo web" sposta le tue ricerche sul filtro Web integrato, l'opzione più affidabile perché non dipende dal layout della pagina. Cambia modalità o disattiva PlainSight quando vuoi dal pulsante nella barra degli strumenti.
 
 PRIVACY
-PlainSight non raccoglie dati. Niente analisi, niente tracciamento, niente codice remoto, nessuna richiesta di rete propria. Le impostazioni restano nel tuo browser. Il codice è open source su GitHub, chiunque può controllarlo.
+PlainSight non raccoglie dati. Niente analisi, niente tracciamento, niente codice remoto. L'unica connessione è un download giornaliero delle regole aggiornate da GitHub, che non invia nulla su di te (disattivabile). Le impostazioni restano nel tuo browser. Il codice è open source su GitHub, chiunque può controllarlo.
 
 Funziona su tutti i domini Google, in qualsiasi lingua.
 

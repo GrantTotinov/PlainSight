@@ -23,7 +23,7 @@ COMMENT ÇA MARCHE
 Choisissez un mode à l'installation. « Masquer l'IA » garde la page de résultats habituelle et retire les parties IA. « Web uniquement » passe vos recherches au filtre Web intégré, l'option la plus fiable car elle ne dépend pas de la mise en page. Changez de mode ou désactivez PlainSight à tout moment depuis le bouton de la barre d'outils.
 
 CONFIDENTIALITÉ
-PlainSight ne collecte aucune donnée. Pas d'analyse, pas de pistage, pas de code distant, aucune requête réseau de sa part. Vos réglages restent dans votre navigateur. Le code est open source sur GitHub, chacun peut le vérifier.
+PlainSight ne collecte aucune donnée. Pas d'analyse, pas de pistage, pas de code distant. Seule connexion : un téléchargement quotidien des règles à jour depuis GitHub, qui n'envoie rien sur vous (désactivable). Vos réglages restent dans votre navigateur. Le code est open source sur GitHub, chacun peut le vérifier.
 
 Fonctionne sur tous les domaines Google, dans toutes les langues.
 

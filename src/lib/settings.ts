@@ -6,6 +6,8 @@ export interface Settings {
   blockAiMode: boolean;
   /** Also hide "People also ask": Google now answers almost all of it with AI. Opt-in. */
   hidePeopleAlsoAsk: boolean;
+  /** Download selector fixes from GitHub once a day. Disclosed in Options and on the welcome page. */
+  remoteUpdates: boolean;
 }
 
 export const SCHEMA_VERSION = 1;
@@ -15,6 +17,7 @@ export const DEFAULT_SETTINGS: Settings = {
   mode: 'hideAi',
   blockAiMode: false,
   hidePeopleAlsoAsk: false,
+  remoteUpdates: true,
 };
 
 const bool = (value: unknown, fallback: boolean) => (typeof value === 'boolean' ? value : fallback);
@@ -30,6 +33,7 @@ export function migrate(raw: unknown): Settings {
     blockAiMode: bool(s.blockAiMode, DEFAULT_SETTINGS.blockAiMode),
     // Added after 0.1.0 without a schema bump: a missing field simply takes its default.
     hidePeopleAlsoAsk: bool(s.hidePeopleAlsoAsk, DEFAULT_SETTINGS.hidePeopleAlsoAsk),
+    remoteUpdates: bool(s.remoteUpdates, DEFAULT_SETTINGS.remoteUpdates),
   };
 }
 

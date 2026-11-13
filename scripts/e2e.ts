@@ -22,8 +22,19 @@ const ctx = await chromium.launchPersistentContext(mkdtempSync(join(tmpdir(), 'p
   args: [`--disable-extensions-except=${EXT}`, `--load-extension=${EXT}`],
 });
 const requested: string[] = [];
+// A "newer" selector config for the remote update check: the bundled one plus #botstuff.
+const remoteConfig = JSON.parse(readFileSync('src/selectors/selectors.json', 'utf8'));
+remoteConfig.updated = '2999-01-01';
+remoteConfig.rules[1].selectors.push('#botstuff');
+const remoteRequests: { url: string; cookie?: string; referer?: string }[] = [];
+
 await ctx.route('**/*', (route) => {
   const url = new URL(route.request().url());
+  if (url.hostname === 'raw.githubusercontent.com') {
+    const headers = route.request().headers();
+    remoteRequests.push({ url: url.href, cookie: headers.cookie, referer: headers.referer });
+    return route.fulfill({ status: 200, contentType: 'application/json', json: remoteConfig });
+  }
   if (url.hostname !== 'www.google.com' || route.request().resourceType() !== 'document') {
     return route.abort();
   }
@@ -207,6 +218,46 @@ try {
     assert.equal(await aio.isVisible(), true, 'still hidden after switching Off');
     await setSettings('hideAi', false);
     assert.equal(await aio.isVisible(), false, 'visible after switching back on');
+    await p.close();
+  });
+
+  await check('Remote update: downloaded rules apply to an open page', async () => {
+    await setSettings('hideAi', false);
+    const p = await ctx.newPage();
+    await p.goto(search('results-ai-overview'));
+    const bottom = p.locator('#botstuff');
+    // Force the daily check (the install-time one may have run before routing was ready).
+    await sw.evaluate(() => chrome.storage.local.remove(['remoteCheckedAt', 'remoteSelectors']));
+    await p.reload();
+    for (let i = 0; i < 30 && (await bottom.isVisible()); i++) await p.waitForTimeout(100);
+    if (await bottom.isVisible()) {
+      const stored = await sw.evaluate(() => chrome.storage.local.get('remoteSelectors'));
+      const state = await bottom.evaluate((el) => [...el.attributes].map((a) => a.name).join(' '));
+      assert.fail(
+        `not applied: requests=${remoteRequests.length} stored=${JSON.stringify(stored).slice(0, 60)} attrs=${state}`,
+      );
+    }
+    const last = remoteRequests.at(-1)!;
+    assert.equal(new URL(last.url).search, '', 'query string sent');
+    assert.equal(last.cookie, undefined, 'cookie sent');
+    assert.equal(last.referer, undefined, 'referrer sent');
+    await p.close();
+  });
+
+  await check('Remote update: turning it off drops the downloaded rules', async () => {
+    await sw.evaluate(() =>
+      chrome.storage.sync.set({
+        settings: { schemaVersion: 1, mode: 'hideAi', blockAiMode: false, remoteUpdates: false },
+      }),
+    );
+    await new Promise((r) => setTimeout(r, 300));
+    const p = await ctx.newPage();
+    await p.goto(search('results-ai-overview'));
+    assert.ok(await p.locator('#botstuff').isVisible(), 'remote rule still applied');
+    const { remoteSelectors } = await sw.evaluate(() =>
+      chrome.storage.local.get('remoteSelectors'),
+    );
+    assert.equal(remoteSelectors, undefined);
     await p.close();
   });
 
