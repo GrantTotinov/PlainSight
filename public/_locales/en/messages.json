@@ -1,8 +1,127 @@
 {
   "extName": {
-    "message": "PlainSight: Hide AI Overviews & AI Mode for Google Search™"
+    "message": "PlainSight: Hide AI Overviews & AI Mode for Google Search™",
+    "description": "Store and toolbar name. Max 75 characters. Keep \"PlainSight\" and \"Google Search™\"."
   },
   "extDescription": {
-    "message": "Remove AI Overviews and AI Mode from Google Search. Get classic web results back. Free, open source, no tracking."
+    "message": "Remove AI Overviews and AI Mode from Google Search. Get classic web results back. Free, open source, no tracking.",
+    "description": "Max 132 characters."
+  },
+  "showFullResults": {
+    "message": "Show full Google results",
+    "description": "Link on the results page in Web only mode. Pauses PlainSight for the tab."
+  },
+  "modeLabel": {
+    "message": "Mode"
+  },
+  "modeHideAi": {
+    "message": "Hide AI"
+  },
+  "modeHideAiHint": {
+    "message": "Normal Google results without AI Overviews and AI Mode buttons."
+  },
+  "modeWebOnly": {
+    "message": "Web only"
+  },
+  "modeWebOnlyHint": {
+    "message": "Every search opens in Google's Web filter: links only, no AI, no images or maps."
+  },
+  "modeOff": {
+    "message": "Off"
+  },
+  "modeOffHint": {
+    "message": "PlainSight does nothing until you turn it back on."
+  },
+  "blockAiMode": {
+    "message": "Block AI Mode"
+  },
+  "blockAiModeHint": {
+    "message": "Opening AI Mode takes you to regular results instead."
+  },
+  "hiddenCount": {
+    "message": "AI Overviews hidden: $COUNT$",
+    "description": "Local counter shown in the popup.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "42"
+      }
+    }
+  },
+  "pauseTab": {
+    "message": "Pause on this tab"
+  },
+  "resumeTab": {
+    "message": "Resume on this tab"
+  },
+  "pausedNotice": {
+    "message": "Paused on this tab until you close it."
+  },
+  "reportProblem": {
+    "message": "Report a problem"
+  },
+  "options": {
+    "message": "Options"
+  },
+  "reviewPrompt": {
+    "message": "Is PlainSight working for you?"
+  },
+  "reviewLink": {
+    "message": "Leave a review"
+  },
+  "dismiss": {
+    "message": "Dismiss"
+  },
+  "hostAccessMissing": {
+    "message": "PlainSight needs access to Google Search pages to work."
+  },
+  "hostAccessGrant": {
+    "message": "Allow access"
+  },
+  "welcomeTitle": {
+    "message": "Welcome to PlainSight"
+  },
+  "welcomeIntro": {
+    "message": "Choose how Google Search should look. You can change this any time from the PlainSight toolbar button."
+  },
+  "welcomeDifference": {
+    "message": "Hide AI keeps the normal Google page and removes the AI parts. Web only switches to Google's own Web filter, which shows links only and keeps working even when Google changes its page."
+  },
+  "welcomeSaved": {
+    "message": "Saved. You can close this tab and search as usual."
+  },
+  "optionsTitle": {
+    "message": "PlainSight options"
+  },
+  "privacyNote": {
+    "message": "PlainSight collects no data. Your settings stay in your browser and the counter never leaves your device."
+  },
+  "supportTitle": {
+    "message": "Support PlainSight"
+  },
+  "supportText": {
+    "message": "PlainSight is free and open source. If it makes your searches better, you can support its development."
+  },
+  "supportLink": {
+    "message": "Sponsor on GitHub"
+  },
+  "moreFromDeveloper": {
+    "message": "More from the developer"
+  },
+  "aiExporter": {
+    "message": "AI Exporter",
+    "description": "Name of another extension by the same developer. Do not translate."
+  },
+  "sourceCode": {
+    "message": "Source code"
+  },
+  "version": {
+    "message": "Version $VERSION$",
+    "placeholders": {
+      "version": {
+        "content": "$1",
+        "example": "1.0.0"
+      }
+    }
   }
 }

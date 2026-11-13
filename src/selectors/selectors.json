@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-11-13",
+  "notes": "headingText and buttonText for every locale except en are TODO(verify): check the exact wording on a Google results page in that language before relying on it.",
+  "rules": [
+    {
+      "id": "ai-overview-main",
+      "feature": "aiOverview",
+      "selectors": [".M8OgIe", "#eKIzJc"],
+      "headingText": {
+        "en": ["AI Overview"],
+        "de": ["Übersicht mit KI"],
+        "fr": ["Aperçu IA"],
+        "es": ["Vista creada con IA"],
+        "pt-BR": ["Visão geral criada por IA"],
+        "it": ["Panoramica AI"],
+        "nl": ["AI-overzicht"],
+        "pl": ["Przegląd od AI"],
+        "tr": ["Yapay Zeka Genel Bakışı"],
+        "ru": ["Обзор от ИИ"],
+        "uk": ["Огляд від ШІ"],
+        "bg": ["Обзор от ИИ"],
+        "ja": ["AI による概要"],
+        "ko": ["AI 개요"],
+        "zh-CN": ["AI 概览"],
+        "zh-TW": ["AI 摘要"],
+        "vi": ["Tổng quan do AI tạo"],
+        "id": ["Ringkasan AI"],
+        "hi": ["एआई से खास जानकारी"]
+      }
+    },
+    {
+      "id": "ai-mode-entry-points",
+      "feature": "aiMode",
+      "selectors": [
+        "[role=\"listitem\"]:has(a[href*=\"udm=50\"])",
+        "a[href^=\"/search\"][href*=\"udm=50\"]",
+        "form[role=\"search\"] button[role=\"link\"]"
+      ],
+      "buttonText": {
+        "en": ["AI Mode"],
+        "de": ["KI-Modus"],
+        "fr": ["Mode IA"],
+        "es": ["Modo IA"],
+        "pt-BR": ["Modo IA"],
+        "it": ["Modalità AI"],
+        "nl": ["AI-modus"],
+        "pl": ["Tryb AI"],
+        "tr": ["Yapay Zeka Modu"],
+        "ru": ["Режим ИИ"],
+        "uk": ["Режим ШІ"],
+        "bg": ["Режим с ИИ"],
+        "ja": ["AI モード"],
+        "ko": ["AI 모드"],
+        "zh-CN": ["AI 模式"],
+        "zh-TW": ["AI 模式"],
+        "vi": ["Chế độ AI"],
+        "id": ["Mode AI"],
+        "hi": ["एआई मोड"]
+      }
+    }
+  ]
+}

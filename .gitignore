@@ -3,3 +3,4 @@ node_modules/
 .wxt/
 .playwright-profile/
 *.log
+.playwright-mcp/
