@@ -137,5 +137,11 @@
   },
   "hidePeopleAlsoAskHint": {
     "message": "Майже всі ці відповіді Google тепер пише за допомогою ШІ."
+  },
+  "remoteUpdates": {
+    "message": "Отримувати оновлення правил з GitHub"
+  },
+  "remoteUpdatesHint": {
+    "message": "Раз на день PlainSight завантажує список блоків ШІ з github.com/GrantTotinov/PlainSight, щоб виправлення надходили без оновлення в магазині. Нічого про вас і ваші запити не надсилається."
   }
 }

@@ -137,5 +137,11 @@
   },
   "hidePeopleAlsoAskHint": {
     "message": "Google kini menulis hampir semua jawaban ini dengan AI."
+  },
+  "remoteUpdates": {
+    "message": "Dapatkan pembaruan aturan dari GitHub"
+  },
+  "remoteUpdatesHint": {
+    "message": "Sekali sehari PlainSight mengunduh daftar blok AI dari github.com/GrantTotinov/PlainSight, sehingga perbaikan sampai tanpa pembaruan di toko. Tidak ada data tentang Anda atau penelusuran Anda yang dikirim."
   }
 }

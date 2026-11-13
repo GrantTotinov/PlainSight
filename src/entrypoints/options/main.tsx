@@ -11,6 +11,17 @@ function Options() {
       <h1>{t('optionsTitle')}</h1>
       <HostAccessNotice />
       <SettingsForm settings={settings} update={update} />
+      <label class="choice">
+        <input
+          type="checkbox"
+          checked={settings.remoteUpdates}
+          onChange={(e) => update({ remoteUpdates: e.currentTarget.checked })}
+        />
+        <span>
+          <strong>{t('remoteUpdates')}</strong>
+          <span class="muted">{t('remoteUpdatesHint')}</span>
+        </span>
+      </label>
       <p class="muted">{t('privacyNote')}</p>
       <section class="notice">
         <h2>{t('supportTitle')}</h2>

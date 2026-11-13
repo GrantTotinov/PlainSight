@@ -137,5 +137,11 @@
   },
   "hidePeopleAlsoAskHint": {
     "message": "Google schreibt fast alle diese Antworten inzwischen mit KI."
+  },
+  "remoteUpdates": {
+    "message": "Regel-Updates von GitHub laden"
+  },
+  "remoteUpdatesHint": {
+    "message": "Einmal am Tag lädt PlainSight seine Liste der KI-Blöcke von github.com/GrantTotinov/PlainSight, damit Korrekturen ohne Store-Update ankommen. Es wird nichts über dich oder deine Suchen gesendet."
   }
 }

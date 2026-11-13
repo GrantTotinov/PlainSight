@@ -119,6 +119,8 @@ export interface Hider {
    * optional features the user turned on, such as hiding "People also ask".
    */
   setEnabled(on: boolean, optional?: Feature[]): void;
+  /** Swap in a newer selector config (downloaded update) without reloading the page. */
+  setConfig(config: SelectorConfig): void;
   /** Scan a subtree right away. Exposed for tests. */
   scan(root: Element): void;
   /** What happened on this page, for the popup. */
@@ -127,9 +129,11 @@ export interface Hider {
 
 export function createHider(
   doc: Document,
-  config: SelectorConfig,
+  initialConfig: SelectorConfig,
   onAiOverviewHidden: () => void,
 ): Hider {
+  let config = initialConfig;
+  let optionalOn: Feature[] = [];
   let css = '';
   let ruleSelectors: { selector: string; feature: Feature }[] = [];
   let headings = new Map<string, Feature>();
@@ -255,6 +259,7 @@ export function createHider(
     },
     setEnabled(on, optional = []) {
       state = on ? 'on' : 'off';
+      optionalOn = optional;
       compile(optional);
       style.textContent = on ? css : '';
       if (on) {
@@ -265,6 +270,13 @@ export function createHider(
       } else {
         observer.disconnect();
       }
+    },
+    setConfig(next) {
+      config = next;
+      compile(optionalOn);
+      if (state === 'off') return;
+      style.textContent = css;
+      scan(doc.documentElement);
     },
     scan,
     status: () => ({

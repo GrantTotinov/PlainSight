@@ -35,6 +35,7 @@ function Welcome() {
       <p class="muted">{t('welcomeDifference')}</p>
       {saved && <p role="status">{t('welcomeSaved')}</p>}
       <p class="muted">{t('privacyNote')}</p>
+      <p class="muted">{t('remoteUpdatesHint')}</p>
     </main>
   );
 }

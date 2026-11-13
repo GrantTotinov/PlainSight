@@ -137,5 +137,11 @@
   },
   "hidePeopleAlsoAskHint": {
     "message": "이제 Google은 이 답변의 거의 전부를 AI로 작성합니다."
+  },
+  "remoteUpdates": {
+    "message": "GitHub에서 규칙 업데이트 받기"
+  },
+  "remoteUpdatesHint": {
+    "message": "PlainSight는 하루에 한 번 github.com/GrantTotinov/PlainSight에서 AI 블록 목록을 내려받아 스토어 업데이트 없이도 수정 사항을 적용합니다. 사용자나 검색에 관한 정보는 전송되지 않습니다."
   }
 }

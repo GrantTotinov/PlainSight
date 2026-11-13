@@ -1,10 +1,12 @@
 import { createHider, type SelectorConfig } from '../lib/hide';
 import { CONTENT_MATCHES } from '../lib/hosts';
 import { send } from '../lib/messages';
+import { pickConfig, REMOTE_KEY } from '../lib/remote';
 import { loadSettings, migrate, SETTINGS_KEY, type Settings } from '../lib/settings';
 import selectors from '../selectors/selectors.json';
 
 const LINK_ID = 'plainsight-full-results';
+const bundled = selectors as SelectorConfig;
 
 export default defineContentScript({
   matches: CONTENT_MATCHES,
@@ -15,7 +17,8 @@ export default defineContentScript({
     const onAiModePage = () => new URL(location.href).searchParams.get('udm') === '50';
 
     // Hide first, ask questions later: AI blocks must never flash on screen.
-    const hider = createHider(document, selectors as SelectorConfig, () => {
+    // The bundled selectors apply at once; a newer downloaded copy replaces them a moment later.
+    const hider = createHider(document, bundled, () => {
       void send({ type: 'countHidden' }).catch(() => {});
     });
     if (!onAiModePage()) hider.start();
@@ -24,23 +27,43 @@ export default defineContentScript({
       if (msg?.type === 'pageStatus') sendResponse(hider.status());
     });
 
-    const [settings, paused] = await Promise.all([
-      loadSettings(),
-      send({ type: 'isPaused' }).catch(() => false),
-    ]);
+    // Listen before the first await: the daily selector download often finishes while this
+    // page is still loading, and a change event fired before the listener exists is lost.
+    let current: Settings | undefined;
+    let remote: unknown;
+    let remoteSeen = false;
+    let paused = false;
+    let ready = false;
 
     const apply = (s: Settings) => {
+      current = s;
+      hider.setConfig(s.remoteUpdates ? pickConfig(bundled, remote) : bundled);
       const on = s.mode !== 'off' && !paused && !onAiModePage();
       hider.setEnabled(on, s.hidePeopleAlsoAsk ? ['peopleAlsoAsk'] : []);
       if (on && s.mode === 'webOnly') whenReady(addFullResultsLink);
       else document.getElementById(LINK_ID)?.remove();
     };
-    apply(settings);
 
     browser.storage.onChanged.addListener((changes, area) => {
-      if (area === 'sync' && SETTINGS_KEY in changes)
-        apply(migrate(changes[SETTINGS_KEY]?.newValue));
+      const settingsChanged = area === 'sync' && SETTINGS_KEY in changes;
+      const remoteChanged = area === 'local' && REMOTE_KEY in changes;
+      if (settingsChanged) current = migrate(changes[SETTINGS_KEY]?.newValue);
+      if (remoteChanged) {
+        remote = changes[REMOTE_KEY]?.newValue;
+        remoteSeen = true;
+      }
+      if (ready && current && (settingsChanged || remoteChanged)) apply(current);
     });
+
+    const [settings, pausedNow, stored] = await Promise.all([
+      loadSettings(),
+      send({ type: 'isPaused' }).catch(() => false),
+      browser.storage.local.get(REMOTE_KEY).catch(() => ({})),
+    ]);
+    paused = pausedNow;
+    if (!remoteSeen) remote = (stored as Record<string, unknown>)[REMOTE_KEY];
+    ready = true;
+    apply(current ?? settings);
   },
 });
 

@@ -137,5 +137,11 @@
   },
   "hidePeopleAlsoAskHint": {
     "message": "Google ora scrive quasi tutte queste risposte con l’AI."
+  },
+  "remoteUpdates": {
+    "message": "Ricevi aggiornamenti delle regole da GitHub"
+  },
+  "remoteUpdatesHint": {
+    "message": "Una volta al giorno PlainSight scarica il suo elenco di blocchi AI da github.com/GrantTotinov/PlainSight, così le correzioni arrivano senza aggiornare lo store. Non viene inviato nulla su di te o sulle tue ricerche."
   }
 }
