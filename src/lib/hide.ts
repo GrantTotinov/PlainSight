@@ -1,8 +1,10 @@
-export type Feature = 'aiOverview' | 'aiMode';
+export type Feature = 'aiOverview' | 'aiMode' | 'peopleAlsoAsk';
 
 export interface SelectorRule {
   id: string;
   feature: Feature;
+  /** Off unless the user turns the feature on in the settings. */
+  optional?: boolean;
   /** CSS selectors hidden before first paint. Prefer structural or attribute selectors. */
   selectors: string[];
   /** Heading text of the block, per Google UI locale. */
@@ -67,14 +69,14 @@ export function matchTerm<T>(text: string, terms: Map<string, T>): T | undefined
 }
 
 /**
- * CSS that hides every known selector, unless a safety guard marked the element to keep.
- * One rule per selector, so a selector a browser does not support only drops itself.
+ * CSS that hides every known selector of the active rules, unless a safety guard marked the
+ * element to keep. One rule per selector, so a selector a browser does not support only drops
+ * itself. Hidden markers are per feature, so turning an option off shows its blocks again.
  */
-export function buildCss(config: SelectorConfig): string {
-  const selectors = config.rules.flatMap((r) => r.selectors).map((s) => `${s}:not([${KEEP_ATTR}])`);
-  return [...selectors, `[${HIDDEN_ATTR}]`]
-    .map((s) => `${s} { display: none !important; }`)
-    .join('\n');
+export function buildCss(rules: SelectorRule[]): string {
+  const selectors = rules.flatMap((r) => r.selectors).map((s) => `${s}:not([${KEEP_ATTR}])`);
+  const markers = [...new Set(rules.map((r) => r.feature))].map((f) => `[${HIDDEN_ATTR}="${f}"]`);
+  return [...selectors, ...markers].map((s) => `${s} { display: none !important; }`).join('\n');
 }
 
 /** Text a user would see: skips inline <style>/<script>, which Google puts inside buttons. */
@@ -112,8 +114,11 @@ function* within(root: Element, selector: string): Generator<Element> {
 export interface Hider {
   /** Inject CSS and start watching the page. Call as early as possible. */
   start(): void;
-  /** Turn hiding on or off (Off mode, paused tab, settings change). */
-  setEnabled(on: boolean): void;
+  /**
+   * Turn hiding on or off (Off mode, paused tab, settings change). `optional` lists the
+   * optional features the user turned on, such as hiding "People also ask".
+   */
+  setEnabled(on: boolean, optional?: Feature[]): void;
   /** Scan a subtree right away. Exposed for tests. */
   scan(root: Element): void;
   /** What happened on this page, for the popup. */
@@ -125,17 +130,26 @@ export function createHider(
   config: SelectorConfig,
   onAiOverviewHidden: () => void,
 ): Hider {
-  const css = buildCss(config);
-  const ruleSelectors = config.rules.flatMap((r) =>
-    r.selectors.map((selector) => ({ selector, feature: r.feature })),
-  );
-  const headings = new Map<string, Feature>();
-  const buttons = new Map<string, Feature>();
-  for (const r of config.rules) {
-    for (const t of allText(r.headingText)) headings.set(normalize(t), r.feature);
-    for (const t of allText(r.buttonText)) buttons.set(normalize(t), r.feature);
-  }
-  const overviewTerms = [...headings].filter(([, f]) => f === 'aiOverview').map(([t]) => t);
+  let css = '';
+  let ruleSelectors: { selector: string; feature: Feature }[] = [];
+  let headings = new Map<string, Feature>();
+  let buttons = new Map<string, Feature>();
+  let overviewTerms: string[] = [];
+  const compile = (optional: Feature[]) => {
+    const rules = config.rules.filter((r) => !r.optional || optional.includes(r.feature));
+    css = buildCss(rules);
+    ruleSelectors = rules.flatMap((r) =>
+      r.selectors.map((selector) => ({ selector, feature: r.feature })),
+    );
+    headings = new Map();
+    buttons = new Map();
+    for (const r of rules) {
+      for (const t of allText(r.headingText)) headings.set(normalize(t), r.feature);
+      for (const t of allText(r.buttonText)) buttons.set(normalize(t), r.feature);
+    }
+    overviewTerms = [...headings].filter(([, f]) => f === 'aiOverview').map(([t]) => t);
+  };
+  compile([]);
 
   const textMatch = (el: Element, terms: Map<string, Feature>) => {
     const raw = (el.textContent ?? '').toLowerCase();
@@ -239,8 +253,9 @@ export function createHider(
       observe();
       scan(doc.documentElement);
     },
-    setEnabled(on) {
+    setEnabled(on, optional = []) {
       state = on ? 'on' : 'off';
+      compile(optional);
       style.textContent = on ? css : '';
       if (on) {
         if (!style.isConnected) doc.documentElement.append(style);

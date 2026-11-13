@@ -130,5 +130,12 @@
   },
   "switchToWebOnly": {
     "message": "Yalnızca web kullan"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "\"Diğer kullanıcılar şunları da sordu\" bölümünü gizle",
+    "description": "TODO(verify): Google's name for \"People also ask\" in this language."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "Google artık bu yanıtların neredeyse tamamını yapay zekayla yazıyor."
   }
 }

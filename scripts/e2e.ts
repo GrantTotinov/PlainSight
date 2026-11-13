@@ -46,10 +46,11 @@ const udm = (page: Page) => new URL(page.url()).searchParams.get('udm');
 
 try {
   const sw = ctx.serviceWorkers()[0] ?? (await ctx.waitForEvent('serviceworker'));
-  const setSettings = async (mode: string, blockAiMode: boolean) => {
+  const setSettings = async (mode: string, blockAiMode: boolean, hidePeopleAlsoAsk = false) => {
     await sw.evaluate((s) => chrome.storage.sync.set({ settings: { schemaVersion: 1, ...s } }), {
       mode,
       blockAiMode,
+      hidePeopleAlsoAsk,
     });
     await new Promise((r) => setTimeout(r, 300)); // background rebuilds the DNR rules
   };
@@ -172,6 +173,25 @@ try {
     await new Promise((r) => setTimeout(r, 300));
     const rules = await sw.evaluate(() => chrome.declarativeNetRequest.getSessionRules());
     assert.equal(rules.length, 0);
+  });
+
+  await check('Option: "People also ask" hidden only while turned on', async () => {
+    const p = await ctx.newPage();
+    await setSettings('hideAi', false, true);
+    await p.goto(search('results-ai-overview-2'));
+    const paa = p
+      .locator('[role="heading"]')
+      .filter({ hasText: /^People also ask$/ })
+      .first();
+    const videos = p
+      .locator('[role="heading"]')
+      .filter({ hasText: /^Videos$/ })
+      .first();
+    assert.equal(await paa.isVisible(), false, 'People also ask visible while on');
+    assert.ok(await videos.isVisible(), 'Videos hidden');
+    await setSettings('hideAi', false, false);
+    assert.ok(await paa.isVisible(), 'People also ask still hidden after turning it off');
+    await p.close();
   });
 
   await check('Mode switch applies to an open page without reload', async () => {

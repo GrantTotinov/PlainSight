@@ -130,5 +130,12 @@
   },
   "switchToWebOnly": {
     "message": "Dùng Chỉ web"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "Ẩn \"Mọi người cũng hỏi\"",
+    "description": "TODO(verify): Google's name for \"People also ask\" in this language."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "Google hiện viết gần như tất cả các câu trả lời này bằng AI."
   }
 }

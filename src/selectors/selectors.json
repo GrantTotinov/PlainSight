@@ -6,7 +6,7 @@
     {
       "id": "ai-overview-main",
       "feature": "aiOverview",
-      "selectors": [".M8OgIe", "#eKIzJc"],
+      "selectors": [".M8OgIe", "#eKIzJc", "[data-attnms]"],
       "headingText": {
         "en": ["AI Overview"],
         "de": ["Übersicht mit KI"],
@@ -35,7 +35,10 @@
       "selectors": [
         "[role=\"listitem\"]:has(a[href*=\"udm=50\"])",
         "a[href*=\"/search?\"][href*=\"udm=50\"]",
-        "form[role=\"search\"] button[role=\"link\"]"
+        "form[role=\"search\"] button[role=\"link\"]",
+        ".plR5qb",
+        ".xOchs",
+        "[role=\"button\"][data-azi][jsname=\"pLYtdd\"]"
       ],
       "buttonText": {
         "en": ["AI Mode"],
@@ -57,6 +60,33 @@
         "vi": ["Chế độ AI"],
         "id": ["Mode AI"],
         "hi": ["एआई मोड"]
+      }
+    },
+    {
+      "id": "people-also-ask",
+      "feature": "peopleAlsoAsk",
+      "optional": true,
+      "selectors": [".cUnQKe:has([jsname=\"YrZdPb\"][data-evn])", "[jsname=\"YrZdPb\"][data-evn]"],
+      "headingText": {
+        "en": ["People also ask"],
+        "de": ["Ähnliche Fragen"],
+        "fr": ["Autres questions posées"],
+        "es": ["Más preguntas"],
+        "pt-BR": ["Outras perguntas"],
+        "it": ["Altre domande"],
+        "nl": ["Mensen vragen ook"],
+        "pl": ["Podobne pytania"],
+        "tr": ["Diğer kullanıcılar şunları da sordu"],
+        "ru": ["Похожие вопросы"],
+        "uk": ["Схожі запитання"],
+        "bg": ["Хората питат също"],
+        "ja": ["他の人はこちらも質問"],
+        "ko": ["관련 질문"],
+        "zh-CN": ["相关问题"],
+        "zh-TW": ["其他人也問了以下問題"],
+        "vi": ["Mọi người cũng hỏi"],
+        "id": ["Orang lain juga bertanya"],
+        "hi": ["लोग यह भी पूछते हैं"]
       }
     }
   ]

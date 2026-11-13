@@ -45,7 +45,7 @@ const redirect = (queryTransform: QueryTransform): Rule['action'] => ({
 });
 
 /** The full set of dynamic rules for the given settings. Rules only touch top-level /search loads. */
-export function buildRules(settings: Settings): Rule[] {
+export function buildRules(settings: Pick<Settings, 'mode' | 'blockAiMode'>): Rule[] {
   if (settings.mode === 'off') return [];
   const webOnly = settings.mode === 'webOnly';
   const rules: Rule[] = [];

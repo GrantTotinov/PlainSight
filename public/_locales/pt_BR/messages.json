@@ -130,5 +130,12 @@
   },
   "switchToWebOnly": {
     "message": "Usar Somente web"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "Ocultar \"Outras perguntas\"",
+    "description": "TODO(verify): Google's name for \"People also ask\" in this language."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "O Google agora escreve quase todas essas respostas com IA."
   }
 }

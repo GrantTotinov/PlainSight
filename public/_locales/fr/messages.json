@@ -130,5 +130,12 @@
   },
   "switchToWebOnly": {
     "message": "Passer en Web uniquement"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "Masquer « Autres questions posées »",
+    "description": "TODO(verify): Google's name for \"People also ask\" in this language."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "Google rédige désormais presque toutes ces réponses avec l’IA."
   }
 }

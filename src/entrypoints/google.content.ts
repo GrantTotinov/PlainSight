@@ -31,7 +31,7 @@ export default defineContentScript({
 
     const apply = (s: Settings) => {
       const on = s.mode !== 'off' && !paused && !onAiModePage();
-      hider.setEnabled(on);
+      hider.setEnabled(on, s.hidePeopleAlsoAsk ? ['peopleAlsoAsk'] : []);
       if (on && s.mode === 'webOnly') whenReady(addFullResultsLink);
       else document.getElementById(LINK_ID)?.remove();
     };

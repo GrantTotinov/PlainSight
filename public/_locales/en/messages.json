@@ -134,5 +134,12 @@
   },
   "switchToWebOnly": {
     "message": "Use Web only"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "Hide \"People also ask\"",
+    "description": "Option. Use Google's exact name of the \"People also ask\" box."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "Google now writes almost all of these answers with AI."
   }
 }

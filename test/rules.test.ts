@@ -37,7 +37,7 @@ function navigate(rules: Rule[], url: string, tabId = 1): string {
   throw new Error(`too many redirects for ${url}`);
 }
 
-const webOnly: Settings = { mode: 'webOnly', blockAiMode: false };
+const webOnly: Pick<Settings, 'mode' | 'blockAiMode'> = { mode: 'webOnly', blockAiMode: false };
 const g = 'https://www.google.com/search?q=cats';
 
 describe('buildRules', () => {

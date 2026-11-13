@@ -130,5 +130,12 @@
   },
   "switchToWebOnly": {
     "message": "Alleen web gebruiken"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "\"Mensen vragen ook\" verbergen",
+    "description": "TODO(verify): Google's name for \"People also ask\" in this language."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "Google schrijft bijna al deze antwoorden nu met AI."
   }
 }

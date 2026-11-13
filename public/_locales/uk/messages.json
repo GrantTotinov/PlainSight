@@ -130,5 +130,12 @@
   },
   "switchToWebOnly": {
     "message": "Увімкнути «Лише веб»"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "Приховати «Схожі запитання»",
+    "description": "TODO(verify): Google's name for \"People also ask\" in this language."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "Майже всі ці відповіді Google тепер пише за допомогою ШІ."
   }
 }

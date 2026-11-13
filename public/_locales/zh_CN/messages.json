@@ -130,5 +130,12 @@
   },
   "switchToWebOnly": {
     "message": "使用“仅网页”"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "隐藏“相关问题”",
+    "description": "TODO(verify): Google's name for \"People also ask\" in this language."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "Google 现在几乎所有这些答案都由 AI 撰写。"
   }
 }

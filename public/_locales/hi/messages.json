@@ -130,5 +130,12 @@
   },
   "switchToWebOnly": {
     "message": "सिर्फ़ वेब इस्तेमाल करें"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "\"लोग यह भी पूछते हैं\" छिपाएं",
+    "description": "TODO(verify): Google's name for \"People also ask\" in this language."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "Google अब इनमें से लगभग सभी जवाब एआई से लिखता है।"
   }
 }

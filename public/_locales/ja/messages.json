@@ -130,5 +130,12 @@
   },
   "switchToWebOnly": {
     "message": "「ウェブのみ」を使う"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "「他の人はこちらも質問」を非表示",
+    "description": "TODO(verify): Google's name for \"People also ask\" in this language."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "これらの回答は現在ほぼすべて Google の AI が作成しています。"
   }
 }

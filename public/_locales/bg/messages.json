@@ -130,5 +130,12 @@
   },
   "switchToWebOnly": {
     "message": "Използвай „Само уеб“"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "Скрий „Хората питат също“",
+    "description": "TODO(verify): Google's name for \"People also ask\" in this language."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "Google вече пише почти всички тези отговори с ИИ."
   }
 }

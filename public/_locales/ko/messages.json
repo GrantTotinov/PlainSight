@@ -130,5 +130,12 @@
   },
   "switchToWebOnly": {
     "message": "웹만 사용"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "\"관련 질문\" 숨기기",
+    "description": "TODO(verify): Google's name for \"People also ask\" in this language."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "이제 Google은 이 답변의 거의 전부를 AI로 작성합니다."
   }
 }

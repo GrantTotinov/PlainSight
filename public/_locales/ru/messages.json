@@ -130,5 +130,12 @@
   },
   "switchToWebOnly": {
     "message": "Включить «Только веб»"
+  },
+  "hidePeopleAlsoAsk": {
+    "message": "Скрыть «Похожие вопросы»",
+    "description": "TODO(verify): Google's name for \"People also ask\" in this language."
+  },
+  "hidePeopleAlsoAskHint": {
+    "message": "Почти все эти ответы Google теперь пишет с помощью ИИ."
   }
 }
